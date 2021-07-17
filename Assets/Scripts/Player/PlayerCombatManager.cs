@@ -43,13 +43,19 @@ public class PlayerCombatManager : MonoBehaviour
 
     public void HandleLightAttack(WeaponItem weapon)
     {
-        animatorHandler.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
-        lastAttack = weapon.OHLightAttacks[0];
+        if (weapon != null)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
+            lastAttack = weapon.OHLightAttacks[0];
+        }
     }
 
     public void HandleHeavyAttack(WeaponItem weapon)
     {
-        animatorHandler.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
-        lastAttack = weapon.OHHeavyAttacks[0];
+        if (weapon != null)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
+            lastAttack = weapon.OHHeavyAttacks[0];
+        }
     }
 }
