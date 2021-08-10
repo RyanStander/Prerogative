@@ -1,0 +1,2253 @@
+fileFormatVersion: 2
+guid: 13d7513657cf31e4cba649043b02757b
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: BLW_DEF
+  - first:
+      1: 100002
+    second: Character1_Head
+  - first:
+      1: 100004
+    second: Character1_Hips
+  - first:
+      1: 100006
+    second: Character1_LeftArm
+  - first:
+      1: 100008
+    second: Character1_LeftFoot
+  - first:
+      1: 100010
+    second: Character1_LeftForeArm
+  - first:
+      1: 100012
+    second: Character1_LeftHand
+  - first:
+      1: 100014
+    second: Character1_LeftHandIndex1
+  - first:
+      1: 100016
+    second: Character1_LeftHandIndex2
+  - first:
+      1: 100018
+    second: Character1_LeftHandIndex3
+  - first:
+      1: 100020
+    second: Character1_LeftHandIndex4
+  - first:
+      1: 100022
+    second: Character1_LeftHandMiddle1
+  - first:
+      1: 100024
+    second: Character1_LeftHandMiddle2
+  - first:
+      1: 100026
+    second: Character1_LeftHandMiddle3
+  - first:
+      1: 100028
+    second: Character1_LeftHandMiddle4
+  - first:
+      1: 100030
+    second: Character1_LeftHandPinky1
+  - first:
+      1: 100032
+    second: Character1_LeftHandPinky2
+  - first:
+      1: 100034
+    second: Character1_LeftHandPinky3
+  - first:
+      1: 100036
+    second: Character1_LeftHandPinky4
+  - first:
+      1: 100038
+    second: Character1_LeftHandRing1
+  - first:
+      1: 100040
+    second: Character1_LeftHandRing2
+  - first:
+      1: 100042
+    second: Character1_LeftHandRing3
+  - first:
+      1: 100044
+    second: Character1_LeftHandRing4
+  - first:
+      1: 100046
+    second: Character1_LeftHandThumb1
+  - first:
+      1: 100048
+    second: Character1_LeftHandThumb2
+  - first:
+      1: 100050
+    second: Character1_LeftHandThumb3
+  - first:
+      1: 100052
+    second: Character1_LeftHandThumb4
+  - first:
+      1: 100054
+    second: Character1_LeftLeg
+  - first:
+      1: 100056
+    second: Character1_LeftShoulder
+  - first:
+      1: 100058
+    second: Character1_LeftToeBase
+  - first:
+      1: 100060
+    second: Character1_LeftUpLeg
+  - first:
+      1: 100062
+    second: Character1_Neck
+  - first:
+      1: 100064
+    second: Character1_Reference
+  - first:
+      1: 100066
+    second: Character1_RightArm
+  - first:
+      1: 100068
+    second: Character1_RightFoot
+  - first:
+      1: 100070
+    second: Character1_RightForeArm
+  - first:
+      1: 100072
+    second: Character1_RightHand
+  - first:
+      1: 100074
+    second: Character1_RightHandIndex1
+  - first:
+      1: 100076
+    second: Character1_RightHandIndex2
+  - first:
+      1: 100078
+    second: Character1_RightHandIndex3
+  - first:
+      1: 100080
+    second: Character1_RightHandIndex4
+  - first:
+      1: 100082
+    second: Character1_RightHandMiddle1
+  - first:
+      1: 100084
+    second: Character1_RightHandMiddle2
+  - first:
+      1: 100086
+    second: Character1_RightHandMiddle3
+  - first:
+      1: 100088
+    second: Character1_RightHandMiddle4
+  - first:
+      1: 100090
+    second: Character1_RightHandPinky1
+  - first:
+      1: 100092
+    second: Character1_RightHandPinky2
+  - first:
+      1: 100094
+    second: Character1_RightHandPinky3
+  - first:
+      1: 100096
+    second: Character1_RightHandPinky4
+  - first:
+      1: 100098
+    second: Character1_RightHandRing1
+  - first:
+      1: 100100
+    second: Character1_RightHandRing2
+  - first:
+      1: 100102
+    second: Character1_RightHandRing3
+  - first:
+      1: 100104
+    second: Character1_RightHandRing4
+  - first:
+      1: 100106
+    second: Character1_RightHandThumb1
+  - first:
+      1: 100108
+    second: Character1_RightHandThumb2
+  - first:
+      1: 100110
+    second: Character1_RightHandThumb3
+  - first:
+      1: 100112
+    second: Character1_RightHandThumb4
+  - first:
+      1: 100114
+    second: Character1_RightLeg
+  - first:
+      1: 100116
+    second: Character1_RightShoulder
+  - first:
+      1: 100118
+    second: Character1_RightToeBase
+  - first:
+      1: 100120
+    second: Character1_RightUpLeg
+  - first:
+      1: 100122
+    second: Character1_Spine
+  - first:
+      1: 100124
+    second: Character1_Spine1
+  - first:
+      1: 100126
+    second: Character1_Spine2
+  - first:
+      1: 100128
+    second: EL_DEF
+  - first:
+      1: 100130
+    second: eye_base_old
+  - first:
+      1: 100132
+    second: EYE_DEF
+  - first:
+      1: 100134
+    second: eye_L_old
+  - first:
+      1: 100136
+    second: eye_R_old
+  - first:
+      1: 100138
+    second: //RootNode
+  - first:
+      1: 100140
+    second: head_back
+  - first:
+      1: 100142
+    second: J_L_HairFront_00
+  - first:
+      1: 100144
+    second: J_L_HairFront_01
+  - first:
+      1: 100146
+    second: J_L_HairSide_00
+  - first:
+      1: 100148
+    second: J_L_HairSide_01
+  - first:
+      1: 100150
+    second: J_L_HairSide_02
+  - first:
+      1: 100152
+    second: J_L_HairTail_00
+  - first:
+      1: 100154
+    second: J_L_HairTail_01
+  - first:
+      1: 100156
+    second: J_L_HairTail_02
+  - first:
+      1: 100158
+    second: J_L_HairTail_03
+  - first:
+      1: 100160
+    second: J_L_HairTail_04
+  - first:
+      1: 100162
+    second: J_L_HairTail_05
+  - first:
+      1: 100164
+    second: J_L_HairTail_06
+  - first:
+      1: 100166
+    second: J_L_HeadRibbon_00
+  - first:
+      1: 100168
+    second: J_L_HeadRibbon_01
+  - first:
+      1: 100170
+    second: J_L_HeadRibbon_02
+  - first:
+      1: 100172
+    second: J_L_Mune_00
+  - first:
+      1: 100174
+    second: J_L_Mune_01
+  - first:
+      1: 100176
+    second: J_L_Mune_02
+  - first:
+      1: 100178
+    second: J_L_Skirt_00
+  - first:
+      1: 100180
+    second: J_L_Skirt_01
+  - first:
+      1: 100182
+    second: J_L_Skirt_02
+  - first:
+      1: 100184
+    second: J_L_SkirtBack_00
+  - first:
+      1: 100186
+    second: J_L_SkirtBack_01
+  - first:
+      1: 100188
+    second: J_L_SkirtBack_02
+  - first:
+      1: 100190
+    second: J_L_Sode_A00
+  - first:
+      1: 100192
+    second: J_L_Sode_A01
+  - first:
+      1: 100194
+    second: J_L_Sode_B00
+  - first:
+      1: 100196
+    second: J_L_Sode_B01
+  - first:
+      1: 100198
+    second: J_L_Sode_C00
+  - first:
+      1: 100200
+    second: J_L_Sode_C01
+  - first:
+      1: 100202
+    second: J_L_Sode_D00
+  - first:
+      1: 100204
+    second: J_L_Sode_D01
+  - first:
+      1: 100206
+    second: J_L_SusoBack_00
+  - first:
+      1: 100208
+    second: J_L_SusoBack_01
+  - first:
+      1: 100210
+    second: J_L_SusoFront_00
+  - first:
+      1: 100212
+    second: J_L_SusoFront_01
+  - first:
+      1: 100214
+    second: J_L_SusoSide_00
+  - first:
+      1: 100216
+    second: J_L_SusoSide_01
+  - first:
+      1: 100218
+    second: J_Mune_root_00
+  - first:
+      1: 100220
+    second: J_Mune_root_01
+  - first:
+      1: 100222
+    second: J_R_HairFront_00
+  - first:
+      1: 100224
+    second: J_R_HairFront_01
+  - first:
+      1: 100226
+    second: J_R_HairSide_00
+  - first:
+      1: 100228
+    second: J_R_HairSide_01
+  - first:
+      1: 100230
+    second: J_R_HairSide_02
+  - first:
+      1: 100232
+    second: J_R_HairTail_00
+  - first:
+      1: 100234
+    second: J_R_HairTail_01
+  - first:
+      1: 100236
+    second: J_R_HairTail_02
+  - first:
+      1: 100238
+    second: J_R_HairTail_03
+  - first:
+      1: 100240
+    second: J_R_HairTail_04
+  - first:
+      1: 100242
+    second: J_R_HairTail_05
+  - first:
+      1: 100244
+    second: J_R_HairTail_06
+  - first:
+      1: 100246
+    second: J_R_HeadRibbon_00
+  - first:
+      1: 100248
+    second: J_R_HeadRibbon_01
+  - first:
+      1: 100250
+    second: J_R_HeadRibbon_02
+  - first:
+      1: 100252
+    second: J_R_Mune_00
+  - first:
+      1: 100254
+    second: J_R_Mune_01
+  - first:
+      1: 100256
+    second: J_R_Mune_02
+  - first:
+      1: 100258
+    second: J_R_Skirt_00
+  - first:
+      1: 100260
+    second: J_R_Skirt_01
+  - first:
+      1: 100262
+    second: J_R_Skirt_02
+  - first:
+      1: 100264
+    second: J_R_SkirtBack_00
+  - first:
+      1: 100266
+    second: J_R_SkirtBack_01
+  - first:
+      1: 100268
+    second: J_R_SkirtBack_02
+  - first:
+      1: 100270
+    second: J_R_Sode_A00
+  - first:
+      1: 100272
+    second: J_R_Sode_A01
+  - first:
+      1: 100274
+    second: J_R_Sode_B00
+  - first:
+      1: 100276
+    second: J_R_Sode_B01
+  - first:
+      1: 100278
+    second: J_R_Sode_C00
+  - first:
+      1: 100280
+    second: J_R_Sode_C01
+  - first:
+      1: 100282
+    second: J_R_Sode_D00
+  - first:
+      1: 100284
+    second: J_R_Sode_D01
+  - first:
+      1: 100286
+    second: J_R_SusoBack_00
+  - first:
+      1: 100288
+    second: J_R_SusoBack_01
+  - first:
+      1: 100290
+    second: J_R_SusoFront_00
+  - first:
+      1: 100292
+    second: J_R_SusoFront_01
+  - first:
+      1: 100294
+    second: J_R_SusoSide_00
+  - first:
+      1: 100296
+    second: J_R_SusoSide_01
+  - first:
+      1: 100298
+    second: mesh_root
+  - first:
+      1: 100300
+    second: MTH_DEF
+  - first:
+      1: 100302
+    second: poly_Body
+  - first:
+      1: 100304
+    second: poly_SkirtLB
+  - first:
+      1: 100306
+    second: poly_SkirtLF
+  - first:
+      1: 100308
+    second: poly_SkirtRB
+  - first:
+      1: 100310
+    second: poly_SkirtRF
+  - first:
+      4: 400000
+    second: BLW_DEF
+  - first:
+      4: 400002
+    second: Character1_Head
+  - first:
+      4: 400004
+    second: Character1_Hips
+  - first:
+      4: 400006
+    second: Character1_LeftArm
+  - first:
+      4: 400008
+    second: Character1_LeftFoot
+  - first:
+      4: 400010
+    second: Character1_LeftForeArm
+  - first:
+      4: 400012
+    second: Character1_LeftHand
+  - first:
+      4: 400014
+    second: Character1_LeftHandIndex1
+  - first:
+      4: 400016
+    second: Character1_LeftHandIndex2
+  - first:
+      4: 400018
+    second: Character1_LeftHandIndex3
+  - first:
+      4: 400020
+    second: Character1_LeftHandIndex4
+  - first:
+      4: 400022
+    second: Character1_LeftHandMiddle1
+  - first:
+      4: 400024
+    second: Character1_LeftHandMiddle2
+  - first:
+      4: 400026
+    second: Character1_LeftHandMiddle3
+  - first:
+      4: 400028
+    second: Character1_LeftHandMiddle4
+  - first:
+      4: 400030
+    second: Character1_LeftHandPinky1
+  - first:
+      4: 400032
+    second: Character1_LeftHandPinky2
+  - first:
+      4: 400034
+    second: Character1_LeftHandPinky3
+  - first:
+      4: 400036
+    second: Character1_LeftHandPinky4
+  - first:
+      4: 400038
+    second: Character1_LeftHandRing1
+  - first:
+      4: 400040
+    second: Character1_LeftHandRing2
+  - first:
+      4: 400042
+    second: Character1_LeftHandRing3
+  - first:
+      4: 400044
+    second: Character1_LeftHandRing4
+  - first:
+      4: 400046
+    second: Character1_LeftHandThumb1
+  - first:
+      4: 400048
+    second: Character1_LeftHandThumb2
+  - first:
+      4: 400050
+    second: Character1_LeftHandThumb3
+  - first:
+      4: 400052
+    second: Character1_LeftHandThumb4
+  - first:
+      4: 400054
+    second: Character1_LeftLeg
+  - first:
+      4: 400056
+    second: Character1_LeftShoulder
+  - first:
+      4: 400058
+    second: Character1_LeftToeBase
+  - first:
+      4: 400060
+    second: Character1_LeftUpLeg
+  - first:
+      4: 400062
+    second: Character1_Neck
+  - first:
+      4: 400064
+    second: Character1_Reference
+  - first:
+      4: 400066
+    second: Character1_RightArm
+  - first:
+      4: 400068
+    second: Character1_RightFoot
+  - first:
+      4: 400070
+    second: Character1_RightForeArm
+  - first:
+      4: 400072
+    second: Character1_RightHand
+  - first:
+      4: 400074
+    second: Character1_RightHandIndex1
+  - first:
+      4: 400076
+    second: Character1_RightHandIndex2
+  - first:
+      4: 400078
+    second: Character1_RightHandIndex3
+  - first:
+      4: 400080
+    second: Character1_RightHandIndex4
+  - first:
+      4: 400082
+    second: Character1_RightHandMiddle1
+  - first:
+      4: 400084
+    second: Character1_RightHandMiddle2
+  - first:
+      4: 400086
+    second: Character1_RightHandMiddle3
+  - first:
+      4: 400088
+    second: Character1_RightHandMiddle4
+  - first:
+      4: 400090
+    second: Character1_RightHandPinky1
+  - first:
+      4: 400092
+    second: Character1_RightHandPinky2
+  - first:
+      4: 400094
+    second: Character1_RightHandPinky3
+  - first:
+      4: 400096
+    second: Character1_RightHandPinky4
+  - first:
+      4: 400098
+    second: Character1_RightHandRing1
+  - first:
+      4: 400100
+    second: Character1_RightHandRing2
+  - first:
+      4: 400102
+    second: Character1_RightHandRing3
+  - first:
+      4: 400104
+    second: Character1_RightHandRing4
+  - first:
+      4: 400106
+    second: Character1_RightHandThumb1
+  - first:
+      4: 400108
+    second: Character1_RightHandThumb2
+  - first:
+      4: 400110
+    second: Character1_RightHandThumb3
+  - first:
+      4: 400112
+    second: Character1_RightHandThumb4
+  - first:
+      4: 400114
+    second: Character1_RightLeg
+  - first:
+      4: 400116
+    second: Character1_RightShoulder
+  - first:
+      4: 400118
+    second: Character1_RightToeBase
+  - first:
+      4: 400120
+    second: Character1_RightUpLeg
+  - first:
+      4: 400122
+    second: Character1_Spine
+  - first:
+      4: 400124
+    second: Character1_Spine1
+  - first:
+      4: 400126
+    second: Character1_Spine2
+  - first:
+      4: 400128
+    second: EL_DEF
+  - first:
+      4: 400130
+    second: eye_base_old
+  - first:
+      4: 400132
+    second: EYE_DEF
+  - first:
+      4: 400134
+    second: eye_L_old
+  - first:
+      4: 400136
+    second: eye_R_old
+  - first:
+      4: 400138
+    second: //RootNode
+  - first:
+      4: 400140
+    second: head_back
+  - first:
+      4: 400142
+    second: J_L_HairFront_00
+  - first:
+      4: 400144
+    second: J_L_HairFront_01
+  - first:
+      4: 400146
+    second: J_L_HairSide_00
+  - first:
+      4: 400148
+    second: J_L_HairSide_01
+  - first:
+      4: 400150
+    second: J_L_HairSide_02
+  - first:
+      4: 400152
+    second: J_L_HairTail_00
+  - first:
+      4: 400154
+    second: J_L_HairTail_01
+  - first:
+      4: 400156
+    second: J_L_HairTail_02
+  - first:
+      4: 400158
+    second: J_L_HairTail_03
+  - first:
+      4: 400160
+    second: J_L_HairTail_04
+  - first:
+      4: 400162
+    second: J_L_HairTail_05
+  - first:
+      4: 400164
+    second: J_L_HairTail_06
+  - first:
+      4: 400166
+    second: J_L_HeadRibbon_00
+  - first:
+      4: 400168
+    second: J_L_HeadRibbon_01
+  - first:
+      4: 400170
+    second: J_L_HeadRibbon_02
+  - first:
+      4: 400172
+    second: J_L_Mune_00
+  - first:
+      4: 400174
+    second: J_L_Mune_01
+  - first:
+      4: 400176
+    second: J_L_Mune_02
+  - first:
+      4: 400178
+    second: J_L_Skirt_00
+  - first:
+      4: 400180
+    second: J_L_Skirt_01
+  - first:
+      4: 400182
+    second: J_L_Skirt_02
+  - first:
+      4: 400184
+    second: J_L_SkirtBack_00
+  - first:
+      4: 400186
+    second: J_L_SkirtBack_01
+  - first:
+      4: 400188
+    second: J_L_SkirtBack_02
+  - first:
+      4: 400190
+    second: J_L_Sode_A00
+  - first:
+      4: 400192
+    second: J_L_Sode_A01
+  - first:
+      4: 400194
+    second: J_L_Sode_B00
+  - first:
+      4: 400196
+    second: J_L_Sode_B01
+  - first:
+      4: 400198
+    second: J_L_Sode_C00
+  - first:
+      4: 400200
+    second: J_L_Sode_C01
+  - first:
+      4: 400202
+    second: J_L_Sode_D00
+  - first:
+      4: 400204
+    second: J_L_Sode_D01
+  - first:
+      4: 400206
+    second: J_L_SusoBack_00
+  - first:
+      4: 400208
+    second: J_L_SusoBack_01
+  - first:
+      4: 400210
+    second: J_L_SusoFront_00
+  - first:
+      4: 400212
+    second: J_L_SusoFront_01
+  - first:
+      4: 400214
+    second: J_L_SusoSide_00
+  - first:
+      4: 400216
+    second: J_L_SusoSide_01
+  - first:
+      4: 400218
+    second: J_Mune_root_00
+  - first:
+      4: 400220
+    second: J_Mune_root_01
+  - first:
+      4: 400222
+    second: J_R_HairFront_00
+  - first:
+      4: 400224
+    second: J_R_HairFront_01
+  - first:
+      4: 400226
+    second: J_R_HairSide_00
+  - first:
+      4: 400228
+    second: J_R_HairSide_01
+  - first:
+      4: 400230
+    second: J_R_HairSide_02
+  - first:
+      4: 400232
+    second: J_R_HairTail_00
+  - first:
+      4: 400234
+    second: J_R_HairTail_01
+  - first:
+      4: 400236
+    second: J_R_HairTail_02
+  - first:
+      4: 400238
+    second: J_R_HairTail_03
+  - first:
+      4: 400240
+    second: J_R_HairTail_04
+  - first:
+      4: 400242
+    second: J_R_HairTail_05
+  - first:
+      4: 400244
+    second: J_R_HairTail_06
+  - first:
+      4: 400246
+    second: J_R_HeadRibbon_00
+  - first:
+      4: 400248
+    second: J_R_HeadRibbon_01
+  - first:
+      4: 400250
+    second: J_R_HeadRibbon_02
+  - first:
+      4: 400252
+    second: J_R_Mune_00
+  - first:
+      4: 400254
+    second: J_R_Mune_01
+  - first:
+      4: 400256
+    second: J_R_Mune_02
+  - first:
+      4: 400258
+    second: J_R_Skirt_00
+  - first:
+      4: 400260
+    second: J_R_Skirt_01
+  - first:
+      4: 400262
+    second: J_R_Skirt_02
+  - first:
+      4: 400264
+    second: J_R_SkirtBack_00
+  - first:
+      4: 400266
+    second: J_R_SkirtBack_01
+  - first:
+      4: 400268
+    second: J_R_SkirtBack_02
+  - first:
+      4: 400270
+    second: J_R_Sode_A00
+  - first:
+      4: 400272
+    second: J_R_Sode_A01
+  - first:
+      4: 400274
+    second: J_R_Sode_B00
+  - first:
+      4: 400276
+    second: J_R_Sode_B01
+  - first:
+      4: 400278
+    second: J_R_Sode_C00
+  - first:
+      4: 400280
+    second: J_R_Sode_C01
+  - first:
+      4: 400282
+    second: J_R_Sode_D00
+  - first:
+      4: 400284
+    second: J_R_Sode_D01
+  - first:
+      4: 400286
+    second: J_R_SusoBack_00
+  - first:
+      4: 400288
+    second: J_R_SusoBack_01
+  - first:
+      4: 400290
+    second: J_R_SusoFront_00
+  - first:
+      4: 400292
+    second: J_R_SusoFront_01
+  - first:
+      4: 400294
+    second: J_R_SusoSide_00
+  - first:
+      4: 400296
+    second: J_R_SusoSide_01
+  - first:
+      4: 400298
+    second: mesh_root
+  - first:
+      4: 400300
+    second: MTH_DEF
+  - first:
+      4: 400302
+    second: poly_Body
+  - first:
+      4: 400304
+    second: poly_SkirtLB
+  - first:
+      4: 400306
+    second: poly_SkirtLF
+  - first:
+      4: 400308
+    second: poly_SkirtRB
+  - first:
+      4: 400310
+    second: poly_SkirtRF
+  - first:
+      23: 2300000
+    second: BLW_DEF
+  - first:
+      23: 2300002
+    second: EL_DEF
+  - first:
+      23: 2300004
+    second: eye_base_old
+  - first:
+      23: 2300006
+    second: EYE_DEF
+  - first:
+      23: 2300008
+    second: eye_L_old
+  - first:
+      23: 2300010
+    second: eye_R_old
+  - first:
+      23: 2300012
+    second: head_back
+  - first:
+      23: 2300014
+    second: MTH_DEF
+  - first:
+      33: 3300000
+    second: BLW_DEF
+  - first:
+      33: 3300002
+    second: EL_DEF
+  - first:
+      33: 3300004
+    second: eye_base_old
+  - first:
+      33: 3300006
+    second: EYE_DEF
+  - first:
+      33: 3300008
+    second: eye_L_old
+  - first:
+      33: 3300010
+    second: eye_R_old
+  - first:
+      33: 3300012
+    second: head_back
+  - first:
+      33: 3300014
+    second: MTH_DEF
+  - first:
+      43: 4300000
+    second: head_back
+  - first:
+      43: 4300002
+    second: eye_base_old
+  - first:
+      43: 4300004
+    second: eye_L_old
+  - first:
+      43: 4300006
+    second: eye_R_old
+  - first:
+      43: 4300008
+    second: EYE_DEF
+  - first:
+      43: 4300010
+    second: EL_DEF
+  - first:
+      43: 4300012
+    second: BLW_DEF
+  - first:
+      43: 4300014
+    second: MTH_DEF
+  - first:
+      43: 4300016
+    second: poly_Body
+  - first:
+      43: 4300018
+    second: poly_SkirtLF
+  - first:
+      43: 4300020
+    second: poly_SkirtLB
+  - first:
+      43: 4300022
+    second: poly_SkirtRF
+  - first:
+      43: 4300024
+    second: poly_SkirtRB
+  - first:
+      74: 7400000
+    second: Jab
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: poly_Body
+  - first:
+      137: 13700002
+    second: poly_SkirtLB
+  - first:
+      137: 13700004
+    second: poly_SkirtLF
+  - first:
+      137: 13700006
+    second: poly_SkirtRB
+  - first:
+      137: 13700008
+    second: poly_SkirtRF
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Jab
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Character1_Reference
+        weight: 1
+      - path: Character1_Reference/Character1_Hips
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_LeftUpLeg
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_LeftUpLeg/Character1_LeftLeg
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_LeftUpLeg/Character1_LeftLeg/Character1_LeftFoot
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_LeftUpLeg/Character1_LeftLeg/Character1_LeftFoot/Character1_LeftToeBase
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_RightUpLeg
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_RightUpLeg/Character1_RightLeg
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_RightUpLeg/Character1_RightLeg/Character1_RightFoot
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_RightUpLeg/Character1_RightLeg/Character1_RightFoot/Character1_RightToeBase
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandIndex1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandIndex1/Character1_LeftHandIndex2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandIndex1/Character1_LeftHandIndex2/Character1_LeftHandIndex3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandIndex1/Character1_LeftHandIndex2/Character1_LeftHandIndex3/Character1_LeftHandIndex4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandMiddle1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandMiddle1/Character1_LeftHandMiddle2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandMiddle1/Character1_LeftHandMiddle2/Character1_LeftHandMiddle3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandMiddle1/Character1_LeftHandMiddle2/Character1_LeftHandMiddle3/Character1_LeftHandMiddle4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandPinky1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandPinky1/Character1_LeftHandPinky2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandPinky1/Character1_LeftHandPinky2/Character1_LeftHandPinky3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandPinky1/Character1_LeftHandPinky2/Character1_LeftHandPinky3/Character1_LeftHandPinky4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandRing1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandRing1/Character1_LeftHandRing2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandRing1/Character1_LeftHandRing2/Character1_LeftHandRing3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandRing1/Character1_LeftHandRing2/Character1_LeftHandRing3/Character1_LeftHandRing4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandThumb1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandThumb1/Character1_LeftHandThumb2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandThumb1/Character1_LeftHandThumb2/Character1_LeftHandThumb3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/Character1_LeftHand/Character1_LeftHandThumb1/Character1_LeftHandThumb2/Character1_LeftHandThumb3/Character1_LeftHandThumb4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_A00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_A00/J_L_Sode_A01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_B00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_B00/J_L_Sode_B01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_C00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_C00/J_L_Sode_C01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_D00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_LeftShoulder/Character1_LeftArm/Character1_LeftForeArm/J_L_Sode_D00/J_L_Sode_D01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/BLW_DEF
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/eye_base_old
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/EYE_DEF
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/EYE_DEF/EL_DEF
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/eye_L_old
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/eye_R_old
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/head_back
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairFront_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairFront_00/J_L_HairFront_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairSide_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairSide_00/J_L_HairSide_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairSide_00/J_L_HairSide_01/J_L_HairSide_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01/J_L_HairTail_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01/J_L_HairTail_02/J_L_HairTail_03
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01/J_L_HairTail_02/J_L_HairTail_03/J_L_HairTail_04
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01/J_L_HairTail_02/J_L_HairTail_03/J_L_HairTail_04/J_L_HairTail_05
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HairTail_00/J_L_HairTail_01/J_L_HairTail_02/J_L_HairTail_03/J_L_HairTail_04/J_L_HairTail_05/J_L_HairTail_06
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HeadRibbon_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HeadRibbon_00/J_L_HeadRibbon_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_L_HeadRibbon_00/J_L_HeadRibbon_01/J_L_HeadRibbon_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairFront_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairFront_00/J_R_HairFront_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairSide_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairSide_00/J_R_HairSide_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairSide_00/J_R_HairSide_01/J_R_HairSide_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01/J_R_HairTail_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01/J_R_HairTail_02/J_R_HairTail_03
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01/J_R_HairTail_02/J_R_HairTail_03/J_R_HairTail_04
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01/J_R_HairTail_02/J_R_HairTail_03/J_R_HairTail_04/J_R_HairTail_05
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HairTail_00/J_R_HairTail_01/J_R_HairTail_02/J_R_HairTail_03/J_R_HairTail_04/J_R_HairTail_05/J_R_HairTail_06
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HeadRibbon_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HeadRibbon_00/J_R_HeadRibbon_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/J_R_HeadRibbon_00/J_R_HeadRibbon_01/J_R_HeadRibbon_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_Neck/Character1_Head/MTH_DEF
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandIndex1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandIndex1/Character1_RightHandIndex2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandIndex1/Character1_RightHandIndex2/Character1_RightHandIndex3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandIndex1/Character1_RightHandIndex2/Character1_RightHandIndex3/Character1_RightHandIndex4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandMiddle1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandMiddle1/Character1_RightHandMiddle2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandMiddle1/Character1_RightHandMiddle2/Character1_RightHandMiddle3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandMiddle1/Character1_RightHandMiddle2/Character1_RightHandMiddle3/Character1_RightHandMiddle4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandPinky1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandPinky1/Character1_RightHandPinky2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandPinky1/Character1_RightHandPinky2/Character1_RightHandPinky3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandPinky1/Character1_RightHandPinky2/Character1_RightHandPinky3/Character1_RightHandPinky4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandRing1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandRing1/Character1_RightHandRing2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandRing1/Character1_RightHandRing2/Character1_RightHandRing3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandRing1/Character1_RightHandRing2/Character1_RightHandRing3/Character1_RightHandRing4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandThumb1
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandThumb1/Character1_RightHandThumb2
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandThumb1/Character1_RightHandThumb2/Character1_RightHandThumb3
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/Character1_RightHand/Character1_RightHandThumb1/Character1_RightHandThumb2/Character1_RightHandThumb3/Character1_RightHandThumb4
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_A00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_A00/J_R_Sode_A01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_B00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_B00/J_R_Sode_B01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_C00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_C00/J_R_Sode_C01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_D00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/Character1_Spine2/Character1_RightShoulder/Character1_RightArm/Character1_RightForeArm/J_R_Sode_D00/J_R_Sode_D01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_L_Mune_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_L_Mune_00/J_L_Mune_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_L_Mune_00/J_L_Mune_01/J_L_Mune_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_Mune_root_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_R_Mune_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_R_Mune_00/J_R_Mune_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/Character1_Spine1/J_Mune_root_00/J_R_Mune_00/J_R_Mune_01/J_R_Mune_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/J_L_SusoSide_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/J_L_SusoSide_00/J_L_SusoSide_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/J_R_SusoSide_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/Character1_Spine/J_R_SusoSide_00/J_R_SusoSide_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_Skirt_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_Skirt_00/J_L_Skirt_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_Skirt_00/J_L_Skirt_01/J_L_Skirt_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_Skirt_00/J_L_SusoFront_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_Skirt_00/J_L_SusoFront_00/J_L_SusoFront_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_SkirtBack_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_SkirtBack_00/J_L_SkirtBack_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_SkirtBack_00/J_L_SkirtBack_01/J_L_SkirtBack_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_SkirtBack_00/J_L_SusoBack_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_L_SkirtBack_00/J_L_SusoBack_00/J_L_SusoBack_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_Skirt_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_Skirt_00/J_R_Skirt_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_Skirt_00/J_R_Skirt_01/J_R_Skirt_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_Skirt_00/J_R_SusoFront_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_Skirt_00/J_R_SusoFront_00/J_R_SusoFront_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_SkirtBack_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_SkirtBack_00/J_R_SkirtBack_01
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_SkirtBack_00/J_R_SkirtBack_01/J_R_SkirtBack_02
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_SkirtBack_00/J_R_SusoBack_00
+        weight: 1
+      - path: Character1_Reference/Character1_Hips/J_R_SkirtBack_00/J_R_SusoBack_00/J_R_SusoBack_01
+        weight: 1
+      - path: mesh_root
+        weight: 1
+      - path: mesh_root/poly_Body
+        weight: 1
+      - path: mesh_root/poly_SkirtLB
+        weight: 1
+      - path: mesh_root/poly_SkirtLF
+        weight: 1
+      - path: mesh_root/poly_SkirtRB
+        weight: 1
+      - path: mesh_root/poly_SkirtRF
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: mixamorig:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: mixamorig:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: xbot(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Beta_Joints
+      parentName: xbot(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Beta_Surface
+      parentName: xbot(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Hips
+      parentName: xbot(Clone)
+      position: {x: 7.7272905e-10, y: 0.010427487, z: 0.00015543158}
+      rotation: {x: 5.5795913e-16, y: 0.00000002135681, z: -0.00000070372965, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine
+      parentName: mixamorig:Hips
+      position: {x: -9.2341523e-10, y: 0.0010181587, z: 0.000013152092}
+      rotation: {x: -5.5794124e-16, y: -0.00000002135681, z: 0.00000070372874, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine1
+      parentName: mixamorig:Spine
+      position: {x: -2.519403e-11, y: 0.001008345, z: -0.000100080426}
+      rotation: {x: 3.8774097e-26, y: -4.2632574e-14, z: 6.82121e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Spine2
+      parentName: mixamorig:Spine1
+      position: {x: -3.4574864e-11, y: 0.00091000105, z: -0.0001373417}
+      rotation: {x: 0, y: -0, z: -1.8055514e-34, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Neck
+      parentName: mixamorig:Spine2
+      position: {x: -6.334285e-11, y: 0.0016671667, z: -0.0002516168}
+      rotation: {x: -5.2041704e-18, y: 4.2632927e-14, z: 2.273737e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:Head
+      parentName: mixamorig:Neck
+      position: {x: 4.2423183e-11, y: 0.0009617875, z: 0.00016850074}
+      rotation: {x: 0, y: -0, z: -2.3142172e-36, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:HeadTop_End
+      parentName: mixamorig:Head
+      position: {x: 6.508241e-11, y: 0.0017815154, z: 0.00025849853}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftEye
+      parentName: mixamorig:Head
+      position: {x: -0.00030675606, y: 0.0006409507, z: 0.0009283554}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightEye
+      parentName: mixamorig:Head
+      position: {x: 0.00030675504, y: 0.00064095, z: 0.0009283547}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftShoulder
+      parentName: mixamorig:Spine2
+      position: {x: -0.00045704463, y: 0.0010945984, z: -0.0002627988}
+      rotation: {x: -0.000000044703484, y: 3.8567765e-14, z: -0.00000013563118, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftArm
+      parentName: mixamorig:LeftShoulder
+      position: {x: -0.0010592369, y: -0.00005245829, z: -0.00022321199}
+      rotation: {x: 0.000000044703484, y: 8.4346904e-14, z: -0.0000016602488, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftForeArm
+      parentName: mixamorig:LeftArm
+      position: {x: -0.002784152, y: -0.000000008942864, z: 0.0000000037458907}
+      rotation: {x: -0.000000059604645, y: 0.0000000038620516, z: 0.0000017958803, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHand
+      parentName: mixamorig:LeftForeArm
+      position: {x: -0.0028328837, y: -0.0000000017440718, z: 0.0000000037804524}
+      rotation: {x: 0.00022562433, y: 0.000000044703473, z: -1.0083181e-11, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandThumb1
+      parentName: mixamorig:LeftHand
+      position: {x: -0.000246614, y: -0.00015750491, z: 0.00026824136}
+      rotation: {x: -0.118723094, y: 0.08687735, z: -0.11875274, w: 0.9819648}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandThumb2
+      parentName: mixamorig:LeftHandThumb1
+      position: {x: -0.00032298034, y: -0.00018646907, z: 0.00018646811}
+      rotation: {x: 0.00000010496793, y: -0.000004944398, z: -0.000004780959, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandThumb3
+      parentName: mixamorig:LeftHandThumb2
+      position: {x: -0.0002652565, y: -0.00015314929, z: 0.00015314715}
+      rotation: {x: 4.661964e-12, y: 0.00000059509927, z: 0.00000063981753, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandThumb4
+      parentName: mixamorig:LeftHandThumb3
+      position: {x: -0.00019545668, y: -0.00011285, z: 0.00011284921}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex1
+      parentName: mixamorig:LeftHand
+      position: {x: -0.0009109301, y: -0.000051708335, z: 0.00022600731}
+      rotation: {x: 0.00000007450579, y: -6.7234625e-12, z: -0.000000014901159, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex2
+      parentName: mixamorig:LeftHandIndex1
+      position: {x: -0.00036764093, y: -6.939138e-10, z: 0.0000000029242517}
+      rotation: {x: -0.00000010430811, y: 0.000000014901151, z: -6.7230145e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex3
+      parentName: mixamorig:LeftHandIndex2
+      position: {x: -0.00028830624, y: 0.0000000038511967, z: -0.0000000042764814}
+      rotation: {x: 8.452564e-15, y: 0.0000000148742725, z: -0.00000005961137, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandIndex4
+      parentName: mixamorig:LeftHandIndex3
+      position: {x: -0.00023927198, y: 0.0000000037025907, z: 0.0000000033554433}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandMiddle1
+      parentName: mixamorig:LeftHand
+      position: {x: -0.00095334015, y: -0.0000000033924046, z: 0.0000000013937026}
+      rotation: {x: 0.000000014901157, y: -0.00000004469004, z: 0.00000002982249, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandMiddle2
+      parentName: mixamorig:LeftHandMiddle1
+      position: {x: -0.00036982365, y: 1.961359e-10, z: 0.0000000017916967}
+      rotation: {x: -0.0000000149011585, y: 0.000000014901165, z: -6.7261296e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandMiddle3
+      parentName: mixamorig:LeftHandMiddle2
+      position: {x: -0.00029509215, y: -0.0000000039376085, z: 0.000000001644796}
+      rotation: {x: 5.594566e-16, y: -6.7223536e-12, z: -0.000000014901161, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandMiddle4
+      parentName: mixamorig:LeftHandMiddle3
+      position: {x: -0.00028339025, y: -0.000000003893482, z: -9.504223e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandRing1
+      parentName: mixamorig:LeftHand
+      position: {x: -0.00091045274, y: -0.0000043939503, z: -0.00018650846}
+      rotation: {x: 0.000000029802315, y: -0.000000029795597, z: 0.000000014914605, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandRing2
+      parentName: mixamorig:LeftHandRing1
+      position: {x: -0.00031540266, y: -6.553468e-10, z: 0.0000000010425744}
+      rotation: {x: -0.000000029802314, y: 0.000000029782148, z: -0.000000044716913, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandRing3
+      parentName: mixamorig:LeftHandRing2
+      position: {x: -0.00029376723, y: -0.0000000045458615, z: -6.864757e-10}
+      rotation: {x: 0.00000005960463, y: -0.0000000148944315, z: 0.000000014907876, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandRing4
+      parentName: mixamorig:LeftHandRing3
+      position: {x: -0.00026474526, y: -0.0000000049804414, z: 7.070515e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandPinky1
+      parentName: mixamorig:LeftHand
+      position: {x: -0.00080777775, y: -0.00004886682, z: -0.00038060668}
+      rotation: {x: 0.000000029802317, y: -0.000000014907881, z: -0.000000014894434, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandPinky2
+      parentName: mixamorig:LeftHandPinky1
+      position: {x: -0.00036000344, y: -2.2522151e-10, z: -0.0000000026238793}
+      rotation: {x: 0.000000029802315, y: -0.000000014894437, z: 0.000000014907881, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandPinky3
+      parentName: mixamorig:LeftHandPinky2
+      position: {x: -0.00021142115, y: 0.000000001953828, z: -2.8644148e-10}
+      rotation: {x: -0.00000005960463, y: -0.000000029815762, z: -0.000000029788868, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftHandPinky4
+      parentName: mixamorig:LeftHandPinky3
+      position: {x: -0.00019756825, y: 0.0000000012405657, z: -0.0000000044301403}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightShoulder
+      parentName: mixamorig:Spine2
+      position: {x: 0.00045699696, y: 0.0010946176, z: -0.00026280174}
+      rotation: {x: -0.000000014901161, y: 4.3930442e-14, z: 0.000000042395698, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightArm
+      parentName: mixamorig:RightShoulder
+      position: {x: 0.0010592843, y: -0.000052479834, z: -0.00022320985}
+      rotation: {x: 0.000000014901161, y: -1.2978756e-15, z: -0.000000042395467, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightForeArm
+      parentName: mixamorig:RightArm
+      position: {x: 0.002784152, y: -0.0000000033079217, z: 0.000000001167631}
+      rotation: {x: -0.000000059604638, y: 0.0000017611261, z: -1.09214605e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHand
+      parentName: mixamorig:RightForeArm
+      position: {x: 0.0028328837, y: -1.5814171e-11, z: 0.0000000055816014}
+      rotation: {x: 0.00023261023, y: -0.0000018096918, z: 4.2094897e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandPinky1
+      parentName: mixamorig:RightHand
+      position: {x: 0.00080766744, y: -0.000048845926, z: -0.000380601}
+      rotation: {x: 0.000000074505586, y: 0.0000138888945, z: 0.000000014902197, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandPinky2
+      parentName: mixamorig:RightHandPinky1
+      position: {x: 0.00036000344, y: 0.0000000039676653, z: 0.000000005081442}
+      rotation: {x: -0.000000014900952, y: -0.000013859092, z: -0.00000001491523, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandPinky3
+      parentName: mixamorig:RightHandPinky2
+      position: {x: 0.00021142115, y: 0.0000000015137925, z: 0.0000000014793768}
+      rotation: {x: -0.000000089406946, y: -6.1947887e-19, z: -1.3318336e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandPinky4
+      parentName: mixamorig:RightHandPinky3
+      position: {x: 0.00019756825, y: -0.0000000018521957, z: -9.839841e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandRing1
+      parentName: mixamorig:RightHand
+      position: {x: 0.0009103588, y: -0.0000043914347, z: -0.00018650723}
+      rotation: {x: 0.000000029802315, y: 0.000000029795387, z: -0.00000001491502, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandRing2
+      parentName: mixamorig:RightHandRing1
+      position: {x: 0.00031540266, y: 0.0000000023997295, z: 0.000000004885121}
+      rotation: {x: -0.000000029802314, y: -0.000000029781521, z: 0.000000044717336, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandRing3
+      parentName: mixamorig:RightHandRing2
+      position: {x: 0.00029376723, y: -0.000000004160065, z: -0.0000000039660635}
+      rotation: {x: 0.000000059604627, y: 0.0000000148664965, z: -0.00000007451271, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandRing4
+      parentName: mixamorig:RightHandRing3
+      position: {x: 0.00026474526, y: 0.000000002460821, z: -2.2949233e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandMiddle1
+      parentName: mixamorig:RightHand
+      position: {x: 0.0009532503, y: -0.0000000016312302, z: 0.0000000016791841}
+      rotation: {x: 0.000000014901157, y: 0.000000044689624, z: -0.000000029823113, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandMiddle2
+      parentName: mixamorig:RightHandMiddle1
+      position: {x: 0.00036982365, y: 0.0000000015066959, z: -0.0000000022545523}
+      rotation: {x: -0.0000000149011585, y: -0.000000014901165, z: 6.930773e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandMiddle3
+      parentName: mixamorig:RightHandMiddle2
+      position: {x: 0.00029509215, y: -3.113245e-11, z: -3.0340255e-11}
+      rotation: {x: 0.000000059603845, y: 0.000017673352, z: 0.00000004469067, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandMiddle4
+      parentName: mixamorig:RightHandMiddle3
+      position: {x: 0.00028339025, y: 8.053241e-10, z: 0.0000000053787703}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex1
+      parentName: mixamorig:RightHand
+      position: {x: 0.00091082806, y: -0.000051678893, z: 0.00022601163}
+      rotation: {x: 0.000000014901159, y: 6.934323e-12, z: 0.0000000149011585, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex2
+      parentName: mixamorig:RightHandIndex1
+      position: {x: 0.00036764093, y: 0.0000000019227155, z: 0.000000003235567}
+      rotation: {x: -0.000000044703473, y: -0.000000014901154, z: 6.9321007e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex3
+      parentName: mixamorig:RightHandIndex2
+      position: {x: 0.00028830624, y: -0.000000004960121, z: 0.0000000040448973}
+      rotation: {x: 0.000000029802319, y: 0.000000014915011, z: 0.000000029795393, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandIndex4
+      parentName: mixamorig:RightHandIndex3
+      position: {x: 0.00023927198, y: 0.00000000268147, z: 0.0000000028020133}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandThumb1
+      parentName: mixamorig:RightHand
+      position: {x: 0.0002464806, y: -0.00015727141, z: 0.00026826264}
+      rotation: {x: -0.118725814, y: -0.086873986, z: 0.11875655, w: 0.9819644}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandThumb2
+      parentName: mixamorig:RightHandThumb1
+      position: {x: 0.0003229772, y: -0.00018647088, z: 0.00018647184}
+      rotation: {x: 0.000000029786868, y: -0.0000065657905, z: -0.0000065806976, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandThumb3
+      parentName: mixamorig:RightHandThumb2
+      position: {x: 0.0002652605, y: -0.00015314492, z: 0.00015314456}
+      rotation: {x: 0.000000029804987, y: 0.000010714707, z: 0.000010640214, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightHandThumb4
+      parentName: mixamorig:RightHandThumb3
+      position: {x: 0.00019545804, y: -0.000112846166, z: 0.0001128507}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightUpLeg
+      parentName: mixamorig:Hips
+      position: {x: 0.00082077953, y: -0.00067516614, z: -0.00015995593}
+      rotation: {x: -0.0006736767, y: -0.000000022158684, z: 0.0000007132908, w: 0.99999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightLeg
+      parentName: mixamorig:RightUpLeg
+      position: {x: -8.435572e-12, y: -0.0044370536, z: 0.000028615637}
+      rotation: {x: 0.0013461137, y: 0.00000001453026, z: 0.0000000017475387, w: 0.9999991}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightFoot
+      parentName: mixamorig:RightLeg
+      position: {x: -9.644582e-11, y: -0.004442773, z: -0.0002983789}
+      rotation: {x: -0.0006724375, y: 6.846273e-10, z: -0.000000011323817, w: 0.99999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToeBase
+      parentName: mixamorig:RightFoot
+      position: {x: 2.360438e-10, y: -0.0008728669, z: 0.001071056}
+      rotation: {x: 0.000000014650141, y: 6.5304206e-11, z: -3.3796616e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:RightToe_End
+      parentName: mixamorig:RightToeBase
+      position: {x: 2.0942645e-10, y: -0.00000006763694, z: 0.000927812}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftUpLeg
+      parentName: mixamorig:Hips
+      position: {x: -0.00082077814, y: -0.0006751714, z: -0.00015995555}
+      rotation: {x: -0.0007022143, y: -0.000000022163992, z: 0.0000007135213, w: 0.99999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftLeg
+      parentName: mixamorig:LeftUpLeg
+      position: {x: 4.110158e-11, y: -0.004437047, z: 0.000028464263}
+      rotation: {x: 0.0014022698, y: -3.3268402e-10, z: -1.3309691e-10, w: 0.99999905}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftFoot
+      parentName: mixamorig:LeftLeg
+      position: {x: -4.7163932e-11, y: -0.0044427873, z: -0.00029821906}
+      rotation: {x: -0.0007000565, y: 6.3139166e-10, z: -0.000000010605688, w: 0.99999976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToeBase
+      parentName: mixamorig:LeftFoot
+      position: {x: 2.9609878e-10, y: -0.00087286695, z: 0.001071056}
+      rotation: {x: 2.4374452e-10, y: 1.1699966e-10, z: 9.293838e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig:LeftToe_End
+      parentName: mixamorig:LeftToeBase
+      position: {x: 2.5080618e-10, y: -0.000000067668296, z: 0.0009278135}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e48672d343851fc428b6eea0e3847384, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
