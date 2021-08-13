@@ -18,5 +18,9 @@ MonoBehaviour:
   isUnarmed: 1
   rightHandIdle: UN_Idle
   leftHandIdle: UN_Idle
-  OHLightAttacks: []
-  OHHeavyAttacks: []
+  OHLightAttacks:
+  - UN_Light_01
+  - UN_Light_02
+  - UN_Light_03
+  OHHeavyAttacks:
+  - UN_Heavy_01

@@ -53,4 +53,28 @@ public class PlayerInventory : MonoBehaviour
             weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon,false);
         }
     }
+    public void ChangeLeftWeapon()
+    {
+        currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
+
+        for (int i = 0; i < weaponsInLeftHandSlots.Length; i++)
+        {
+            if (currentLeftWeaponIndex == i && weaponsInLeftHandSlots[i] != null)
+            {
+                leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
+                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], false);
+            }
+            else if (currentLeftWeaponIndex == i && weaponsInLeftHandSlots[i] == null)
+            {
+                currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
+            }
+        }
+
+        if (currentLeftWeaponIndex > weaponsInLeftHandSlots.Length - 1)
+        {
+            currentLeftWeaponIndex = -1;
+            leftWeapon = unarmedWeapon;
+            weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+        }
+    }
 }
