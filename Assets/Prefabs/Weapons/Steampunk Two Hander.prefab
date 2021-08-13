@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &1097746818968801408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539267804165332604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6987415, y: 0.10564661, z: 0.026705429}
+  m_Center: {x: 0.517546, y: 0.011658917, z: 0.0001814712}
+--- !u!114 &5667652385027707264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539267804165332604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34874b6da827623479e49df0fb8ab107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponDamage: 20
+--- !u!1 &2509425083184210316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5601872445783328009}
+  m_Layer: 0
+  m_Name: WeaponPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5601872445783328009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509425083184210316}
+  m_LocalRotation: {x: 0.42955583, y: 0.57242733, z: 0.56036407, w: -0.41689435}
+  m_LocalPosition: {x: -0.0494, y: -0.0365, z: -0.0608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 536463961808063502}
+  m_Father: {fileID: 6172506281158614085}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -88.583, y: 170.382, z: 83.154}
+--- !u!1 &5999604829687330736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6172506281158614085}
+  m_Layer: 0
+  m_Name: Steampunk Two Hander
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6172506281158614085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5999604829687330736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5601872445783328009}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &540153019876977368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5601872445783328009}
+    m_Modifications:
+    - target: {fileID: 1371618073605284, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_Name
+      value: Prefab_Steampunk_Sword_Gold_Emission_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+--- !u!1 &539267804165332604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1371618073605284, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+  m_PrefabInstance: {fileID: 540153019876977368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &536463961808063502 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4192913709950678, guid: 7404fdf845b425a4f87494e3033d2647, type: 3}
+  m_PrefabInstance: {fileID: 540153019876977368}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfd1ea976a81b341961982796028c51, type: 3}
+  m_Name: Steampunk-Two-Hander
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 0}
+  itemName: Steampunk Two Hander
+  modelPrefab: {fileID: 5999604829687330736, guid: 85943d039cc86e94d9a645e9eef80c56, type: 3}
+  isUnarmed: 0
+  rightHandIdle: Idle_GreatSword_01
+  leftHandIdle: Idle_GreatSword_01
+  OHLightAttacks:
+  - TH_Light_Attack_01
+  - TH_Light_Attack_02
+  - TH_Light_Attack_03
+  OHHeavyAttacks:
+  - TH_Heavy_Attack
