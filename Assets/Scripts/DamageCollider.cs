@@ -25,7 +25,6 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hit");
         if (other.CompareTag("Damageable") || other.CompareTag("Enemy"))
         {
             //hanlde enemy/damageable being attack

@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public float maxHealth=100, currentHealth;
 
-    public HealthBar healthBar;
+    public UISliderBarDisplay healthBar;
 
     private Animator animator;
 
@@ -28,7 +28,7 @@ public class EnemyStats : MonoBehaviour
     {
         currentHealth = maxHealth;
         if (healthBar!=null)
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxValue(maxHealth);
     }
 
     private void FixedUpdate()
@@ -58,7 +58,7 @@ public class EnemyStats : MonoBehaviour
 
         //pass the current health to the health bar
         if (healthBar != null)
-            healthBar.SetCurrentHealth(currentHealth);
+            healthBar.SetCurrentValue(currentHealth);
 
         //play animation that player has taken damage
         if (animator != null)

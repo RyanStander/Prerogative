@@ -24,3 +24,6 @@ MonoBehaviour:
   - UN_Light_03
   OHHeavyAttacks:
   - UN_Heavy_01
+  baseStaminaCost: 15
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2

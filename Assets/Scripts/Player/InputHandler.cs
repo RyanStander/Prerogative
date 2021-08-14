@@ -141,12 +141,10 @@ public class InputHandler : MonoBehaviour
         inputActions.QuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
         if (d_Pad_Right)
         {
-            Debug.Log("changing right");
             playerInventory.ChangeRightWeapon();
         }
         else if (d_Pad_Left)
         {
-            Debug.Log("changing left");
             playerInventory.ChangeLeftWeapon();
         }
     }

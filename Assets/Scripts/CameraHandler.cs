@@ -73,7 +73,6 @@ public class CameraHandler : MonoBehaviour
             Mathf.Abs(targetPosition), ignoreLayers))
         {
             //if it intersects, set target position to where it would not collide with the object
-            Debug.Log("collided");
             float distance = Vector3.Distance(cameraPivotTransform.position, hit.point);
             targetPosition = -(distance - cameraCollisionOffSet);
         }

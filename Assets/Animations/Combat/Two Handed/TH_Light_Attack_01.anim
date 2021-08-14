@@ -49090,6 +49090,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.53333336
+    functionName: DrainLightStaminaAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.8
     functionName: CloseRightHandDamageCollider
     data: 

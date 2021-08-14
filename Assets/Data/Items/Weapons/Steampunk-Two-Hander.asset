@@ -24,3 +24,6 @@ MonoBehaviour:
   - TH_Light_Attack_03
   OHHeavyAttacks:
   - TH_Heavy_Attack
+  baseStaminaCost: 25
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2

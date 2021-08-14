@@ -9,33 +9,42 @@ public class PlayerCombatManager : MonoBehaviour
 
     public string lastAttack;
 
+    private WeaponSlotManager weaponSlotManager;
+    private PlayerStats playerStats;
     private void Awake()
     {
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         inputHandler = GetComponent<InputHandler>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     public void HandleWeaponCombo(WeaponItem weapon)
     {
-        if (inputHandler.comboFlag)
+        if (playerStats.HasEnoughStaminaForAttack())
         {
-            animatorHandler.anim.SetBool("canDoCombo", false);
-            for (int i = 0; i < weapon.OHLightAttacks.Count-1; i++)
-            {     
-                if (lastAttack == weapon.OHLightAttacks[i])
-                {
-                    lastAttack = weapon.OHLightAttacks[i + 1];
-                    animatorHandler.PlayTargetAnimation(lastAttack, true);
-                    break;
-                }
-            }
-            for (int i = 0; i < weapon.OHHeavyAttacks.Count - 1; i++)
+            playerStats.PutStaminaRegenOnCooldown();
+
+            if (inputHandler.comboFlag)
             {
-                if (lastAttack == weapon.OHHeavyAttacks[i])
+                animatorHandler.anim.SetBool("canDoCombo", false);
+                for (int i = 0; i < weapon.OHLightAttacks.Count - 1; i++)
                 {
-                    lastAttack = weapon.OHHeavyAttacks[i + 1];
-                    animatorHandler.PlayTargetAnimation(lastAttack, true);
-                    break;
+                    if (lastAttack == weapon.OHLightAttacks[i])
+                    {
+                        lastAttack = weapon.OHLightAttacks[i + 1];
+                        animatorHandler.PlayTargetAnimation(lastAttack, true);
+                        break;
+                    }
+                }
+                for (int i = 0; i < weapon.OHHeavyAttacks.Count - 1; i++)
+                {
+                    if (lastAttack == weapon.OHHeavyAttacks[i])
+                    {
+                        lastAttack = weapon.OHHeavyAttacks[i + 1];
+                        animatorHandler.PlayTargetAnimation(lastAttack, true);
+                        break;
+                    }
                 }
             }
         }
@@ -43,19 +52,31 @@ public class PlayerCombatManager : MonoBehaviour
 
     public void HandleLightAttack(WeaponItem weapon)
     {
-        if (weapon != null)
+        if (playerStats.HasEnoughStaminaForAttack())
         {
-            animatorHandler.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
-            lastAttack = weapon.OHLightAttacks[0];
+            playerStats.PutStaminaRegenOnCooldown();
+
+            weaponSlotManager.attackingWeapon = weapon;
+            if (weapon != null)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
+                lastAttack = weapon.OHLightAttacks[0];
+            }
         }
     }
 
     public void HandleHeavyAttack(WeaponItem weapon)
     {
-        if (weapon != null)
+        if (playerStats.HasEnoughStaminaForAttack())
         {
-            animatorHandler.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
-            lastAttack = weapon.OHHeavyAttacks[0];
+            playerStats.PutStaminaRegenOnCooldown();
+
+            weaponSlotManager.attackingWeapon = weapon;
+            if (weapon != null)
+            {
+                animatorHandler.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
+                lastAttack = weapon.OHHeavyAttacks[0];
+            }
         }
     }
 }

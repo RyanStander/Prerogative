@@ -15,4 +15,9 @@ public class WeaponItem : Item
     [Header("One Handed Attack Animations")]
     public List<string> OHLightAttacks;
     public List<string> OHHeavyAttacks;
+
+    [Header("Stamina Costs")]
+    public int baseStaminaCost;
+    public float lightAttackMultiplier;
+    public float heavyAttackMultiplier;
 }
