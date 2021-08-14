@@ -11,7 +11,7 @@ public class CameraHandler : MonoBehaviour
         cameraPivotTransform;//Transform of the camera pivot, how the camera turns on the swivel
     private Transform myTransform;//transform of the game object
     private Vector3 cameraTransformPosition, cameraFollowVelocity = Vector3.zero;//position of the camera transform
-    private LayerMask ignoreLayers; //used for camera's collision with objects in the world
+    public LayerMask ignoreLayers; //used for camera's collision with objects in the world
 
     public static CameraHandler singleton;
 

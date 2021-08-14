@@ -36,6 +36,8 @@ public class PlayerManager : MonoBehaviour
         //handle animation based functions for locomotion
         playerLocomotion.HandleRollingAndSprinting(delta);
         playerLocomotion.HandleJumping();
+
+        CheckForInteractableObject();
     }
 
     private void FixedUpdate()
@@ -55,6 +57,7 @@ public class PlayerManager : MonoBehaviour
         inputHandler.lightAttackInput = false;
         inputHandler.heavyAttackInput = false;
         inputHandler.jumpInput = false;
+        inputHandler.interactInput = false;
         inputHandler.d_Pad_Up = false;
         inputHandler.d_Pad_Down = false;
         inputHandler.d_Pad_Right = false;
@@ -72,6 +75,31 @@ public class PlayerManager : MonoBehaviour
         if (isInAir)
         {
             playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+        }
+    }
+
+    public void CheckForInteractableObject()
+    {
+        RaycastHit hit;
+
+        if (Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f, cameraHandler.ignoreLayers))
+        {
+            if (hit.collider.tag == "Interactable")
+            {
+                Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+
+                if (interactableObject != null)
+                {
+                    string interactableText = interactableObject.interactableText;
+                    //Set the ui text to the interactable objects text
+                    //set the text pop up to true
+
+                    if (inputHandler.interactInput)
+                    {
+                        hit.collider.GetComponent<Interactable>().Interact(this);
+                    }
+                }
+            }
         }
     }
 }

@@ -13,6 +13,8 @@ public class PlayerInventory : MonoBehaviour
     public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1], weaponsInLeftHandSlots = new WeaponItem[1];
 
     public int currentRightWeaponIndex = 0, currentLeftWeaponIndex=0;
+
+    public List<WeaponItem> weaponsInventory;
     private void Awake()
     {
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();

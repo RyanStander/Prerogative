@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput;
+    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput;
 
     //Quickslot inputs (item Selection)
     public bool d_Pad_Up,d_Pad_Down,d_Pad_Right,d_Pad_Left;
@@ -62,6 +62,7 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);
         HandleAttackInput(delta);
         HandleQuickslotInput();
+        HandleInteractingButtonInput();
     }
 
     public void MoveInput(float delta)
@@ -147,5 +148,10 @@ public class InputHandler : MonoBehaviour
         {
             playerInventory.ChangeLeftWeapon();
         }
+    }
+
+    private void HandleInteractingButtonInput()
+    {
+        inputActions.PlayerActions.Interact.performed += i => interactInput = true;
     }
 }

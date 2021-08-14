@@ -137,6 +137,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "b45eb181-411b-41bb-a85e-b91efcacccc4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -146,7 +154,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Controller",
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -157,7 +165,7 @@
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse & Keyboard",
                     "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -168,7 +176,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "Tap",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse & Keyboard",
                     "action": "LightAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -179,7 +187,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "Hold(duration=0.15)",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse & Keyboard",
                     "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -190,8 +198,30 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse & Keyboard",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5b3ee7a-0597-4545-b564-c8ae2712fef9",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d57a9e0d-b2aa-4d34-9e60-9be4579e3430",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
