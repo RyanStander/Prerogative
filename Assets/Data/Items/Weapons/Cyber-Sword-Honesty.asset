@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfd1ea976a81b341961982796028c51, type: 3}
   m_Name: Cyber-Sword-Honesty
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: d5966a193394e5146a37c3616232e4a0, type: 3}
   itemName: Cyber Sword Honesty
   modelPrefab: {fileID: 5998665846097091022, guid: 6964267bc0b22574e959882e1dc4d6cf, type: 3}
   isUnarmed: 0

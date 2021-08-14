@@ -39,13 +39,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2420631297423623990}
-  m_LocalRotation: {x: -0.00045428576, y: 0.000000028901567, z: -0.00006210398, w: 0.99999994}
-  m_LocalPosition: {x: 0.004370204, y: 0.0009968312, z: 0.0018599093}
+  m_LocalRotation: {x: -0.060284287, y: -0.081685334, z: 0.99451095, w: 0.02532358}
+  m_LocalPosition: {x: 0, y: -0.004, z: -0.003}
   m_LocalScale: {x: 0.09090911, y: 0.090909116, z: 0.09090909}
   m_Children: []
   m_Father: {fileID: 4342254384597002027}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.173, y: -7.218, z: 176.503}
 --- !u!114 &3542980633607010685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3135682407811310718}
   m_LocalRotation: {x: -0.000547118, y: -0.00000009749158, z: 8.739459e-11, w: 0.9999999}
-  m_LocalPosition: {x: 0.12560935, y: 0.0009977702, z: 0.0016295656}
+  m_LocalPosition: {x: 0.00137, y: 0.00173, z: -0.00172}
   m_LocalScale: {x: 0.090909086, y: 0.090909086, z: 0.090909086}
   m_Children: []
   m_Father: {fileID: 542885072419163689}
@@ -153,6 +153,10 @@ MonoBehaviour:
   lightAttackInput: 0
   heavyAttackInput: 0
   jumpInput: 0
+  d_Pad_Up: 0
+  d_Pad_Down: 0
+  d_Pad_Right: 0
+  d_Pad_Left: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
@@ -225,13 +229,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55335297c3c78e498e51890145bf405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightWeapon: {fileID: 11400000, guid: e897ed5484d6eb742a451e8f932ccef0, type: 2}
-  leftWeapon: {fileID: 0}
-  unarmedWeapon: {fileID: 0}
+  rightWeapon: {fileID: 11400000, guid: 9e665a3924e64054997d1b7f3241e90e, type: 2}
+  leftWeapon: {fileID: 11400000, guid: 4ebfc221d8fbb504c93a430e8c2964b7, type: 2}
+  unarmedWeapon: {fileID: 11400000, guid: 4ebfc221d8fbb504c93a430e8c2964b7, type: 2}
   weaponsInRightHandSlots:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e897ed5484d6eb742a451e8f932ccef0, type: 2}
+  - {fileID: 11400000, guid: 9e665a3924e64054997d1b7f3241e90e, type: 2}
   weaponsInLeftHandSlots:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e897ed5484d6eb742a451e8f932ccef0, type: 2}
+  - {fileID: 11400000, guid: 9e665a3924e64054997d1b7f3241e90e, type: 2}
   currentRightWeaponIndex: 0
   currentLeftWeaponIndex: 0
 --- !u!114 &4140189982712640116
@@ -411,6 +417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catherine
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1b20af65cfa18e6438ac7729099a8ee1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ca162ccdf71d15c4dbb2ea2e693f921a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b20af65cfa18e6438ac7729099a8ee1, type: 3}
 --- !u!1 &5081960338913349633 stripped

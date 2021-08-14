@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfd1ea976a81b341961982796028c51, type: 3}
   m_Name: Steampunk-Two-Hander
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 7c7648e15bac7d442ac4d3cf9b58b976, type: 3}
   itemName: Steampunk Two Hander
   modelPrefab: {fileID: 5999604829687330736, guid: 85943d039cc86e94d9a645e9eef80c56, type: 3}
   isUnarmed: 0
