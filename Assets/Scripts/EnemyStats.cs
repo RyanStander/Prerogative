@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public float maxHealth=100, currentHealth;
 
-    public UISliderBarDisplay healthBar;
+    public SliderBarDisplayUI healthBar;
 
     private Animator animator;
 

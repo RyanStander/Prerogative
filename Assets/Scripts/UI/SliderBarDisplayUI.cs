@@ -4,7 +4,7 @@ using UnityEngine.UI;
 //Requires this component to function
 [RequireComponent(typeof(Slider))]
 
-public class UISliderBarDisplay : MonoBehaviour
+public class SliderBarDisplayUI : MonoBehaviour
 {
     //slider used to display the players current health
     private Slider barSlider;

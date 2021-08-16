@@ -9,6 +9,10 @@ public class PlayerManager : MonoBehaviour
     private Animator anim;
     private CameraHandler cameraHandler;
     private PlayerLocomotion playerLocomotion;
+    
+    private InteractableUI interactableUI;
+    public GameObject interactableUIGameObject;
+    public GameObject itemInteractableGameObject;
 
     [Header("Player Flags")]
     public bool isInteracting, isSprinting, isInAir, isGrounded,canDoCombo;
@@ -20,6 +24,7 @@ public class PlayerManager : MonoBehaviour
         inputHandler = GetComponent<InputHandler>();
         anim = GetComponentInChildren<Animator>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        interactableUI = FindObjectOfType<InteractableUI>();
     }
 
 
@@ -91,14 +96,26 @@ public class PlayerManager : MonoBehaviour
                 if (interactableObject != null)
                 {
                     string interactableText = interactableObject.interactableText;
-                    //Set the ui text to the interactable objects text
-                    //set the text pop up to true
+                    interactableUI.interactableText.text = interactableText;
+                    interactableUIGameObject.SetActive(true);
 
                     if (inputHandler.interactInput)
                     {
                         hit.collider.GetComponent<Interactable>().Interact(this);
                     }
                 }
+            }
+        }
+        else
+        {
+            if (interactableUIGameObject != null)
+            {
+                interactableUIGameObject.SetActive(false);
+            }
+
+            if (itemInteractableGameObject!=null&& inputHandler.interactInput)
+            {
+                itemInteractableGameObject.SetActive(false);
             }
         }
     }

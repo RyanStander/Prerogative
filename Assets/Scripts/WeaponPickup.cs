@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class WeaponPickup : Interactable
 {
@@ -28,6 +30,11 @@ public class WeaponPickup : Interactable
         //Plays the animation of picking up item
         animatorHandler.PlayTargetAnimation("PickUpItem", true);
         playerInventory.weaponsInventory.Add(weapon);
+
+        playerManager.itemInteractableGameObject.GetComponentInChildren<TextMeshProUGUI>().text = "You obtained "+weapon.itemName+"!";
+        playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = weapon.itemIcon.texture;
+        playerManager.itemInteractableGameObject.SetActive(true);
+
         Destroy(gameObject);
     }
 }

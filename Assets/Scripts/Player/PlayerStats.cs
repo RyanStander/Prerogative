@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
     private float staminaCDTimeStamp,staminaRegenTimeStamp;
     private bool canRegen = true;
 
-    public UISliderBarDisplay healthBar,staminaBar;
+    public SliderBarDisplayUI healthBar,staminaBar;
 
     private AnimatorHandler animatorHandler;
 
