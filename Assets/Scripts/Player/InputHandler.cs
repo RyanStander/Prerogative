@@ -26,6 +26,7 @@ public class InputHandler : MonoBehaviour
     public bool dPadUp,dPadDown,dPadRight,dPadLeft;
 
     //Know when its already in the process
+    //combat flags
     public bool rollFlag, sprintFlag,comboFlag;
     public float rollInputTimer;
 
@@ -170,6 +171,8 @@ public class InputHandler : MonoBehaviour
         if (menuInput)
         {
             uiManager.ToggleSelectWindow();
+            uiManager.ToggleHUDWindow();
+            uiManager.UpdateUI();
         }
     }
 
@@ -179,7 +182,9 @@ public class InputHandler : MonoBehaviour
 
         if (inventoryInput)
         {
-            uiManager.ToggleInventory();
+            uiManager.ToggleWeaponInventory();
+            uiManager.ToggleHUDWindow();
+            uiManager.UpdateUI();
         }
     }
 }
