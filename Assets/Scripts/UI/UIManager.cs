@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
+    private EquipmentWindowUI equipmentWindowUI;
 
     [Header("UI Windows")]
     public GameObject hudWindow;
@@ -16,9 +17,15 @@ public class UIManager : MonoBehaviour
     public Transform weaponInventorySlotsParent;//transform that the weapons slots will instantiate onto
     private WeaponInventorySlot[] weaponInventorySlots;
 
+    private void Awake()
+    {
+        equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
+        equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+    }
+
     private void Start()
     {
-        weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+        weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();       
     }
     public void UpdateUI()
     {
