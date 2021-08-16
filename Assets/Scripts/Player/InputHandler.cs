@@ -47,13 +47,10 @@ public class InputHandler : MonoBehaviour
             //makes it so that input actions for movement/camera checked by movement  inputs and camera inputs
             inputActions.PlayerMovement.Movement.performed += movementInputActions => movementInput = movementInputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += cameraInputActions => cameraInput = cameraInputActions.ReadValue<Vector2>();
-            
-            //attacking input actions
-            inputActions.PlayerActions.LightAttack.performed += i => lightAttackInput = true;
-            inputActions.PlayerActions.HeavyAttack.performed += i => heavyAttackInput = true;
 
-            //jumping input action
-            inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
+            InputsInitialize();
+
+
         }
 
         inputActions.Enable();
@@ -69,7 +66,6 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);
         HandleAttackInput(delta);
         HandleQuickslotInput();
-        HandleInteractingButtonInput();
         HandleMenuInput();
         HandleInventoryInput();
     }
@@ -81,6 +77,24 @@ public class InputHandler : MonoBehaviour
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
         mouseX = cameraInput.x;
         mouseY = cameraInput.y;
+    }
+
+    private void InputsInitialize()
+    {
+        //combat inputs
+        inputActions.PlayerActions.LightAttack.performed += i => lightAttackInput = true;
+        inputActions.PlayerActions.HeavyAttack.performed += i => heavyAttackInput = true;
+        inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
+        inputActions.PlayerActions.Interact.performed += i => interactInput = true;
+
+        //quickslot inputs
+        inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
+        inputActions.QuickSlots.DPadLeft.performed += i => dPadLeft = true;
+
+        //menu inputs
+        inputActions.UIInputs.Menu.performed += i => menuInput = true;
+        inputActions.UIInputs.Inventory.performed += i => inventoryInput = true;
+
     }
 
     private void HandleRollInput(float delta)
@@ -147,8 +161,6 @@ public class InputHandler : MonoBehaviour
 
     private void HandleQuickslotInput()
     {
-        inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
-        inputActions.QuickSlots.DPadLeft.performed += i => dPadLeft = true;
         if (dPadRight)
         {
             playerInventory.ChangeRightWeapon();
@@ -159,15 +171,8 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    private void HandleInteractingButtonInput()
+    private void HandleMenuInput() 
     {
-        inputActions.PlayerActions.Interact.performed += i => interactInput = true;
-    }
-
-    private void HandleMenuInput()
-    {
-        inputActions.UIInputs.Menu.performed += i => menuInput = true;
-
         if (menuInput)
         {
             uiManager.ToggleSelectWindow();
@@ -178,8 +183,6 @@ public class InputHandler : MonoBehaviour
 
     private void HandleInventoryInput()
     {
-        inputActions.UIInputs.Inventory.performed += i => inventoryInput = true;
-
         if (inventoryInput)
         {
             uiManager.ToggleWeaponInventory();

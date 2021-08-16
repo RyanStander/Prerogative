@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion.HandleJumping();
 
         CheckForInteractableObject();
+
     }
 
     private void FixedUpdate()
@@ -52,7 +53,12 @@ public class PlayerManager : MonoBehaviour
         //Handle movement based functions
         playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-        
+
+        if (cameraHandler != null)
+        {
+            cameraHandler.FollowTarget(delta);
+        }
+
     }
 
     private void LateUpdate()
@@ -78,16 +84,15 @@ public class PlayerManager : MonoBehaviour
 
         isSprinting = inputHandler.rollInput;
 
-        if (cameraHandler != null)
-        {
-            float delta = Time.fixedDeltaTime;
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-        }
-
         if (isInAir)
         {
             playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+        }
+
+        if (cameraHandler != null)
+        {
+            float delta = Time.fixedDeltaTime;
+            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
         }
     }
 

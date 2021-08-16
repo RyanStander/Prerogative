@@ -36442,6 +36442,10 @@ PrefabInstance:
       propertyPath: itemInteractableGameObject
       value: 
       objectReference: {fileID: 5997627545441471083}
+    - target: {fileID: 4140189982712640123, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4140189982712640124, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: m_Camera
       value: 
