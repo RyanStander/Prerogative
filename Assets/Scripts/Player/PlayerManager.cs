@@ -58,15 +58,23 @@ public class PlayerManager : MonoBehaviour
     private void LateUpdate()
     {
         //Ensures inputs only happen once per frame
+
+        //Combat Inputs
         inputHandler.rollFlag = false;
         inputHandler.lightAttackInput = false;
         inputHandler.heavyAttackInput = false;
         inputHandler.jumpInput = false;
         inputHandler.interactInput = false;
-        inputHandler.d_Pad_Up = false;
-        inputHandler.d_Pad_Down = false;
-        inputHandler.d_Pad_Right = false;
-        inputHandler.d_Pad_Left = false;
+
+        //Menu Inputs
+        inputHandler.menuInput = false;
+        inputHandler.inventoryInput = false;
+
+        //Item Selection Inputs
+        inputHandler.dPadUp = false;
+        inputHandler.dPadDown = false;
+        inputHandler.dPadRight = false;
+        inputHandler.dPadLeft = false;
 
         isSprinting = inputHandler.rollInput;
 

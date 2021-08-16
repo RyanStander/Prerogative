@@ -21,10 +21,15 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private float minimumPivot = -35, maximumPivot = 35;
 
     [SerializeField] private float cameraSphereRadius = 0.2f, cameraCollisionOffSet = 0.2f, minimumCollisionOffset = 0.2f;
+
+    [Header("Debugging")] [SerializeField] private bool disableCursorLocking = false;
     private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (!disableCursorLocking)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         singleton = this;
         myTransform = transform;

@@ -354,6 +354,63 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI Inputs",
+            "id": "bded67df-6f88-492e-8371-6db4e33a972e",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "83d4511b-5ff6-4335-a50b-fea37b47ed63",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "1938cb00-68e6-4dd3-9f8d-3b0a35b5d065",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9fe15140-4ecf-4db9-9c40-b587dbfd4d69",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "102cce7e-c6b3-4e14-a09c-564ddf6fc854",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bc7a474-0f0b-41c6-864b-ed73574b30a7",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -367,6 +367,63 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI Inputs"",
+            ""id"": ""bded67df-6f88-492e-8371-6db4e33a972e"",
+            ""actions"": [
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""83d4511b-5ff6-4335-a50b-fea37b47ed63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""1938cb00-68e6-4dd3-9f8d-3b0a35b5d065"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""9fe15140-4ecf-4db9-9c40-b587dbfd4d69"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""102cce7e-c6b3-4e14-a09c-564ddf6fc854"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5bc7a474-0f0b-41c6-864b-ed73574b30a7"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -416,6 +473,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_QuickSlots_DPadDown = m_QuickSlots.FindAction("D-Pad Down", throwIfNotFound: true);
         m_QuickSlots_DPadLeft = m_QuickSlots.FindAction("D-Pad Left", throwIfNotFound: true);
         m_QuickSlots_DPadRight = m_QuickSlots.FindAction("D-Pad Right", throwIfNotFound: true);
+        // UI Inputs
+        m_UIInputs = asset.FindActionMap("UI Inputs", throwIfNotFound: true);
+        m_UIInputs_Menu = m_UIInputs.FindAction("Menu", throwIfNotFound: true);
+        m_UIInputs_Inventory = m_UIInputs.FindAction("Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -624,6 +685,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public QuickSlotsActions @QuickSlots => new QuickSlotsActions(this);
+
+    // UI Inputs
+    private readonly InputActionMap m_UIInputs;
+    private IUIInputsActions m_UIInputsActionsCallbackInterface;
+    private readonly InputAction m_UIInputs_Menu;
+    private readonly InputAction m_UIInputs_Inventory;
+    public struct UIInputsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public UIInputsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Menu => m_Wrapper.m_UIInputs_Menu;
+        public InputAction @Inventory => m_Wrapper.m_UIInputs_Inventory;
+        public InputActionMap Get() { return m_Wrapper.m_UIInputs; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIInputsActions set) { return set.Get(); }
+        public void SetCallbacks(IUIInputsActions instance)
+        {
+            if (m_Wrapper.m_UIInputsActionsCallbackInterface != null)
+            {
+                @Menu.started -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnMenu;
+                @Inventory.started -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+            }
+            m_Wrapper.m_UIInputsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
+            }
+        }
+    }
+    public UIInputsActions @UIInputs => new UIInputsActions(this);
     private int m_MouseKeyboardSchemeIndex = -1;
     public InputControlScheme MouseKeyboardScheme
     {
@@ -661,5 +763,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnDPadDown(InputAction.CallbackContext context);
         void OnDPadLeft(InputAction.CallbackContext context);
         void OnDPadRight(InputAction.CallbackContext context);
+    }
+    public interface IUIInputsActions
+    {
+        void OnMenu(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
     }
 }

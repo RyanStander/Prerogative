@@ -11,6 +11,7 @@ public class InputHandler : MonoBehaviour
     private PlayerCombatManager playerCombatManager;
     private PlayerInventory playerInventory;
     private PlayerManager playerManager;
+    private UIManager uiManager;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
@@ -18,9 +19,13 @@ public class InputHandler : MonoBehaviour
     //Combat inputs
     public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput;
 
-    //Quickslot inputs (item Selection)
-    public bool d_Pad_Up,d_Pad_Down,d_Pad_Right,d_Pad_Left;
+    //Menu Inputs
+    public bool menuInput,inventoryInput;
 
+    //Quickslot inputs (item Selection)
+    public bool dPadUp,dPadDown,dPadRight,dPadLeft;
+
+    //Know when its already in the process
     public bool rollFlag, sprintFlag,comboFlag;
     public float rollInputTimer;
 
@@ -29,6 +34,7 @@ public class InputHandler : MonoBehaviour
         playerCombatManager = GetComponent<PlayerCombatManager>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void OnEnable()
@@ -63,6 +69,8 @@ public class InputHandler : MonoBehaviour
         HandleAttackInput(delta);
         HandleQuickslotInput();
         HandleInteractingButtonInput();
+        HandleMenuInput();
+        HandleInventoryInput();
     }
 
     public void MoveInput(float delta)
@@ -138,13 +146,13 @@ public class InputHandler : MonoBehaviour
 
     private void HandleQuickslotInput()
     {
-        inputActions.QuickSlots.DPadRight.performed += i => d_Pad_Right = true;
-        inputActions.QuickSlots.DPadLeft.performed += i => d_Pad_Left = true;
-        if (d_Pad_Right)
+        inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
+        inputActions.QuickSlots.DPadLeft.performed += i => dPadLeft = true;
+        if (dPadRight)
         {
             playerInventory.ChangeRightWeapon();
         }
-        else if (d_Pad_Left)
+        else if (dPadLeft)
         {
             playerInventory.ChangeLeftWeapon();
         }
@@ -153,5 +161,25 @@ public class InputHandler : MonoBehaviour
     private void HandleInteractingButtonInput()
     {
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
+    }
+
+    private void HandleMenuInput()
+    {
+        inputActions.UIInputs.Menu.performed += i => menuInput = true;
+
+        if (menuInput)
+        {
+            uiManager.ToggleSelectWindow();
+        }
+    }
+
+    private void HandleInventoryInput()
+    {
+        inputActions.UIInputs.Inventory.performed += i => inventoryInput = true;
+
+        if (inventoryInput)
+        {
+            uiManager.ToggleInventory();
+        }
     }
 }
