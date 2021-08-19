@@ -11,13 +11,14 @@ public class InputHandler : MonoBehaviour
     private PlayerCombatManager playerCombatManager;
     private PlayerInventory playerInventory;
     private PlayerManager playerManager;
+    private CameraHandler cameraHandler;
     private UIManager uiManager;
 
     private Vector2 movementInput;
     private Vector2 cameraInput;
 
     //Combat inputs
-    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput;
+    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput,lockOnInput;
 
     //Menu Inputs
     public bool menuInput,inventoryInput,equipmentInput;
@@ -27,7 +28,7 @@ public class InputHandler : MonoBehaviour
 
     //use flags to know when its already in the process
     //combat flags
-    public bool rollFlag, sprintFlag,comboFlag;
+    public bool rollFlag, sprintFlag,comboFlag,lockOnFlag;
     public float rollInputTimer;
 
     //menu flags
@@ -39,6 +40,7 @@ public class InputHandler : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
         uiManager = FindObjectOfType<UIManager>();
+        cameraHandler = FindObjectOfType<CameraHandler>();
     }
 
     private void OnEnable()
@@ -52,8 +54,6 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerMovement.Camera.performed += cameraInputActions => cameraInput = cameraInputActions.ReadValue<Vector2>();
 
             InputsInitialize();
-
-
         }
 
         inputActions.Enable();
@@ -65,12 +65,14 @@ public class InputHandler : MonoBehaviour
 
     public void TickInput(float delta)
     {
+        //Combat inputs
         MoveInput(delta);
         HandleRollInput(delta);
-        HandleAttackInput(delta);
-        HandleQuickslotInput();
-        
+        HandleAttackInput(delta); 
+        HandleLockOnInput();
+
         //Menu inputs
+        HandleQuickslotInput();
         HandleMenuInput();
         HandleInventoryInput();
         HandleEquipmentInput();
@@ -92,6 +94,7 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.HeavyAttack.performed += i => heavyAttackInput = true;
         inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
+        inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
 
         //quickslot inputs
         inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
@@ -165,6 +168,29 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    private void HandleLockOnInput()
+    {
+        if (lockOnInput&&!lockOnFlag)
+        {
+            cameraHandler.ClearLockOnTarget();
+            lockOnInput = false;
+            cameraHandler.HandleLockOn();
+
+            if (cameraHandler.nearestLockOnTarget!=null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
+                lockOnFlag = true;
+            }
+        }
+        else if (lockOnInput && lockOnFlag)
+        {
+            lockOnInput = false;
+            lockOnFlag = false;
+            cameraHandler.ClearLockOnTarget();
+        }
+    }
+
+    #region Menu Inputs
     private void HandleQuickslotInput()
     {
         if (dPadRight)
@@ -258,4 +284,7 @@ public class InputHandler : MonoBehaviour
         inventoryFlag = false;
         equipmentFlag = false;
     }
+    #endregion
+
+
 }

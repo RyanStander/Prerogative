@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : CharacterManager
 {
     private InputHandler inputHandler;
     private Animator anim;
@@ -56,7 +56,7 @@ public class PlayerManager : MonoBehaviour
 
         if (cameraHandler != null)
         {
-            cameraHandler.FollowTarget(delta);
+            
         }
 
     }
@@ -93,6 +93,9 @@ public class PlayerManager : MonoBehaviour
         if (cameraHandler != null)
         {
             float delta = Time.fixedDeltaTime;
+
+            cameraHandler.FollowTarget(delta);
+
             cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
         }
     }
