@@ -19,6 +19,7 @@ public class InputHandler : MonoBehaviour
 
     //Combat inputs
     public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput,lockOnInput;
+    public float lockOnTargetInput;
 
     //Menu Inputs
     public bool menuInput,inventoryInput,equipmentInput;
@@ -33,6 +34,9 @@ public class InputHandler : MonoBehaviour
 
     //menu flags
     public bool menuFlag, inventoryFlag, equipmentFlag;
+
+    //lock on cooldown
+    private float lockOnSwapStamp, lockOnSwapCooldown=1;
 
     private void Awake()
     {
@@ -52,6 +56,8 @@ public class InputHandler : MonoBehaviour
             //makes it so that input actions for movement/camera checked by movement  inputs and camera inputs
             inputActions.PlayerMovement.Movement.performed += movementInputActions => movementInput = movementInputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += cameraInputActions => cameraInput = cameraInputActions.ReadValue<Vector2>();
+
+            inputActions.PlayerMovement.LockOnTarget.performed += lockOnTargetInputActions => lockOnTargetInput = lockOnTargetInputActions.ReadValue<float>();
 
             InputsInitialize();
         }
@@ -172,7 +178,6 @@ public class InputHandler : MonoBehaviour
     {
         if (lockOnInput&&!lockOnFlag)
         {
-            cameraHandler.ClearLockOnTarget();
             lockOnInput = false;
             cameraHandler.HandleLockOn();
 
@@ -188,6 +193,34 @@ public class InputHandler : MonoBehaviour
             lockOnFlag = false;
             cameraHandler.ClearLockOnTarget();
         }
+
+        Debug.Log(lockOnTargetInput);
+        //Move to the next left target
+        if (lockOnFlag && lockOnTargetInput<0)
+        {
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.leftLockTarget!=null)
+            {
+                if (lockOnSwapStamp<=Time.time)
+                {
+                    lockOnSwapStamp = Time.time + lockOnSwapCooldown;
+                    cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+                }
+            }
+        }//Move to the next right target
+        else if (lockOnFlag&&lockOnTargetInput>0)
+        {
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.rightLockTarget != null)
+            {
+                if (lockOnSwapStamp <= Time.time)
+                {
+                    lockOnSwapStamp = Time.time + lockOnSwapCooldown;
+                    cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+                }
+            }
+        }
+
     }
 
     #region Menu Inputs
