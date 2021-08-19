@@ -5,22 +5,26 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
-    private EquipmentWindowUI equipmentWindowUI;
 
     [Header("UI Windows")]
     public GameObject hudWindow;
     public GameObject selectWindow;
     public GameObject weaponInventoryWindow;
+    public GameObject equipmentWindow;
 
     [Header("Weapon Inventory")]
     public GameObject weaponInventorySlotPrefab;//Prefab of the inventory slot that will be created for all weapons
     public Transform weaponInventorySlotsParent;//transform that the weapons slots will instantiate onto
     private WeaponInventorySlot[] weaponInventorySlots;
 
+    [Header("Equipment")]
+    private EquipmentWindowUI equipmentWindowUI;
+
     private void Awake()
     {
-        equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
-        equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+        //equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
+        equipmentWindowUI = equipmentWindow.GetComponent<EquipmentWindowUI>();
+        //equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
     }
 
     private void Start()
@@ -51,24 +55,54 @@ public class UIManager : MonoBehaviour
         #endregion
     }
 
-    public void ToggleSelectWindow()
+    #region Window Enables/Disables
+    public void OpenSelectWindow()
     {
-        selectWindow.SetActive(!selectWindow.activeSelf);
+        selectWindow.SetActive(true);
     }
 
-    public void ToggleWeaponInventory()
+    public void CloseSelectWindow()
     {
-        weaponInventoryWindow.SetActive(!weaponInventoryWindow.activeSelf);
+        selectWindow.SetActive(false);
     }
 
-    public void ToggleHUDWindow()
+    public void OpenHUDWindow()
     {
-        hudWindow.SetActive(!hudWindow.activeSelf);
+        hudWindow.SetActive(true);
     }
 
-    public void CloseAllInventoryWindows()
+    public void CloseHUDWindow()
+    {
+        hudWindow.SetActive(false);
+    }
+
+    public void OpenWeaponInventoryWindow()
+    {
+        weaponInventoryWindow.SetActive(true);
+        UpdateUI();
+    }
+
+    public void CloseWeaponInventoryWindow()
     {
         weaponInventoryWindow.SetActive(false);
-        hudWindow.SetActive(true);
+    }
+
+    public void OpenEquipmentWindow()
+    {
+        equipmentWindow.SetActive(true);
+        equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+    }
+
+    public void CloseEquipmentWindow()
+    {
+        equipmentWindow.SetActive(false);
+    }
+    #endregion
+
+    //closes the windows like equipment and inventory
+    public void CloseAllSecondaryWindows()
+    {
+        weaponInventoryWindow.SetActive(false);
+        equipmentWindow.SetActive(false);
     }
 }

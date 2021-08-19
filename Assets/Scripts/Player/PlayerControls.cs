@@ -387,6 +387,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Equipment"",
+                    ""type"": ""Button"",
+                    ""id"": ""e606a48f-a0d1-4561-ab7b-00fd918da9e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -420,6 +428,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Mouse & Keyboard"",
                     ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3009972-8714-4d27-b003-2efcdb2436d6"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Equipment"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -477,6 +496,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_UIInputs = asset.FindActionMap("UI Inputs", throwIfNotFound: true);
         m_UIInputs_Menu = m_UIInputs.FindAction("Menu", throwIfNotFound: true);
         m_UIInputs_Inventory = m_UIInputs.FindAction("Inventory", throwIfNotFound: true);
+        m_UIInputs_Equipment = m_UIInputs.FindAction("Equipment", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -691,12 +711,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IUIInputsActions m_UIInputsActionsCallbackInterface;
     private readonly InputAction m_UIInputs_Menu;
     private readonly InputAction m_UIInputs_Inventory;
+    private readonly InputAction m_UIInputs_Equipment;
     public struct UIInputsActions
     {
         private @PlayerControls m_Wrapper;
         public UIInputsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Menu => m_Wrapper.m_UIInputs_Menu;
         public InputAction @Inventory => m_Wrapper.m_UIInputs_Inventory;
+        public InputAction @Equipment => m_Wrapper.m_UIInputs_Equipment;
         public InputActionMap Get() { return m_Wrapper.m_UIInputs; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -712,6 +734,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Inventory.started -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+                @Equipment.started -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnEquipment;
+                @Equipment.performed -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnEquipment;
+                @Equipment.canceled -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnEquipment;
             }
             m_Wrapper.m_UIInputsActionsCallbackInterface = instance;
             if (instance != null)
@@ -722,6 +747,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @Equipment.started += instance.OnEquipment;
+                @Equipment.performed += instance.OnEquipment;
+                @Equipment.canceled += instance.OnEquipment;
             }
         }
     }
@@ -768,5 +796,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnMenu(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnEquipment(InputAction.CallbackContext context);
     }
 }

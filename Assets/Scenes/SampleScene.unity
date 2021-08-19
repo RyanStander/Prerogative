@@ -7353,7 +7353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &726763952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8797,7 +8797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &881656076
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32890,7 +32890,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8375246730481732717}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 881656075}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 343773559600939671}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1469120993842556729
 GameObject:
   m_ObjectHideFlags: 0
@@ -37468,6 +37492,7 @@ MonoBehaviour:
   hudWindow: {fileID: 1001089946965584410}
   selectWindow: {fileID: 343773559600939671}
   weaponInventoryWindow: {fileID: 5997627545835708519}
+  equipmentWindow: {fileID: 881656075}
   weaponInventorySlotPrefab: {fileID: 5997627544389284629}
   weaponInventorySlotsParent: {fileID: 5997627545894599864}
 --- !u!222 &5997627544528599955

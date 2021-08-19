@@ -75,6 +75,7 @@ public class PlayerManager : MonoBehaviour
         //Menu Inputs
         inputHandler.menuInput = false;
         inputHandler.inventoryInput = false;
+        inputHandler.equipmentInput = false;
 
         //Item Selection Inputs
         inputHandler.dPadUp = false;

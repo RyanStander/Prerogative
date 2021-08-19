@@ -374,6 +374,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Equipment",
+                    "type": "Button",
+                    "id": "e606a48f-a0d1-4561-ab7b-00fd918da9e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -407,6 +415,17 @@
                     "processors": "",
                     "groups": "Mouse & Keyboard",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3009972-8714-4d27-b003-2efcdb2436d6",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Equipment",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

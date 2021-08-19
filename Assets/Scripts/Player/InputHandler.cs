@@ -20,15 +20,18 @@ public class InputHandler : MonoBehaviour
     public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput;
 
     //Menu Inputs
-    public bool menuInput,inventoryInput;
+    public bool menuInput,inventoryInput,equipmentInput;
 
     //Quickslot inputs (item Selection)
     public bool dPadUp,dPadDown,dPadRight,dPadLeft;
 
-    //Know when its already in the process
+    //use flags to know when its already in the process
     //combat flags
     public bool rollFlag, sprintFlag,comboFlag;
     public float rollInputTimer;
+
+    //menu flags
+    public bool menuFlag, inventoryFlag, equipmentFlag;
 
     private void Awake()
     {
@@ -66,8 +69,11 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);
         HandleAttackInput(delta);
         HandleQuickslotInput();
+        
+        //Menu inputs
         HandleMenuInput();
         HandleInventoryInput();
+        HandleEquipmentInput();
     }
 
     public void MoveInput(float delta)
@@ -94,7 +100,7 @@ public class InputHandler : MonoBehaviour
         //menu inputs
         inputActions.UIInputs.Menu.performed += i => menuInput = true;
         inputActions.UIInputs.Inventory.performed += i => inventoryInput = true;
-
+        inputActions.UIInputs.Equipment.performed += i => equipmentInput = true;
     }
 
     private void HandleRollInput(float delta)
@@ -175,9 +181,30 @@ public class InputHandler : MonoBehaviour
     {
         if (menuInput)
         {
-            uiManager.ToggleSelectWindow();
-            uiManager.ToggleHUDWindow();
-            uiManager.UpdateUI();
+            if (inventoryFlag || equipmentFlag)
+            {
+                uiManager.CloseAllSecondaryWindows();
+                uiManager.CloseSelectWindow();
+                uiManager.OpenHUDWindow();
+                SetAllSecondaryMenuFlagsToFalse();
+                menuFlag = false;
+            }
+            else
+            {
+                menuFlag = !menuFlag;
+                if (menuFlag)
+                {
+                    uiManager.OpenSelectWindow();
+                    uiManager.CloseAllSecondaryWindows();
+                    SetAllSecondaryMenuFlagsToFalse();
+                    uiManager.CloseHUDWindow();
+                }
+                else
+                {
+                    uiManager.CloseSelectWindow();
+                    uiManager.OpenHUDWindow();
+                }
+            }
         }
     }
 
@@ -185,9 +212,50 @@ public class InputHandler : MonoBehaviour
     {
         if (inventoryInput)
         {
-            uiManager.ToggleWeaponInventory();
-            uiManager.ToggleHUDWindow();
-            uiManager.UpdateUI();
+            inventoryFlag = !inventoryFlag;
+            if (inventoryFlag)
+            {
+                uiManager.OpenWeaponInventoryWindow();
+                uiManager.CloseSelectWindow();
+                uiManager.CloseHUDWindow();
+                menuFlag = false;
+            }
+            else
+            {
+                uiManager.CloseWeaponInventoryWindow();
+                uiManager.CloseSelectWindow();
+                uiManager.OpenHUDWindow();
+            }
         }
+    }
+
+    private void HandleEquipmentInput()
+    {
+        if (equipmentInput)
+        {
+            equipmentFlag = !equipmentFlag;
+            if (equipmentFlag)
+            {
+                uiManager.OpenEquipmentWindow();
+                uiManager.CloseSelectWindow();
+                uiManager.CloseHUDWindow();
+                menuFlag = false;
+            }
+            else
+            {
+                uiManager.CloseEquipmentWindow();
+                uiManager.CloseSelectWindow();
+                uiManager.OpenHUDWindow();
+            }
+        }
+    }
+
+
+
+    //Used when closing all secondary menus without using the direct inputs to avoid buggs
+    private void SetAllSecondaryMenuFlagsToFalse()
+    {
+        inventoryFlag = false;
+        equipmentFlag = false;
     }
 }
