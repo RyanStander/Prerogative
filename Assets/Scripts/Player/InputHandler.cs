@@ -218,6 +218,7 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
+        cameraHandler.SetCameraHeight();
     }
 
     #region Menu Inputs

@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject hudWindow;
     public GameObject selectWindow;
     public GameObject weaponInventoryWindow;
-    public GameObject equipmentWindow;
+    public GameObject equipmentScreenWindow;
 
     [Header("Weapon Inventory")]
     public GameObject weaponInventorySlotPrefab;//Prefab of the inventory slot that will be created for all weapons
@@ -20,10 +20,14 @@ public class UIManager : MonoBehaviour
     [Header("Equipment")]
     private EquipmentWindowUI equipmentWindowUI;
 
+    [Header("Equipment Window Slot Selected")]
+    public bool isSelectedSlotALeftHandSlot;
+    public int selectedSlotNum=-1;
+
     private void Awake()
     {
         //equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
-        equipmentWindowUI = equipmentWindow.GetComponent<EquipmentWindowUI>();
+        equipmentWindowUI = equipmentScreenWindow.GetComponent<EquipmentWindowUI>();
         //equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
     }
 
@@ -34,11 +38,11 @@ public class UIManager : MonoBehaviour
     public void UpdateUI()
     {
         #region Weapon Inventory Slots
-        //if there are less weapon inventory slots than there are weapons in the players inventory
         for (int i = 0; i < weaponInventorySlots.Length; i++)
         {
             if (i<playerInventory.weaponsInventory.Count)
             {
+                //if there are less weapon inventory slots than there are weapons in the players inventory
                 if (weaponInventorySlots.Length < playerInventory.weaponsInventory.Count)
                 {
                     //create new weaponinventory slot and add to the grid
@@ -53,6 +57,11 @@ public class UIManager : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    public void ReloadEquipmentWindow()
+    {
+        equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
     }
 
     #region Window Enables/Disables
@@ -89,20 +98,26 @@ public class UIManager : MonoBehaviour
 
     public void OpenEquipmentWindow()
     {
-        equipmentWindow.SetActive(true);
-        equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
+        equipmentScreenWindow.SetActive(true);
+        ReloadEquipmentWindow();
     }
 
     public void CloseEquipmentWindow()
     {
-        equipmentWindow.SetActive(false);
+        equipmentScreenWindow.SetActive(false);
     }
     #endregion
 
     //closes the windows like equipment and inventory
     public void CloseAllSecondaryWindows()
     {
+        ResetAllSelectedSlots();
         weaponInventoryWindow.SetActive(false);
-        equipmentWindow.SetActive(false);
+        equipmentScreenWindow.SetActive(false);
+    }
+
+    public void ResetAllSelectedSlots()
+    {
+        selectedSlotNum = -1;
     }
 }

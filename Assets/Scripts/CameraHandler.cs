@@ -214,9 +214,8 @@ public class CameraHandler : MonoBehaviour
                     }
                 }
             }
-            
         }
-        SetCameraHeight();
+
     }
 
     public void ClearLockOnTarget()

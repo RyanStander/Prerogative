@@ -18,7 +18,7 @@ public class EquipmentWindowUI : MonoBehaviour
         //add weapon from players inventory to weapon slot on the players display
         foreach (HandEquipmentSlotUI handEquipmentSlot in handEquipmentSlotUIs)
         {
-            if (handEquipmentSlot.isLeftSlot)
+            if (handEquipmentSlot.isLeftHandSlot)
             {
                 handEquipmentSlot.AddItem(playerInventory.weaponsInLeftHandSlots[handEquipmentSlot.slotNum]);
             }
@@ -31,12 +31,12 @@ public class EquipmentWindowUI : MonoBehaviour
 
     public void SelectRightHandSlot(int slotNum)
     {
-        rightHandSlotsSelected[slotNum+1] = true;
+        rightHandSlotsSelected[slotNum] = true;
     }
 
     public void SelectLeftHandSlot(int slotNum)
     {
-        leftHandSlotsSelected[slotNum+1] = true;
+        leftHandSlotsSelected[slotNum] = true;
     }
 
 }

@@ -14,18 +14,21 @@ public class QuickSlotsUI : MonoBehaviour
         {
             if (leftWeaponIcon != null)
             {
-                //checks if weapon has an icon
-                if (weapon.itemIcon != null)
+                if (weapon != null)
                 {
-                    //display icon
-                    leftWeaponIcon.sprite = weapon.itemIcon;
-                    leftWeaponIcon.enabled = true;
-                }
-                else
-                {
-                    //hide icon
-                    leftWeaponIcon.sprite = null;
-                    leftWeaponIcon.enabled = false;
+                    //checks if weapon has an icon
+                    if (weapon.itemIcon != null)
+                    {
+                        //display icon
+                        leftWeaponIcon.sprite = weapon.itemIcon;
+                        leftWeaponIcon.enabled = true;
+                    }
+                    else
+                    {
+                        //hide icon
+                        leftWeaponIcon.sprite = null;
+                        leftWeaponIcon.enabled = false;
+                    }
                 }
             }
             else
