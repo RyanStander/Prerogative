@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bca9dfe0925634d4a92ab132e5b6034a
+guid: 75d0f875b9aaaea49b2f8fd6d7b5f5e8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -18,7 +18,9 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
+      does not match:\n\tParent for 'Hips' differs from one found in HumanDescription.
+      'Strafe_Left' was found instead of 'Armature'.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 

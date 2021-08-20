@@ -72,7 +72,7 @@ public class InputHandler : MonoBehaviour
     public void TickInput(float delta)
     {
         //Combat inputs
-        MoveInput(delta);
+        HandleMoveInput(delta);
         HandleRollInput(delta);
         HandleAttackInput(delta); 
         HandleLockOnInput();
@@ -84,7 +84,7 @@ public class InputHandler : MonoBehaviour
         HandleEquipmentInput();
     }
 
-    public void MoveInput(float delta)
+    public void HandleMoveInput(float delta)
     {
         horizontal = movementInput.x;
         vertical = movementInput.y;
@@ -193,8 +193,6 @@ public class InputHandler : MonoBehaviour
             lockOnFlag = false;
             cameraHandler.ClearLockOnTarget();
         }
-
-        Debug.Log(lockOnTargetInput);
         //Move to the next left target
         if (lockOnFlag && lockOnTargetInput<0)
         {
@@ -220,7 +218,6 @@ public class InputHandler : MonoBehaviour
                 }
             }
         }
-
     }
 
     #region Menu Inputs
