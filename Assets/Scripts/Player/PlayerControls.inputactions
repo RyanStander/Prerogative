@@ -183,6 +183,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Two Hand Swap",
+                    "type": "Button",
+                    "id": "c2938e15-06ab-41a9-95e4-3a8184373090",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -282,6 +290,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "LockOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7f26ffe-85b0-4fcf-8b2d-f5c9dfcb58f7",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Two Hand Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bf09f25-529a-4fe2-9d8b-3fc9cbc2dd31",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Two Hand Swap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

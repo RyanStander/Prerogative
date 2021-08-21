@@ -11,10 +11,13 @@ public class WeaponItem : Item
     [Header("Idle Animations")]
     public string rightHandIdle;
     public string leftHandIdle;
+    public string twoHandIdle;
 
     [Header("One Handed Attack Animations")]
     public List<string> OHLightAttacks;
+    public List<string> THLightAttacks;
     public List<string> OHHeavyAttacks;
+    public List<string> THHeavyAttacks;
 
     [Header("Stamina Costs")]
     public int baseStaminaCost;

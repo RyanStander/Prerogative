@@ -16,14 +16,21 @@ MonoBehaviour:
   itemName: Steampunk Two Hander
   modelPrefab: {fileID: 5999604829687330736, guid: 85943d039cc86e94d9a645e9eef80c56, type: 3}
   isUnarmed: 0
-  rightHandIdle: Idle_GreatSword_01
-  leftHandIdle: Idle_GreatSword_01
+  rightHandIdle: Right_Idle_GreatSword_01
+  leftHandIdle: Left_Idle_GreatSword_01
+  twoHandIdle: Both_Idle_GreatSword_01
   OHLightAttacks:
+  - OH_Light_Attack_01
+  - OH_Light_Attack_02
+  - OH_Light_Attack_03
+  THLightAttacks:
   - TH_Light_Attack_01
-  - TH_Light_Attack_02
-  - TH_Light_Attack_03
+  - TH_Light_Attack_01
+  - TH_Light_Attack_01
   OHHeavyAttacks:
-  - TH_Heavy_Attack
+  - OH_Heavy_Attack_01
+  THHeavyAttacks:
+  - TH_Heavy_Attack_01
   baseStaminaCost: 25
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

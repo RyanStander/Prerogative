@@ -16,14 +16,17 @@ MonoBehaviour:
   itemName: 
   modelPrefab: {fileID: 301446165116518905, guid: 8bfc4bc9287b52141952bce3e316b383, type: 3}
   isUnarmed: 1
-  rightHandIdle: UN_Idle
-  leftHandIdle: UN_Idle
+  rightHandIdle: Right_UN_Idle
+  leftHandIdle: Left_UN_Idle
+  twoHandIdle: 
   OHLightAttacks:
   - UN_Light_01
   - UN_Light_02
   - UN_Light_03
+  THLightAttacks: []
   OHHeavyAttacks:
   - UN_Heavy_01
+  THHeavyAttacks: []
   baseStaminaCost: 15
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

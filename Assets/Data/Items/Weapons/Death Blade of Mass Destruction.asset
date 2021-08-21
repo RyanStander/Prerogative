@@ -12,18 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfd1ea976a81b341961982796028c51, type: 3}
   m_Name: Death Blade of Mass Destruction
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: d5966a193394e5146a37c3616232e4a0, type: 3}
+  itemIcon: {fileID: 21300000, guid: 4f0b1ac73f1b3174f9b7e61b00afed44, type: 3}
   itemName: Death Blade of Deviness
   modelPrefab: {fileID: 5998665846097091022, guid: 22751196c426f8b479f06defa1662405, type: 3}
   isUnarmed: 0
-  rightHandIdle: Idle_SwordShield_01
-  leftHandIdle: Idle_SwordShield_01
+  rightHandIdle: Right_Idle_SwordShield_01
+  leftHandIdle: Left_Idle_SwordShield_01
+  twoHandIdle: Both_Idle_GreatSword_01
   OHLightAttacks:
   - OH_Light_Attack_01
   - OH_Light_Attack_02
   - OH_Light_Attack_03
+  THLightAttacks:
+  - TH_Light_Attack_01
+  - TH_Light_Attack_02
+  - TH_Light_Attack_03
   OHHeavyAttacks:
   - OH_Heavy_Attack
+  THHeavyAttacks:
+  - TH_Heavy_Attack
   baseStaminaCost: 0
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

@@ -11,6 +11,7 @@ public class InputHandler : MonoBehaviour
     private PlayerCombatManager playerCombatManager;
     private PlayerInventory playerInventory;
     private PlayerManager playerManager;
+    private WeaponSlotManager weaponSlotManager;
     private CameraHandler cameraHandler;
     private UIManager uiManager;
 
@@ -18,7 +19,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput,lockOnInput;
+    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
     public float lockOnTargetInput;
 
     //Menu Inputs
@@ -29,7 +30,7 @@ public class InputHandler : MonoBehaviour
 
     //use flags to know when its already in the process
     //combat flags
-    public bool rollFlag, sprintFlag,comboFlag,lockOnFlag;
+    public bool rollFlag, sprintFlag,comboFlag,lockOnFlag,twoHandFlag;
     public float rollInputTimer;
 
     //menu flags
@@ -43,6 +44,7 @@ public class InputHandler : MonoBehaviour
         playerCombatManager = GetComponent<PlayerCombatManager>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
+        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         uiManager = FindObjectOfType<UIManager>();
         cameraHandler = FindObjectOfType<CameraHandler>();
     }
@@ -82,6 +84,7 @@ public class InputHandler : MonoBehaviour
         HandleMenuInput();
         HandleInventoryInput();
         HandleEquipmentInput();
+        HandleTwoHandInput();
     }
 
     public void HandleMoveInput(float delta)
@@ -101,6 +104,7 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
         inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
+        inputActions.PlayerActions.TwoHandSwap.performed += i => twoHandInput = true;
 
         //quickslot inputs
         inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
@@ -219,6 +223,27 @@ public class InputHandler : MonoBehaviour
             }
         }
         cameraHandler.SetCameraHeight();
+    }
+
+    private void HandleTwoHandInput()
+    {
+        if (twoHandInput)
+        {
+            twoHandInput = false;
+            twoHandFlag = !twoHandFlag;
+
+            if (twoHandFlag)
+            {
+                //Enable two handing
+                weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+            }
+            else
+            {
+                //Disable two handing
+                weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+                weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+            }
+        }
     }
 
     #region Menu Inputs

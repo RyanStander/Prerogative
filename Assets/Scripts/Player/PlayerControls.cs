@@ -196,6 +196,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Two Hand Swap"",
+                    ""type"": ""Button"",
+                    ""id"": ""c2938e15-06ab-41a9-95e4-3a8184373090"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -295,6 +303,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""LockOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7f26ffe-85b0-4fcf-8b2d-f5c9dfcb58f7"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Two Hand Swap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bf09f25-529a-4fe2-9d8b-3fc9cbc2dd31"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Two Hand Swap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -548,6 +578,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
+        m_PlayerActions_TwoHandSwap = m_PlayerActions.FindAction("Two Hand Swap", throwIfNotFound: true);
         // Quick Slots
         m_QuickSlots = asset.FindActionMap("Quick Slots", throwIfNotFound: true);
         m_QuickSlots_DPadUp = m_QuickSlots.FindAction("D-Pad Up", throwIfNotFound: true);
@@ -663,6 +694,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Interact;
     private readonly InputAction m_PlayerActions_LockOn;
+    private readonly InputAction m_PlayerActions_TwoHandSwap;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -673,6 +705,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
+        public InputAction @TwoHandSwap => m_Wrapper.m_PlayerActions_TwoHandSwap;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -700,6 +733,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LockOn.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
                 @LockOn.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
                 @LockOn.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLockOn;
+                @TwoHandSwap.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
+                @TwoHandSwap.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
+                @TwoHandSwap.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -722,6 +758,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LockOn.started += instance.OnLockOn;
                 @LockOn.performed += instance.OnLockOn;
                 @LockOn.canceled += instance.OnLockOn;
+                @TwoHandSwap.started += instance.OnTwoHandSwap;
+                @TwoHandSwap.performed += instance.OnTwoHandSwap;
+                @TwoHandSwap.canceled += instance.OnTwoHandSwap;
             }
         }
     }
@@ -864,6 +903,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
+        void OnTwoHandSwap(InputAction.CallbackContext context);
     }
     public interface IQuickSlotsActions
     {
