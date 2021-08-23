@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyStats : CharacterStats
 {
-    public float maxHealth=100, currentHealth;
-
-    public SliderBarDisplayUI healthBar;
-
     private Animator animator;
 
     private Color originalColor;

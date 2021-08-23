@@ -1,21 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
-    public float healthLevel = 10, maxHealth,currentHealth;
-
-    public float staminaLevel = 10, maxStamina, currentStamina;
-    [SerializeField] private float staminaRegenRate = 0.1f, staminaRegenCooldownTime = 2;
-    private float staminaCDTimeStamp,staminaRegenTimeStamp;
-    private bool canRegen = true;
-
-    public SliderBarDisplayUI healthBar,staminaBar;
-
     private AnimatorHandler animatorHandler;
-
-
-
     private void Awake()
     {
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
