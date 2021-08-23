@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WeaponSlotManager : MonoBehaviour
 {
+    private PlayerManager playerManager;
+
     public WeaponItem attackingWeapon;
 
     private WeaponHolderSlot leftHandSlot, rightHandSlot, backSlot;
@@ -23,6 +25,7 @@ public class WeaponSlotManager : MonoBehaviour
         quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
         playerStats = GetComponentInParent<PlayerStats>();
         inputHandler = GetComponentInParent<InputHandler>();
+        playerManager = GetComponentInParent<PlayerManager>();
 
         WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
         foreach (WeaponHolderSlot weaponHolderSlot in weaponHolderSlots)
@@ -113,24 +116,30 @@ public class WeaponSlotManager : MonoBehaviour
             rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
     }
 
-    public void OpenRightHandDamageCollider()
+    public void OpenDamageCollider()
     {
-        rightHandDamageCollider.EnableDamageCollider();
+        if (playerManager.isUsingLeftHand)
+        {
+            leftHandDamageCollider.EnableDamageCollider();
+        }
+        else
+        {
+            rightHandDamageCollider.EnableDamageCollider();
+        }
+
     }
 
-    public void OpenLeftHandDamageCollider()
+    public void CloseDamageCollider()
     {
-        leftHandDamageCollider.EnableDamageCollider();
-    }
+        if (playerManager.isUsingLeftHand)
+        {
+            leftHandDamageCollider.DisableDamageCollider();
+        }
+        else
+        {
+            rightHandDamageCollider.DisableDamageCollider();
+        }
 
-    public void CloseRightHandDamageCollider()
-    {
-        rightHandDamageCollider.DisableDamageCollider();
-    }
-
-    public void CloseLeftHandDamageCollider()
-    {
-        leftHandDamageCollider.DisableDamageCollider();
     }
 
     #endregion
