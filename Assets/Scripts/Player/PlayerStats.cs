@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PlayerStats : CharacterStats
 {
-    private AnimatorHandler animatorHandler;
+    private PlayerAnimatorManager playerAnimatorManager;
     private void Awake()
     {
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
     }
 
     private void Start()
@@ -40,13 +40,13 @@ public class PlayerStats : CharacterStats
         healthBar.SetCurrentValue(currentHealth);
 
         //play animation that player has taken damage
-        animatorHandler.PlayTargetAnimation("Impact_03", true);
+        playerAnimatorManager.PlayTargetAnimation("Impact_03", true);
 
         //If player health reaches or goes pass 0, play death animation and handle death
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            animatorHandler.PlayTargetAnimation("Death_01",true);
+            playerAnimatorManager.PlayTargetAnimation("Death_01",true);
 
             //Handle player death
         }

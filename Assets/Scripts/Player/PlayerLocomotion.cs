@@ -13,7 +13,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     [HideInInspector]
     public Transform myTransform;
-    [HideInInspector] public AnimatorHandler animatorHandler;
+    [HideInInspector] public PlayerAnimatorManager playerAnimatorManager;
 
     public new Rigidbody rigidbody;
 
@@ -46,10 +46,10 @@ public class PlayerLocomotion : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
         rigidbody = GetComponent<Rigidbody>();
         inputHandler = GetComponent<InputHandler>();
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         cameraObject = Camera.main.transform;
         myTransform = transform;
-        animatorHandler.Initialize();
+        playerAnimatorManager.Initialize();
 
         playerManager.isGrounded = true;
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
@@ -153,7 +153,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleRollingAndSprinting(float delta)
     {
-        if (animatorHandler.anim.GetBool("isInteracting"))
+        if (playerAnimatorManager.anim.GetBool("isInteracting"))
             return;
 
         if (inputHandler.rollFlag)
@@ -163,14 +163,14 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (inputHandler.moveAmount > 0)
             {
-                animatorHandler.PlayTargetAnimation("Roll", true);
+                playerAnimatorManager.PlayTargetAnimation("Roll", true);
                 moveDirection.y = 0;
                 Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                 myTransform.rotation = rollRotation;
             }
             else
             {
-                animatorHandler.PlayTargetAnimation("Backstep", true);
+                playerAnimatorManager.PlayTargetAnimation("Backstep", true);
             }
         }
     }
@@ -212,12 +212,12 @@ public class PlayerLocomotion : MonoBehaviour
                 if (inAirTimer > 0.5f)
                 {
                     Debug.Log("You were in the air for " + inAirTimer);
-                    animatorHandler.PlayTargetAnimation("Land", true);
+                    playerAnimatorManager.PlayTargetAnimation("Land", true);
                     inAirTimer = 0;
                 }
                 else
                 {
-                    animatorHandler.PlayTargetAnimation("Empty", false);
+                    playerAnimatorManager.PlayTargetAnimation("Empty", false);
                     inAirTimer = 0;
                 }
                 playerManager.isInAir = false;
@@ -234,7 +234,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 if (!playerManager.isInteracting)
                 {
-                    animatorHandler.PlayTargetAnimation("Falling", true);
+                    playerAnimatorManager.PlayTargetAnimation("Falling", true);
                 }
 
                 Vector3 vel = rigidbody.velocity;
@@ -269,7 +269,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection += cameraObject.right * inputHandler.horizontal;
-                animatorHandler.PlayTargetAnimation("Jump", false);
+                playerAnimatorManager.PlayTargetAnimation("Jump", false);
                 moveDirection.y = 0;
                 Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                 myTransform.rotation = jumpRotation;
@@ -292,14 +292,14 @@ public class PlayerLocomotion : MonoBehaviour
         //handles animations based on movement
         if (inputHandler.lockOnFlag && !inputHandler.sprintFlag)
         {
-            animatorHandler.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
+            playerAnimatorManager.UpdateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
         }
         else
         {
-            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+            playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
         }
 
-        if (animatorHandler.canRotate)
+        if (playerAnimatorManager.canRotate)
         {
             HandleRotation(deltaTime);
         }

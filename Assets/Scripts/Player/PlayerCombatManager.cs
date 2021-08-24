@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCombatManager : MonoBehaviour
 {
-    private AnimatorHandler animatorHandler;
+    private PlayerAnimatorManager playerAnimatorManager;
     private InputHandler inputHandler;
 
     public string lastAttack;
@@ -13,7 +13,7 @@ public class PlayerCombatManager : MonoBehaviour
     private PlayerStats playerStats;
     private void Awake()
     {
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         inputHandler = GetComponent<InputHandler>();
         playerStats = GetComponent<PlayerStats>();
@@ -27,7 +27,7 @@ public class PlayerCombatManager : MonoBehaviour
 
             if (inputHandler.comboFlag)
             {
-                animatorHandler.anim.SetBool("canDoCombo", false);
+                playerAnimatorManager.anim.SetBool("canDoCombo", false);
 
 
                 if (inputHandler.twoHandFlag)
@@ -38,7 +38,7 @@ public class PlayerCombatManager : MonoBehaviour
                         if (lastAttack == weapon.THLightAttacks[i])
                         {
                             lastAttack = weapon.THLightAttacks[i + 1];
-                            animatorHandler.PlayTargetAnimation(lastAttack, true);
+                            playerAnimatorManager.PlayTargetAnimation(lastAttack, true);
                             break;
                         }
                     }
@@ -47,7 +47,7 @@ public class PlayerCombatManager : MonoBehaviour
                         if (lastAttack == weapon.THHeavyAttacks[i])
                         {
                             lastAttack = weapon.THHeavyAttacks[i + 1];
-                            animatorHandler.PlayTargetAnimation(lastAttack, true);
+                            playerAnimatorManager.PlayTargetAnimation(lastAttack, true);
                             break;
                         }
                     }
@@ -61,7 +61,7 @@ public class PlayerCombatManager : MonoBehaviour
                         if (lastAttack == weapon.OHLightAttacks[i])
                         {
                             lastAttack = weapon.OHLightAttacks[i + 1];
-                            animatorHandler.PlayTargetAnimation(lastAttack, true);
+                            playerAnimatorManager.PlayTargetAnimation(lastAttack, true);
                             break;
                         }
                     }
@@ -70,7 +70,7 @@ public class PlayerCombatManager : MonoBehaviour
                         if (lastAttack == weapon.OHHeavyAttacks[i])
                         {
                             lastAttack = weapon.OHHeavyAttacks[i + 1];
-                            animatorHandler.PlayTargetAnimation(lastAttack, true);
+                            playerAnimatorManager.PlayTargetAnimation(lastAttack, true);
                             break;
                         }
                     }
@@ -90,7 +90,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (weapon != null)
                 {
-                    animatorHandler.PlayTargetAnimation(weapon.THLightAttacks[0], true);
+                    playerAnimatorManager.PlayTargetAnimation(weapon.THLightAttacks[0], true);
                     lastAttack = weapon.THLightAttacks[0];
                 }
             }
@@ -98,7 +98,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (weapon != null)
                 {
-                    animatorHandler.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
+                    playerAnimatorManager.PlayTargetAnimation(weapon.OHLightAttacks[0], true);
                     lastAttack = weapon.OHLightAttacks[0];
                 }
             }
@@ -116,7 +116,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (weapon != null)
                 {
-                    animatorHandler.PlayTargetAnimation(weapon.THHeavyAttacks[0], true);
+                    playerAnimatorManager.PlayTargetAnimation(weapon.THHeavyAttacks[0], true);
                     lastAttack = weapon.THHeavyAttacks[0];
                 }
             }
@@ -124,7 +124,7 @@ public class PlayerCombatManager : MonoBehaviour
             {
                 if (weapon != null)
                 {
-                    animatorHandler.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
+                    playerAnimatorManager.PlayTargetAnimation(weapon.OHHeavyAttacks[0], true);
                     lastAttack = weapon.OHHeavyAttacks[0];
                 }
             }

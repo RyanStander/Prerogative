@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AnimatorHandler : MonoBehaviour
+public class PlayerAnimatorManager : AnimatorManager
 {
     private PlayerManager playerManager;
-    public Animator anim;
+
     private InputHandler inputHandler;
     private PlayerLocomotion playerLocomotion;
 
@@ -104,12 +104,7 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetBool("canDoCombo", false);
     }
 
-    public void PlayTargetAnimation(string targetAnim, bool isInteracting)
-    {
-        anim.applyRootMotion = isInteracting;
-        anim.SetBool("isInteracting", isInteracting);
-        anim.CrossFade(targetAnim, 0.2f);
-    }
+
     public void OnAnimatorMove()
     {
         if (!playerManager.isInteracting)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : CharacterManager
 {
     private EnemyLocomotionManager enemyLocomotionManager;
-    private bool isPerformingAction;
+    public bool isPerformingAction;
 
     [Header("A.I Settings")]
     public float detectionRadius=20;
@@ -19,14 +19,24 @@ public class EnemyManager : CharacterManager
 
     private void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         HandleCurrentAction();
+
     }
 
     private void HandleCurrentAction()
     {
-        if (enemyLocomotionManager)
+        if (enemyLocomotionManager.currentTarget==null)
         {
             enemyLocomotionManager.HandleDetection();
+        }
+        else
+        {
+            enemyLocomotionManager.HandleMoveToTarget();
         }
     }
 }

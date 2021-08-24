@@ -19,16 +19,16 @@ public class WeaponPickup : Interactable
     {
         PlayerInventory playerInventory;
         PlayerLocomotion playerLocomotion;
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager playerAnimatorManager;
 
         playerInventory = playerManager.GetComponent<PlayerInventory>();
         playerLocomotion = playerManager.GetComponent<PlayerLocomotion>();
-        animatorHandler = playerManager.GetComponentInChildren<AnimatorHandler>();
+        playerAnimatorManager = playerManager.GetComponentInChildren<PlayerAnimatorManager>();
 
         //Stops player from moving while picking up item
         playerLocomotion.rigidbody.velocity = Vector3.zero;
         //Plays the animation of picking up item
-        animatorHandler.PlayTargetAnimation("PickUpItem", true);
+        playerAnimatorManager.PlayTargetAnimation("PickUpItem", true);
         playerInventory.weaponsInventory.Add(weapon);
 
         playerManager.itemInteractableGameObject.GetComponentInChildren<TextMeshProUGUI>().text = "You obtained "+weapon.itemName+"!";
