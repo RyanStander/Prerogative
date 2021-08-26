@@ -9031,6 +9031,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30f8849b57ec7649807011ae1197156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1127353978}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 5c25d39b1ac43544eacc397678cd61a1, type: 2}
+  - {fileID: 11400000, guid: 223c65bd324db1146be8ab2a7c317464, type: 2}
+  currentAttack: {fileID: 0}
 --- !u!1 &900348813
 GameObject:
   m_ObjectHideFlags: 0
@@ -11502,6 +11507,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e557a60b6e7034418d9926d45c8d829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackState: {fileID: 895837705}
+  pursueTargetState: {fileID: 1211629253}
 --- !u!1 &1131613566
 GameObject:
   m_ObjectHideFlags: 0
@@ -17169,6 +17176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21abd5da90b276a44bcd3ae94c64febe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1127353978}
 --- !u!4 &1211629254
 Transform:
   m_ObjectHideFlags: 0
@@ -23024,13 +23032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52367b930c673834ba4b7b78a4f91a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
   detectionLayer:
     serializedVersion: 2
     m_Bits: 2048
-  distanceFromTarget: 0
-  stoppingDistance: 1
-  rotationSpeed: 25
 --- !u!54 &1330832813
 Rigidbody:
   m_ObjectHideFlags: 0
