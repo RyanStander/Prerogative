@@ -14,16 +14,17 @@ public class EnemyManager : CharacterManager
     public CharacterStats currentTarget;
     public Rigidbody enemyRigidBody;
 
-    public bool isPerformingAction;
+    public bool isPerformingAction,isInteracting;
     public float distanceFromTarget;
     public float rotationSpeed = 15;
     public float maximumAttackRange = 1.5f;
 
     [Header("A.I Settings")]
     public float detectionRadius=20;
-    
+
     //The higher, and lower, respectively these angles are, the greater detection field of view (eye sight)
-    [Range(0,180)]public float maximumDetectionAngle = 50, minimumDetectionAngle = -50,viewableAngle;
+    public float maximumDetectionAngle = 50, minimumDetectionAngle = -50;
+    public float viewableAngle;
 
     public float currentRecoveryTime = 0;
     private void Awake()
@@ -45,6 +46,8 @@ public class EnemyManager : CharacterManager
     private void Update()
     {
         HandleRecoveryTimer();
+
+        isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
     }
 
     private void FixedUpdate()
