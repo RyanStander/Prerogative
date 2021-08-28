@@ -122,7 +122,7 @@ public class WeaponSlotManager : MonoBehaviour
         {
             leftHandDamageCollider.EnableDamageCollider();
         }
-        else
+        if (playerManager.isUsingRightHand)
         {
             rightHandDamageCollider.EnableDamageCollider();
         }
@@ -135,7 +135,7 @@ public class WeaponSlotManager : MonoBehaviour
         {
             leftHandDamageCollider.DisableDamageCollider();
         }
-        else
+        if (playerManager.isUsingRightHand)
         {
             rightHandDamageCollider.DisableDamageCollider();
         }
@@ -154,5 +154,12 @@ public class WeaponSlotManager : MonoBehaviour
     {
         //Drains stamina based on what attack type the player is using
         playerStats.DrainStamina(attackingWeapon.baseStaminaCost * attackingWeapon.heavyAttackMultiplier);
+    }
+
+    public void DodgeStaminaDrain()
+    {
+        //temporary, fix asap
+        playerStats.PutStaminaRegenOnCooldown();
+        playerStats.DrainStamina(5);
     }
 }

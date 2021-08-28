@@ -15,7 +15,8 @@ public class PlayerManager : CharacterManager
     public GameObject itemInteractableGameObject;
 
     [Header("Player Flags")]
-    public bool isInteracting, isSprinting, isInAir, isGrounded,canDoCombo,isUsingLeftHand;
+    public bool isInteracting;
+    public bool isSprinting, isInAir, isGrounded,canDoCombo,isUsingLeftHand,isUsingRightHand, isInvulnerable;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class PlayerManager : CharacterManager
         isInteracting = anim.GetBool("isInteracting");
         canDoCombo = anim.GetBool("canDoCombo");
         isUsingLeftHand = anim.GetBool("isUsingLeftHand");
+        isUsingRightHand = anim.GetBool("isUsingRightHand");
+        isInvulnerable = anim.GetBool("isInvulnerable");
         anim.SetBool("isInAir", isInAir);
 
         inputHandler.TickInput(delta);

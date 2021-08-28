@@ -4,9 +4,11 @@ using System.Collections;
 public class PlayerStats : CharacterStats
 {
     private PlayerAnimatorManager playerAnimatorManager;
+    private PlayerManager playerManager;
     private void Awake()
     {
         playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
+        playerManager = GetComponent<PlayerManager>();
     }
 
     private void Start()
@@ -33,6 +35,9 @@ public class PlayerStats : CharacterStats
 
     public void TakeDamage(float damage)
     {
+        if (playerManager.isInvulnerable)
+            return;
+
         if (isDead)
             return;
 

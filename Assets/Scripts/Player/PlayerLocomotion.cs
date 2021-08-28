@@ -7,6 +7,7 @@ public class PlayerLocomotion : MonoBehaviour
 {
     private CameraHandler cameraHandler;
     private PlayerManager playerManager;
+    private PlayerStats playerStats;
     private Transform cameraObject;
     private InputHandler inputHandler;
     public Vector3 moveDirection;
@@ -42,6 +43,7 @@ public class PlayerLocomotion : MonoBehaviour
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void Start()
@@ -159,6 +161,9 @@ public class PlayerLocomotion : MonoBehaviour
     public void HandleRollingAndSprinting(float delta)
     {
         if (playerAnimatorManager.anim.GetBool("isInteracting"))
+            return;
+
+        if (!playerStats.HasEnoughStaminaForAttack())
             return;
 
         if (inputHandler.rollFlag)
