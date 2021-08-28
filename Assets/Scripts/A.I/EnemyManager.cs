@@ -15,7 +15,6 @@ public class EnemyManager : CharacterManager
     public Rigidbody enemyRigidBody;
 
     public bool isPerformingAction,isInteracting;
-    public float distanceFromTarget;
     public float rotationSpeed = 15;
     public float maximumAttackRange = 1.5f;
 
@@ -24,7 +23,6 @@ public class EnemyManager : CharacterManager
 
     //The higher, and lower, respectively these angles are, the greater detection field of view (eye sight)
     public float maximumDetectionAngle = 50, minimumDetectionAngle = -50;
-    public float viewableAngle;
 
     public float currentRecoveryTime = 0;
     private void Awake()

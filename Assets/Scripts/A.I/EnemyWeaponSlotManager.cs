@@ -79,4 +79,24 @@ public class EnemyWeaponSlotManager : MonoBehaviour
     {
         rightHandDamageCollider.DisableDamageCollider();
     }
+
+    public void DrainLightStaminaAttack()
+    {
+        //Drains stamina based on what attack type the player is using
+    }
+
+    public void DrainHeavyStaminaAttack()
+    {
+        //Drains stamina based on what attack type the player is using
+    }
+
+    public void EnableCombo()
+    {
+        //anim.SetBool("canDoCombo", true);
+    }
+
+    public void DisableCombo()
+    {
+        //anim.SetBool("canDoCombo", false);
+    }
 }

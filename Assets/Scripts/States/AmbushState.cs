@@ -14,6 +14,7 @@ public class AmbushState : State
 
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+
         if (isSleeping && enemyManager.isInteracting == false)
         {
             enemyAnimatorManager.PlayTargetAnimation(sleepAnimation, true);
@@ -32,10 +33,10 @@ public class AmbushState : State
             if (characterStats!=null)
             {
                 Vector3 targetsDirection = characterStats.transform.position - enemyManager.transform.position;
-                enemyManager.viewableAngle = Vector3.Angle(targetsDirection, enemyManager.transform.forward);
+                float viewableAngle = Vector3.Angle(targetsDirection, enemyManager.transform.forward);
 
                 //If the character is in front of the enemy
-                if (enemyManager.viewableAngle>enemyManager.minimumDetectionAngle&&enemyManager.viewableAngle<enemyManager.maximumDetectionAngle)
+                if (viewableAngle>enemyManager.minimumDetectionAngle&&viewableAngle<enemyManager.maximumDetectionAngle)
                 {
                     //temporary if
                     if (characterStats != GetComponentInParent<EnemyStats>())

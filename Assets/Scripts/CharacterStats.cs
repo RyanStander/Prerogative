@@ -7,6 +7,7 @@ public class CharacterStats : MonoBehaviour
     [Header("Health")]
     public float healthLevel = 10;
     public float maxHealth, currentHealth;
+    public bool isDead = false;
 
     [Header("Stamina")]
     public float staminaLevel = 10;

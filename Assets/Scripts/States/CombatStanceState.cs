@@ -8,18 +8,24 @@ public class CombatStanceState : State
     public PursueTargetState pursueTargetState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
-        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
         //potentially circle player or walk around them
 
+        HandleRotateTowardsTarget(enemyManager);
+
+        if (enemyManager.isPerformingAction)
+        {
+            enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f,Time.deltaTime);
+        }
 
         //Check for attack range
         //if in attack range return attack State
-        if (enemyManager.currentRecoveryTime<=0 && enemyManager.distanceFromTarget<=enemyManager.maximumAttackRange)
+        if (enemyManager.currentRecoveryTime<=0 && distanceFromTarget<=enemyManager.maximumAttackRange)
         {
             return attackState;
         }
         //if the player runs out of range, retun the persue target state
-        else if (enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
+        else if (distanceFromTarget > enemyManager.maximumAttackRange)
         {
             return pursueTargetState;
         }
@@ -27,6 +33,38 @@ public class CombatStanceState : State
         else
         {
             return this;
+        }
+    }
+
+    private void HandleRotateTowardsTarget(EnemyManager enemyManager)
+    {
+        //nav mesh agent always rotates towards what is the correct path. With manual it will rotate directly towards target, ignoring obstacles. Manual rotation
+        //serves the function of allowing enemy to attack at a target without caring for obstructions.
+        //Rotate manually
+        if (enemyManager.isPerformingAction)
+        {
+            Vector3 direction = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
+            direction.y = 0;
+            direction.Normalize();
+
+            if (direction == Vector3.zero)
+            {
+                direction = enemyManager.transform.forward;
+            }
+
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, targetRotation, enemyManager.rotationSpeed / Time.deltaTime);
+        }
+        //Rotate with pathfinding (navmesh)
+        else
+        {
+            Vector3 relativeDirection = enemyManager.transform.InverseTransformDirection(enemyManager.navmeshAgent.desiredVelocity);
+            Vector3 targetVelocity = enemyManager.enemyRigidBody.velocity;
+
+            enemyManager.navmeshAgent.enabled = true;
+            enemyManager.navmeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
+            enemyManager.enemyRigidBody.velocity = targetVelocity;
+            enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navmeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
         }
     }
 }

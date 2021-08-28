@@ -10,8 +10,6 @@ public class EnemyStats : CharacterStats
     private MeshRenderer meshRenderer;
 
     private float fade = 1f;
-
-    private bool isDead = false;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -49,6 +47,8 @@ public class EnemyStats : CharacterStats
 
     public void TakeDamage(float damage)
     {
+        if (isDead)
+            return;
         //change current health
         currentHealth = currentHealth - damage;
 

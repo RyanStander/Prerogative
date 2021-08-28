@@ -36,6 +36,9 @@ public class PlayerLocomotion : MonoBehaviour
     private Vector3 normalVector;
     private Vector3 targetPosition;
 
+    public CapsuleCollider characterCollider;
+    public CapsuleCollider characterCollisionBlocker;
+
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
@@ -53,6 +56,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         playerManager.isGrounded = true;
         ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+
+        Physics.IgnoreCollision(characterCollider, characterCollisionBlocker, true);
     }
 
     #region Movement

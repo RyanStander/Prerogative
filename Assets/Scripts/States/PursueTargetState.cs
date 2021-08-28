@@ -8,14 +8,19 @@ public class PursueTargetState : State
     public CombatStanceState combatStanceState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+
         if (enemyManager.isPerformingAction)
+        {
+            enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
             return this;
+        }
 
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
-        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+        distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
         float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
 
-        if (enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
+        if (distanceFromTarget > enemyManager.maximumAttackRange)
         {
             enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
         }
@@ -29,7 +34,7 @@ public class PursueTargetState : State
         //If within attack range, return combat stance state
         //if target is out of range, return this state and continue to chase target
 
-        if (enemyManager.distanceFromTarget<=enemyManager.maximumAttackRange)
+        if (distanceFromTarget<=enemyManager.maximumAttackRange)
         {
             return combatStanceState;
         }
