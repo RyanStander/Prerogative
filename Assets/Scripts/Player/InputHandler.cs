@@ -20,7 +20,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    public bool rollInput,lightAttackInput,heavyAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
+    public bool rollInput,primaryAttackInput,primaryHeldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
     public float lockOnTargetInput;
 
     //Menu Inputs
@@ -42,13 +42,16 @@ public class InputHandler : MonoBehaviour
 
     private void Awake()
     {
-        playerCombatManager = GetComponent<PlayerCombatManager>();
         playerInventory = GetComponent<PlayerInventory>();
         playerManager = GetComponent<PlayerManager>();
+
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+        playerCombatManager = GetComponentInChildren<PlayerCombatManager>();
+        animatorManager = GetComponentInChildren<AnimatorManager>();
+
         uiManager = FindObjectOfType<UIManager>();
         cameraHandler = FindObjectOfType<CameraHandler>();
-        animatorManager = GetComponentInChildren<AnimatorManager>();
+
     }
 
     private void OnEnable()
@@ -101,8 +104,8 @@ public class InputHandler : MonoBehaviour
     private void InputsInitialize()
     {
         //combat inputs
-        inputActions.PlayerActions.LightAttack.performed += i => lightAttackInput = true;
-        inputActions.PlayerActions.HeavyAttack.performed += i => heavyAttackInput = true;
+        inputActions.PlayerActions.LightAttack.performed += i => primaryAttackInput = true;
+        inputActions.PlayerActions.HeavyAttack.performed += i => primaryHeldAttackInput = true;
         inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
         inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
@@ -140,28 +143,12 @@ public class InputHandler : MonoBehaviour
 
     private void HandleAttackInput(float delta)
     {
-        if (lightAttackInput)
+        if (primaryAttackInput)
         {
-            if (playerManager.canDoCombo)
-            {
-                comboFlag = true;
-                playerCombatManager.HandleWeaponCombo(playerInventory.rightWeapon);
-                comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-
-                if (playerManager.canDoCombo)
-                    return;
-
-                animatorManager.anim.SetBool("isUsingRightHand", true);
-                playerCombatManager.HandleLightAttack(playerInventory.rightWeapon);
-            }
+            playerCombatManager.HandlePrimaryAttackAction();
         }
 
-        if (heavyAttackInput)
+        if (primaryHeldAttackInput)
         {
             if (playerManager.canDoCombo)
             {

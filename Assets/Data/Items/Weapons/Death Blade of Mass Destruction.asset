@@ -34,3 +34,4 @@ MonoBehaviour:
   baseStaminaCost: 0
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2
+  weaponType: 3

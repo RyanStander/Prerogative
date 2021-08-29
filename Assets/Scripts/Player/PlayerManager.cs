@@ -71,8 +71,8 @@ public class PlayerManager : CharacterManager
 
         //Combat Inputs
         inputHandler.rollFlag = false;
-        inputHandler.lightAttackInput = false;
-        inputHandler.heavyAttackInput = false;
+        inputHandler.primaryAttackInput = false;
+        inputHandler.primaryHeldAttackInput = false;
         inputHandler.jumpInput = false;
         inputHandler.interactInput = false;
         inputHandler.lockOnTargetInput = 0;

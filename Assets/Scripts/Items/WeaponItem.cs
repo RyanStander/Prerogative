@@ -23,4 +23,15 @@ public class WeaponItem : Item
     public int baseStaminaCost;
     public float lightAttackMultiplier;
     public float heavyAttackMultiplier;
+
+    [Header("WeaponType")]
+    public WeaponType weaponType;
+    
+    public enum WeaponType
+    {
+        spellType1,
+        spellType2,
+        spellType3,
+        meleeWeapon
+    }
 }

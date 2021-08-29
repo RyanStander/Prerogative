@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCombatManager : MonoBehaviour
 {
     private PlayerAnimatorManager playerAnimatorManager;
+    private PlayerManager playerManager;
+    private PlayerInventory playerInventory;
     private InputHandler inputHandler;
 
     public string lastAttack;
@@ -13,10 +15,13 @@ public class PlayerCombatManager : MonoBehaviour
     private PlayerStats playerStats;
     private void Awake()
     {
-        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
-        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
-        inputHandler = GetComponent<InputHandler>();
-        playerStats = GetComponent<PlayerStats>();
+        playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
+        weaponSlotManager = GetComponent<WeaponSlotManager>();
+
+        inputHandler = GetComponentInParent<InputHandler>();
+        playerStats = GetComponentInParent<PlayerStats>();
+        playerManager = GetComponentInParent<PlayerManager>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
     }
 
     public void HandleWeaponCombo(WeaponItem weapon)
@@ -130,4 +135,85 @@ public class PlayerCombatManager : MonoBehaviour
             }
         }
     }
+
+    #region Input Actions
+    public void HandlePrimaryAttackAction()
+    {
+        if (playerInventory.rightWeapon.weaponType==WeaponItem.WeaponType.meleeWeapon)
+        {
+            PerformPrimaryMeleeAction();
+        }
+        else if (playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType1
+            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType2
+            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType3)
+        {
+            PerformPrimaryMagicAction(playerInventory.rightWeapon);
+        }
+        else
+        {
+            Debug.LogWarning("The weapon type was not selected");
+        }
+    }
+    
+    #endregion
+
+    #region Combat Actions
+
+    private void PerformPrimaryMeleeAction()
+    {
+        //If current attack can perform a combo, proceed with combo
+        if (playerManager.canDoCombo)
+        {
+            inputHandler.comboFlag = true;
+            HandleWeaponCombo(playerInventory.rightWeapon);
+            inputHandler.comboFlag = false;
+        }
+        //else, perform starting attack if possible
+        else
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
+
+            playerAnimatorManager.anim.SetBool("isUsingRightHand", true);
+            HandleLightAttack(playerInventory.rightWeapon);
+        }
+    }
+    
+    private void PerformPrimaryMagicAction(WeaponItem weapon)
+    {
+        switch (weapon.weaponType)
+        {
+            case WeaponItem.WeaponType.spellType1:
+                if (playerInventory.currentSpell.spellType==SpellItem.SpellType.spellType1)
+                {
+                    //Check for mana
+                    //Attempt to cast spell
+                }
+                break;
+            case WeaponItem.WeaponType.spellType2:
+                if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType2)
+                {
+                    //Check for mana
+                    //Attempt to cast spell
+                }
+                break;
+            case WeaponItem.WeaponType.spellType3:
+                if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType3)
+                {
+                    //Check for mana
+                    //Attempt to cast spell
+                }
+                break;
+            case WeaponItem.WeaponType.meleeWeapon:
+                //this shouldnt happen, oh no
+                break;
+            default:
+                break;
+        }
+    }
+
+    #endregion
 }
