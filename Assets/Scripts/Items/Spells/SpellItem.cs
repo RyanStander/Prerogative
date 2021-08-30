@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellItem : MonoBehaviour
+public class SpellItem : Item
 {
     public GameObject spellWindUpFX;//The wind up of the spell before actually being cast (this exists so that a spell can be interupted)
     public GameObject spellCastFX;//the actual spell cast when successful
@@ -15,12 +15,12 @@ public class SpellItem : MonoBehaviour
     [TextArea]
     public string spellDescription;//description of what the spell do
 
-    public virtual void AttemptToCastSpell()
+    public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorManager, PlayerStats playerStats)
     {
         Debug.Log("Attempting spell cast!");
     }
 
-    public virtual void SuccessfullyCastSpell()
+    public virtual void SuccessfullyCastSpell(PlayerAnimatorManager animatorManager, PlayerStats playerStats)
     {
         Debug.Log("Spell cast has succeeded");
     }

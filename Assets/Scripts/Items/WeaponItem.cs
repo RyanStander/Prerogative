@@ -29,7 +29,7 @@ public class WeaponItem : Item
     
     public enum WeaponType
     {
-        spellType1,
+        healingAbility,
         spellType2,
         spellType3,
         meleeWeapon

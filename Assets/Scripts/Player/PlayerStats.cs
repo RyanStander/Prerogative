@@ -60,6 +60,18 @@ public class PlayerStats : CharacterStats
             //Handle player death
         }
     }
+
+    public void ReceiveHealing(float healingAmount)
+    {
+        if (isDead)
+            return;
+
+        //change current health
+        currentHealth = currentHealth - healingAmount;
+
+        //pass the current health to the health bar
+        healthBar.SetCurrentValue(currentHealth);
+    }
     #endregion
 
     #region Stamina

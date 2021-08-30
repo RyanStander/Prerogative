@@ -143,7 +143,7 @@ public class PlayerCombatManager : MonoBehaviour
         {
             PerformPrimaryMeleeAction();
         }
-        else if (playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType1
+        else if (playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.healingAbility
             || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType2
             || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType3)
         {
@@ -186,11 +186,12 @@ public class PlayerCombatManager : MonoBehaviour
     {
         switch (weapon.weaponType)
         {
-            case WeaponItem.WeaponType.spellType1:
+            case WeaponItem.WeaponType.healingAbility:
                 if (playerInventory.currentSpell.spellType==SpellItem.SpellType.spellType1)
                 {
                     //Check for mana
                     //Attempt to cast spell
+                    playerInventory.currentSpell.AttemptToCastSpell(playerAnimatorManager, playerStats);
                 }
                 break;
             case WeaponItem.WeaponType.spellType2:
@@ -213,6 +214,11 @@ public class PlayerCombatManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void SuccessfulyCastSpell()
+    {
+        playerInventory.currentSpell.SuccessfullyCastSpell(playerAnimatorManager, playerStats);
     }
 
     #endregion
