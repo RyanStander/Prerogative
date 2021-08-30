@@ -11,15 +11,21 @@ public class HealingSpell : SpellItem
     {
         base.AttemptToCastSpell(animatorManager, playerStats);
 
-        GameObject instantiatedWarmUpSpellFX = Instantiate(spellWindUpFX, animatorManager.transform);
+        if (spellWindUpFX != null)
+        {
+            GameObject instantiatedWarmUpSpellFX = Instantiate(spellWindUpFX, animatorManager.transform.parent);
+        }
+
         animatorManager.PlayTargetAnimation(spellAnimation, true);
     }
 
     public override void SuccessfullyCastSpell(PlayerAnimatorManager animatorManager, PlayerStats playerStats)
     {
         base.SuccessfullyCastSpell(animatorManager, playerStats);
-
-        GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorManager.transform);
+        if (spellCastFX != null)
+        {
+            GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorManager.transform);
+        }
         playerStats.ReceiveHealing(healAmount);       
     }
 }

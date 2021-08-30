@@ -29,7 +29,7 @@ public class SpellItem : Item
 
     public enum SpellType
     {
-        spellType1,
+        healingAbility,
         spellType2,
         spellType3
     }

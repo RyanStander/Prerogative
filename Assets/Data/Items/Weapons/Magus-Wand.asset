@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfd1ea976a81b341961982796028c51, type: 3}
+  m_Name: Magus-Wand
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 3fa53af4c50543b469421a6895537de8, type: 3}
+  itemName: Magus Wand
+  modelPrefab: {fileID: 5998665846097091022, guid: 931a109006d37f54db939995cbc4c26b, type: 3}
+  isUnarmed: 0
+  rightHandIdle: Right_Idle_SwordShield_01
+  leftHandIdle: Left_Idle_SwordShield_01
+  twoHandIdle: Both_Idle_GreatSword_01
+  OHLightAttacks:
+  - OH_Light_Attack_01
+  - OH_Light_Attack_02
+  - OH_Light_Attack_03
+  THLightAttacks:
+  - TH_Light_Attack_01
+  - TH_Light_Attack_02
+  - TH_Light_Attack_03
+  OHHeavyAttacks:
+  - OH_Heavy_Attack
+  THHeavyAttacks:
+  - TH_Heavy_Attack
+  baseStaminaCost: 20
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2
+  weaponType: 0

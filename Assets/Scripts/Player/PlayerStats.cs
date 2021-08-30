@@ -42,7 +42,7 @@ public class PlayerStats : CharacterStats
             return;
 
         //change current health
-        currentHealth = currentHealth - damage;
+        currentHealth -= damage;
 
         //pass the current health to the health bar
         healthBar.SetCurrentValue(currentHealth);
@@ -67,7 +67,13 @@ public class PlayerStats : CharacterStats
             return;
 
         //change current health
-        currentHealth = currentHealth - healingAmount;
+        currentHealth += healingAmount;
+
+        //limit health gain to not go over max
+        if (currentHealth>maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
 
         //pass the current health to the health bar
         healthBar.SetCurrentValue(currentHealth);

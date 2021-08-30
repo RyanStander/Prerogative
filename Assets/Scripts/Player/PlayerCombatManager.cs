@@ -143,9 +143,9 @@ public class PlayerCombatManager : MonoBehaviour
         {
             PerformPrimaryMeleeAction();
         }
-        else if (playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.healingAbility
-            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType2
-            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.spellType3)
+        else if (playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.healingWeapon
+            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.casterWeapon2
+            || playerInventory.rightWeapon.weaponType == WeaponItem.WeaponType.casterWeapon3)
         {
             PerformPrimaryMagicAction(playerInventory.rightWeapon);
         }
@@ -186,22 +186,22 @@ public class PlayerCombatManager : MonoBehaviour
     {
         switch (weapon.weaponType)
         {
-            case WeaponItem.WeaponType.healingAbility:
-                if (playerInventory.currentSpell.spellType==SpellItem.SpellType.spellType1)
+            case WeaponItem.WeaponType.healingWeapon:
+                if (playerInventory.currentSpell.spellType==SpellItem.SpellType.healingAbility)
                 {
                     //Check for mana
                     //Attempt to cast spell
                     playerInventory.currentSpell.AttemptToCastSpell(playerAnimatorManager, playerStats);
                 }
                 break;
-            case WeaponItem.WeaponType.spellType2:
+            case WeaponItem.WeaponType.casterWeapon2:
                 if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType2)
                 {
                     //Check for mana
                     //Attempt to cast spell
                 }
                 break;
-            case WeaponItem.WeaponType.spellType3:
+            case WeaponItem.WeaponType.casterWeapon3:
                 if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType3)
                 {
                     //Check for mana
