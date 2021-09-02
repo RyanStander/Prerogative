@@ -20,6 +20,11 @@ public class PlayerStats : CharacterStats
         maxStamina = SetMaxStaminaFromStaminaLevel();
         currentStamina = maxStamina;
         staminaBar.SetMaxValue(maxStamina);
+
+        maxMagicka = SetMaxMagickaFromMagickaLevel();
+        currentMagicka = maxMagicka;
+        magickaBar.SetMaxValue(maxMagicka);
+
     }
     private void FixedUpdate()
     {
@@ -128,6 +133,24 @@ public class PlayerStats : CharacterStats
     {
         staminaCDTimeStamp = Time.time + staminaRegenCooldownTime;
         canRegen = false;
+    }
+
+    #endregion
+
+    #region Magicka
+
+    private float SetMaxMagickaFromMagickaLevel()
+    {
+        //calculates the players magicka based on magicka level
+        return magickaLevel * 10;
+    }
+
+    public void ConsumeMagicka(int magickaCost)
+    {
+        currentMagicka -= magickaCost;
+        if (currentMagicka<0)
+            currentMagicka = 0;
+        magickaBar.SetCurrentValue(currentMagicka);
     }
 
     #endregion

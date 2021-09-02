@@ -181,38 +181,42 @@ public class PlayerCombatManager : MonoBehaviour
             HandleLightAttack(playerInventory.rightWeapon);
         }
     }
-    
+
     private void PerformPrimaryMagicAction(WeaponItem weapon)
     {
-        switch (weapon.weaponType)
+        if (playerManager.isInteracting)
+            return;
+        if (playerStats.currentMagicka >= playerInventory.currentSpell.magickaCost)
+            switch (weapon.weaponType)
+            {
+                case WeaponItem.WeaponType.healingWeapon:
+                    if (playerInventory.currentSpell.spellType == SpellItem.SpellType.healingAbility)
+                    {
+                        //Attempt to cast spell
+                        playerInventory.currentSpell.AttemptToCastSpell(playerAnimatorManager, playerStats);
+                    }
+                    break;
+                case WeaponItem.WeaponType.casterWeapon2:
+                    if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType2)
+                    {
+                        //Attempt to cast spell
+                    }
+                    break;
+                case WeaponItem.WeaponType.casterWeapon3:
+                    if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType3)
+                    {
+                        //Attempt to cast spell
+                    }
+                    break;
+                case WeaponItem.WeaponType.meleeWeapon:
+                    //this shouldnt happen, oh no
+                    break;
+                default:
+                    break;
+            }
+        else
         {
-            case WeaponItem.WeaponType.healingWeapon:
-                if (playerInventory.currentSpell.spellType==SpellItem.SpellType.healingAbility)
-                {
-                    //Check for mana
-                    //Attempt to cast spell
-                    playerInventory.currentSpell.AttemptToCastSpell(playerAnimatorManager, playerStats);
-                }
-                break;
-            case WeaponItem.WeaponType.casterWeapon2:
-                if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType2)
-                {
-                    //Check for mana
-                    //Attempt to cast spell
-                }
-                break;
-            case WeaponItem.WeaponType.casterWeapon3:
-                if (playerInventory.currentSpell.spellType == SpellItem.SpellType.spellType3)
-                {
-                    //Check for mana
-                    //Attempt to cast spell
-                }
-                break;
-            case WeaponItem.WeaponType.meleeWeapon:
-                //this shouldnt happen, oh no
-                break;
-            default:
-                break;
+            playerAnimatorManager.PlayTargetAnimation("Shrug", true);
         }
     }
 

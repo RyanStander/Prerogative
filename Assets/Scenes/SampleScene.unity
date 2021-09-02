@@ -9215,6 +9215,7 @@ MonoBehaviour:
   enemyAttacks:
   - {fileID: 11400000, guid: 5c25d39b1ac43544eacc397678cd61a1, type: 2}
   - {fileID: 11400000, guid: 223c65bd324db1146be8ab2a7c317464, type: 2}
+  - {fileID: 11400000, guid: a7e7af16c89b28944a4456d210cf5fe3, type: 2}
   currentAttack: {fileID: 0}
 --- !u!1 &900348813
 GameObject:

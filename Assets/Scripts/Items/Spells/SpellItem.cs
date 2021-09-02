@@ -8,6 +8,8 @@ public class SpellItem : Item
     public GameObject spellCastFX;//the actual spell cast when successful
     public string spellAnimation;
 
+    public int magickaCost;
+
     [Header("Spell Type")]
     public SpellType spellType;//the type of spell being cast, could be useful for having synergies (like fire damage type, or focussing a school of magic)
 
@@ -23,6 +25,7 @@ public class SpellItem : Item
     public virtual void SuccessfullyCastSpell(PlayerAnimatorManager animatorManager, PlayerStats playerStats)
     {
         Debug.Log("Spell cast has succeeded");
+        playerStats.ConsumeMagicka(magickaCost);
     }
 
 
