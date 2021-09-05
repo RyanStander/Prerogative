@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public float horizontal, vertical, moveAmount, mouseX, mouseY;
+    [HideInInspector] public float horizontal, vertical, moveAmount, mouseX, mouseY;
 
     private PlayerControls inputActions;
     private PlayerCombatManager playerCombatManager;
@@ -20,25 +20,28 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    public bool rollInput,primaryAttackInput,primaryHeldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
-    public float lockOnTargetInput;
+    [HideInInspector] public bool rollInput,primaryAttackInput,primaryHoldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
+    [HideInInspector] public float lockOnTargetInput;
 
     //Menu Inputs
-    public bool menuInput,inventoryInput,equipmentInput;
+    [HideInInspector] public bool menuInput,inventoryInput,equipmentInput;
 
     //Quickslot inputs (item Selection)
-    public bool dPadUp,dPadDown,dPadRight,dPadLeft;
+    [HideInInspector] public bool dPadUp,dPadDown,dPadRight,dPadLeft;
 
     //use flags to know when its already in the process
     //combat flags
-    public bool rollFlag, sprintFlag,comboFlag,lockOnFlag,twoHandFlag;
-    public float rollInputTimer;
+    [HideInInspector] public bool rollFlag, sprintFlag,comboFlag,lockOnFlag,twoHandFlag;
+    [HideInInspector] public float rollInputTimer;
 
     //menu flags
-    public bool menuFlag, inventoryFlag, equipmentFlag;
+    [HideInInspector] public bool menuFlag, inventoryFlag, equipmentFlag;
 
     //lock on cooldown
-    private float lockOnSwapStamp, lockOnSwapCooldown=1;
+    [HideInInspector] private float lockOnSwapStamp, lockOnSwapCooldown=1;
+
+    //backstabbing raycast (raycasts a line out to check if it hits any backstab colliders
+    [Tooltip("This should be placed a bit in front of the player's chest.")] public Transform criticalAttackRayCastStartPoint;
 
     private void Awake()
     {
@@ -104,8 +107,8 @@ public class InputHandler : MonoBehaviour
     private void InputsInitialize()
     {
         //combat inputs
-        inputActions.PlayerActions.LightAttack.performed += i => primaryAttackInput = true;
-        inputActions.PlayerActions.HeavyAttack.performed += i => primaryHeldAttackInput = true;
+        inputActions.PlayerActions.PrimaryAttack.performed += i => primaryAttackInput = true;
+        inputActions.PlayerActions.PrimaryHoldAttack.performed += i => primaryHoldAttackInput = true;
         inputActions.PlayerActions.Jump.performed += i => jumpInput = true;
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
         inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
@@ -148,24 +151,9 @@ public class InputHandler : MonoBehaviour
             playerCombatManager.HandlePrimaryAttackAction();
         }
 
-        if (primaryHeldAttackInput)
+        if (primaryHoldAttackInput)
         {
-            if (playerManager.canDoCombo)
-            {
-                comboFlag = true;
-                playerCombatManager.HandleWeaponCombo(playerInventory.rightWeapon);
-                comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-
-                if (playerManager.canDoCombo)
-                    return;
-                playerCombatManager.HandleHeavyAttack(playerInventory.rightWeapon);
-            }
-
+            playerCombatManager.HandlePrimaryHeldAttackAction();
         }
     }
 

@@ -145,7 +145,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "LightAttack",
+                    "name": "PrimaryAttack",
                     "type": "Button",
                     "id": "fd4f0e74-056a-4d64-bbb0-a789b735aa6a",
                     "expectedControlType": "Button",
@@ -153,7 +153,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "HeavyAttack",
+                    "name": "PrimaryHoldAttack",
                     "type": "Button",
                     "id": "98b1574e-2bf8-4531-a46f-69c7a5502cda",
                     "expectedControlType": "Button",
@@ -223,7 +223,18 @@
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "LightAttack",
+                    "action": "PrimaryAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e702c0c-a021-41c9-8405-662ade0139e5",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "PrimaryAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -234,7 +245,7 @@
                     "interactions": "Hold(duration=0.15)",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
-                    "action": "HeavyAttack",
+                    "action": "PrimaryHoldAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -13,6 +13,8 @@ public class PlayerCombatManager : MonoBehaviour
 
     private WeaponSlotManager weaponSlotManager;
     private PlayerStats playerStats;
+
+    private LayerMask backstabLayer = 1 << 13;
     private void Awake()
     {
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
@@ -154,6 +156,29 @@ public class PlayerCombatManager : MonoBehaviour
             Debug.LogWarning("The weapon type was not selected");
         }
     }
+
+    public void HandlePrimaryHeldAttackAction()
+    {
+        /*if (playerManager.canDoCombo)
+        {
+            inputHandler.comboFlag = true;
+            HandleWeaponCombo(playerInventory.rightWeapon);
+            inputHandler.comboFlag = false;
+        }
+        else
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            if (playerManager.canDoCombo)
+                return;
+
+            AttemptBackStabOrParry();
+
+            HandleHeavyAttack(playerInventory.rightWeapon);
+        }*/
+        AttemptBackStabOrParry();
+    }
     
     #endregion
 
@@ -223,6 +248,37 @@ public class PlayerCombatManager : MonoBehaviour
     private void SuccessfulyCastSpell()
     {
         playerInventory.currentSpell.SuccessfullyCastSpell(playerAnimatorManager, playerStats);
+    }
+
+    private void AttemptBackStabOrParry()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position, 
+            transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
+        {
+            CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+
+            if (enemyCharacterManager!=null)
+            {
+                //Check for team i.d (so cant back stab allies/self)
+                //pull us into a transform behind the enemy so the backstab looks clean
+                enemyCharacterManager.backstabCollider.LerpToPoint(playerManager.transform);
+                //rotate us towards that transform
+                Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                rotationDirection = hit.transform.position - playerManager.transform.position;
+                rotationDirection.y = 0;
+                rotationDirection.Normalize();
+                Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                playerManager.transform.rotation = targetRotation;
+                //play animation
+                playerAnimatorManager.PlayTargetAnimation("Backstab", true);
+                //make enemy play animation
+                enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Backstabbed", true);
+                //do damage
+            }
+        }
     }
 
     #endregion

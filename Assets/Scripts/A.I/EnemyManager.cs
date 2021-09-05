@@ -27,12 +27,14 @@ public class EnemyManager : CharacterManager
     public float currentRecoveryTime = 0;
     private void Awake()
     {
-        enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
         enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
-        enemyStats = GetComponent<EnemyStats>();
         navmeshAgent = GetComponentInChildren<NavMeshAgent>();
+        backstabCollider = GetComponentInChildren<BackstabCollider>();
+        enemyStats = GetComponent<EnemyStats>();
         enemyRigidBody = GetComponent<Rigidbody>();
-        
+        enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
+
+
     }
 
     private void Start()

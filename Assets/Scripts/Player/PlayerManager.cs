@@ -22,10 +22,12 @@ public class PlayerManager : CharacterManager
     void Start()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
-        inputHandler = GetComponent<InputHandler>();
-        anim = GetComponentInChildren<Animator>();
-        playerLocomotion = GetComponent<PlayerLocomotion>();
         interactableUI = FindObjectOfType<InteractableUI>();
+        anim = GetComponentInChildren<Animator>();
+        backstabCollider = GetComponentInChildren<BackstabCollider>();
+        playerLocomotion = GetComponent<PlayerLocomotion>();
+        inputHandler = GetComponent<InputHandler>();
+
     }
 
 
@@ -72,7 +74,7 @@ public class PlayerManager : CharacterManager
         //Combat Inputs
         inputHandler.rollFlag = false;
         inputHandler.primaryAttackInput = false;
-        inputHandler.primaryHeldAttackInput = false;
+        inputHandler.primaryHoldAttackInput = false;
         inputHandler.jumpInput = false;
         inputHandler.interactInput = false;
         inputHandler.lockOnTargetInput = 0;

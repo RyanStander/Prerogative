@@ -17,6 +17,7 @@ MonoBehaviour:
   spellWindUpFX: {fileID: 100010, guid: c98be9ff8d0b99c4f8857faf470634cf, type: 3}
   spellCastFX: {fileID: 0}
   spellAnimation: Fast_Healing_Start
+  magickaCost: 35
   spellType: 0
   spellDescription: Heals the caster for 50 points instantly.
   healAmount: 50
