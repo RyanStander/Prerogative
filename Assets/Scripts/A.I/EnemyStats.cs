@@ -43,9 +43,9 @@ public class EnemyStats : CharacterStats
         }
     }
 
-    #region Health
+    #region Health 
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool playAnimation=true)
     {
         if (isDead)
             return;
@@ -57,7 +57,7 @@ public class EnemyStats : CharacterStats
             healthBar.SetCurrentValue(currentHealth);
 
         //play animation that player has taken damage
-        if (animator != null)
+        if (animator != null&&playAnimation)
             animator.Play("Impact_03");
 
         //If player health reaches or goes pass 0, play death animation and handle death
@@ -66,7 +66,7 @@ public class EnemyStats : CharacterStats
             currentHealth = 0;
             isDead = true;
 
-            if (animator != null)
+            if (animator != null&& playAnimation)
                 animator.Play("Death_01");
 
             //Handle player death

@@ -9,6 +9,7 @@ public class PlayerManager : CharacterManager
     private Animator anim;
     private CameraHandler cameraHandler;
     private PlayerLocomotion playerLocomotion;
+    private PlayerStats playerStats;
     
     private InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
@@ -27,6 +28,7 @@ public class PlayerManager : CharacterManager
         backstabCollider = GetComponentInChildren<BackstabCollider>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputHandler = GetComponent<InputHandler>();
+        playerStats = GetComponent<PlayerStats>();
 
     }
 
@@ -41,6 +43,7 @@ public class PlayerManager : CharacterManager
         isUsingRightHand = anim.GetBool("isUsingRightHand");
         isInvulnerable = anim.GetBool("isInvulnerable");
         anim.SetBool("isInAir", isInAir);
+        anim.SetBool("isDead", playerStats.isDead);
 
         inputHandler.TickInput(delta);
 

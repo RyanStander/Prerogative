@@ -38,7 +38,7 @@ public class PlayerStats : CharacterStats
         return healthLevel * 10;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool playAnimation = true)
     {
         if (playerManager.isInvulnerable)
             return;
@@ -53,13 +53,15 @@ public class PlayerStats : CharacterStats
         healthBar.SetCurrentValue(currentHealth);
 
         //play animation that player has taken damage
-        playerAnimatorManager.PlayTargetAnimation("Impact_03", true);
+        if(playAnimation)
+            playerAnimatorManager.PlayTargetAnimation("Impact_03", true);
 
         //If player health reaches or goes pass 0, play death animation and handle death
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            playerAnimatorManager.PlayTargetAnimation("Death_01",true);
+            if (playAnimation)
+                playerAnimatorManager.PlayTargetAnimation("Death_01",true);
 
             isDead = true;
             //Handle player death

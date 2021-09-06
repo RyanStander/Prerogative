@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAnimatorManager : AnimatorManager
 {
     private PlayerManager playerManager;
+    private PlayerStats playerStats;
 
     private InputHandler inputHandler;
     private PlayerLocomotion playerLocomotion;
@@ -16,6 +17,7 @@ public class PlayerAnimatorManager : AnimatorManager
     public void Initialize()
     {
         playerManager = GetComponentInParent<PlayerManager>();
+        playerStats = GetComponentInParent<PlayerStats>();
         anim = GetComponent<Animator>();
         inputHandler = GetComponentInParent<InputHandler>();
         playerLocomotion = GetComponentInParent<PlayerLocomotion>();
@@ -112,6 +114,14 @@ public class PlayerAnimatorManager : AnimatorManager
     public void DisableInvulnerability()
     {
         anim.SetBool("isInvulnerable", false);
+    }
+
+    public override void TakeCriticalDamageAnimationEvent()
+    {
+        base.TakeCriticalDamageAnimationEvent();
+
+        playerStats.TakeDamage(playerManager.pendingCriticalDamage,false);
+        playerManager.pendingCriticalDamage = 0;
     }
 
     public void OnAnimatorMove()

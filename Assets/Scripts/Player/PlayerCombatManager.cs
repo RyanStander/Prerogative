@@ -258,6 +258,7 @@ public class PlayerCombatManager : MonoBehaviour
             transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
         {
             CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+            DamageCollider rightWeaponDamageCollider = weaponSlotManager.rightHandDamageCollider;
 
             if (enemyCharacterManager!=null)
             {
@@ -272,6 +273,9 @@ public class PlayerCombatManager : MonoBehaviour
                 Quaternion tr = Quaternion.LookRotation(rotationDirection);
                 Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
                 playerManager.transform.rotation = targetRotation;
+
+                float criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeaponDamageCollider.currentWeaponDamage;
+                enemyCharacterManager.pendingCriticalDamage = criticalDamage;
                 //play animation
                 playerAnimatorManager.PlayTargetAnimation("Backstab", true);
                 //make enemy play animation

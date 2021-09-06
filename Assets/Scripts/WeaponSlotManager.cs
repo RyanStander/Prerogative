@@ -5,12 +5,13 @@ using UnityEngine;
 public class WeaponSlotManager : MonoBehaviour
 {
     private PlayerManager playerManager;
+    private PlayerInventory playerInventory;
 
     public WeaponItem attackingWeapon;
 
     private WeaponHolderSlot leftHandSlot, rightHandSlot, backSlot;
 
-    private DamageCollider leftHandDamageCollider, rightHandDamageCollider;
+    public DamageCollider leftHandDamageCollider, rightHandDamageCollider;
 
     private Animator animator;
 
@@ -26,6 +27,7 @@ public class WeaponSlotManager : MonoBehaviour
         playerStats = GetComponentInParent<PlayerStats>();
         inputHandler = GetComponentInParent<InputHandler>();
         playerManager = GetComponentInParent<PlayerManager>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
 
         WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
         foreach (WeaponHolderSlot weaponHolderSlot in weaponHolderSlots)
@@ -106,14 +108,20 @@ public class WeaponSlotManager : MonoBehaviour
     #region Damage Colliders
     private void LoadLeftWeaponDamageCollider()
     {
-        if (leftHandSlot != null&& leftHandSlot.currentWeaponModel!=null)
+        if (leftHandSlot == null && leftHandSlot.currentWeaponModel == null)
+            return;
+
         leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        leftHandDamageCollider.currentWeaponDamage = playerInventory.leftWeapon.baseDamage;
     }
 
     private void LoadRightWeaponDamageCollider()
     {
-        if (rightHandSlot != null && rightHandSlot.currentWeaponModel != null)
-            rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        if (rightHandSlot == null && rightHandSlot.currentWeaponModel == null)
+            return;
+
+        rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        rightHandDamageCollider.currentWeaponDamage = playerInventory.rightWeapon.baseDamage;
     }
 
     public void OpenDamageCollider()
