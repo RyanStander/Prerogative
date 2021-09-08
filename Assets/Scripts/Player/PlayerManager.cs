@@ -10,6 +10,7 @@ public class PlayerManager : CharacterManager
     private CameraHandler cameraHandler;
     private PlayerLocomotion playerLocomotion;
     private PlayerStats playerStats;
+    private PlayerAnimatorManager playerAnimatorManager;
     
     private InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
@@ -20,16 +21,16 @@ public class PlayerManager : CharacterManager
     public bool isSprinting, isInAir, isGrounded,canDoCombo,isUsingLeftHand,isUsingRightHand, isInvulnerable;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
         interactableUI = FindObjectOfType<InteractableUI>();
         anim = GetComponentInChildren<Animator>();
         backstabCollider = GetComponentInChildren<BackstabCollider>();
+        playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
         inputHandler = GetComponent<InputHandler>();
         playerStats = GetComponent<PlayerStats>();
-
     }
 
 
@@ -44,6 +45,7 @@ public class PlayerManager : CharacterManager
         isInvulnerable = anim.GetBool("isInvulnerable");
         anim.SetBool("isInAir", isInAir);
         anim.SetBool("isDead", playerStats.isDead);
+        playerAnimatorManager.canRotate = anim.GetBool("canRotate");
 
         inputHandler.TickInput(delta);
 
@@ -62,12 +64,7 @@ public class PlayerManager : CharacterManager
         //Handle movement based functions
         playerLocomotion.HandleMovement(delta);
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-
-        if (cameraHandler != null)
-        {
-            
-        }
-
+        playerLocomotion.HandleRotation(delta);
     }
 
     private void LateUpdate()

@@ -5,15 +5,19 @@ using UnityEngine;
 public class AttackState : State
 {
     public CombatStanceState combatStanceState;
+    public IdleState idleState;
     public EnemyActionAttack[] enemyAttacks;
     public EnemyActionAttack currentAttack;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if (enemyManager.currentTarget == null)
+            return idleState;
+
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
         float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
-        HandleRotateTowardsTarget(enemyManager);
+        //HandleRotateTowardsTarget(enemyManager);
 
         if (enemyManager.isPerformingAction)
             return combatStanceState;

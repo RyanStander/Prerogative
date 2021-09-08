@@ -6,8 +6,12 @@ public class CombatStanceState : State
 {
     public AttackState attackState;
     public PursueTargetState pursueTargetState;
+    public IdleState idleState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if (enemyManager.currentTarget == null)
+            return idleState;
+
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
         //potentially circle player or walk around them
 

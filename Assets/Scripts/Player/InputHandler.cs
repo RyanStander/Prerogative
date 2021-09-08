@@ -113,6 +113,8 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.Interact.performed += i => interactInput = true;
         inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
         inputActions.PlayerActions.TwoHandSwap.performed += i => twoHandInput = true;
+        inputActions.PlayerActions.Roll.performed += i => rollInput = true;
+        inputActions.PlayerActions.Roll.canceled += i => rollInput = false;
 
         //quickslot inputs
         inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
@@ -126,17 +128,24 @@ public class InputHandler : MonoBehaviour
 
     private void HandleRollInput(float delta)
     {
-        rollInput = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
-        sprintFlag = rollInput;
+        //rollInput = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+        
+        //sprintFlag = rollInput;
         if (rollInput)
         {
             rollInputTimer += delta;
+
+            if (moveAmount>0.5f)
+            {
+                sprintFlag = true;
+            }
         }
         else
         {
+            sprintFlag = false;
+
             if (rollInputTimer > 0 && rollInputTimer < 0.5f)
             {
-                sprintFlag = false;
                 rollFlag = true;
             }
 

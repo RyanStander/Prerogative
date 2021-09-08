@@ -12,7 +12,7 @@ public class PlayerAnimatorManager : AnimatorManager
     private PlayerLocomotion playerLocomotion;
 
     int vertical, horizontal;
-    public bool canRotate;
+
 
     public void Initialize()
     {
@@ -85,15 +85,6 @@ public class PlayerAnimatorManager : AnimatorManager
 
         anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
         anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
-    }
-
-    public void CanRotate()
-    {
-        canRotate = true;
-    }
-    public void StopRotation()
-    {
-        canRotate = false;
     }
 
     public void EnableCombo()

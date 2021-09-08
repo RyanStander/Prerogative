@@ -28,7 +28,7 @@ public class PlayerCombatManager : MonoBehaviour
 
     public void HandleWeaponCombo(WeaponItem weapon)
     {
-        if (playerStats.HasEnoughStaminaForAttack())
+        if (playerStats.HasStamina())
         {
             playerStats.PutStaminaRegenOnCooldown();
 
@@ -89,7 +89,7 @@ public class PlayerCombatManager : MonoBehaviour
 
     public void HandleLightAttack(WeaponItem weapon)
     {
-        if (playerStats.HasEnoughStaminaForAttack())
+        if (playerStats.HasStamina())
         {
             playerStats.PutStaminaRegenOnCooldown();
             weaponSlotManager.attackingWeapon = weapon;
@@ -114,7 +114,7 @@ public class PlayerCombatManager : MonoBehaviour
 
     public void HandleHeavyAttack(WeaponItem weapon)
     {
-        if (playerStats.HasEnoughStaminaForAttack())
+        if (playerStats.HasStamina())
         {
             playerStats.PutStaminaRegenOnCooldown();
             weaponSlotManager.attackingWeapon = weapon;

@@ -27,11 +27,16 @@ public class PlayerLocomotion : MonoBehaviour
     public float inAirTimer;
 
     [Header("Movement Stats")]
-    [SerializeField] private float walkingSpeed = 3, movementSpeed = 5, 
-        rotationSpeed = 10, sprintSpeed = 7, fallSpeed = 500;
+    [SerializeField] private float walkingSpeed = 3;
+    [SerializeField] private float movementSpeed = 5, rotationSpeed = 10, sprintSpeed = 7, fallSpeed = 500;
+    
+    [Header("Stamina Costs")]
+    public float sprintCost = 0.25f;
+    public float dodgeCost = 5;
 
     [Header("Jumping stats")]
     [Range(0,100)][SerializeField] private float jumpForce = 2f;
+
 
 
     private Vector3 normalVector;
@@ -63,8 +68,11 @@ public class PlayerLocomotion : MonoBehaviour
     }
 
     #region Movement
-    private void HandleRotation(float delta)
+    public void HandleRotation(float delta)
     {
+        if (!playerAnimatorManager.canRotate)
+            return;
+
         if (inputHandler.lockOnFlag)
         {
             if (inputHandler.sprintFlag || inputHandler.rollFlag)
@@ -131,11 +139,12 @@ public class PlayerLocomotion : MonoBehaviour
 
         float speed = movementSpeed;
 
-        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5f)
+        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5f&& playerStats.HasStamina())
         {
             speed = sprintSpeed;
             playerManager.isSprinting = true;
             moveDirection *= speed;
+            playerStats.DrainStaminaWithCooldown(sprintCost);
         }
         else
         {
@@ -163,7 +172,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerAnimatorManager.anim.GetBool("isInteracting"))
             return;
 
-        if (!playerStats.HasEnoughStaminaForAttack())
+        if (!playerStats.HasStamina())
             return;
 
         if (inputHandler.rollFlag)
@@ -182,6 +191,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 playerAnimatorManager.PlayTargetAnimation("Backstep", true);
             }
+            playerStats.DrainStaminaWithCooldown(dodgeCost);
         }
     }
 
@@ -307,11 +317,6 @@ public class PlayerLocomotion : MonoBehaviour
         else
         {
             playerAnimatorManager.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
-        }
-
-        if (playerAnimatorManager.canRotate)
-        {
-            HandleRotation(deltaTime);
         }
     }
 

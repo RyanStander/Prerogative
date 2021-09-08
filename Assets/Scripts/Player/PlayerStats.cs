@@ -103,7 +103,7 @@ public class PlayerStats : CharacterStats
             canRegen = true;
     }
 
-    public bool HasEnoughStaminaForAttack()
+    public bool HasStamina()
     {
         if (currentStamina>0)
             return true;
@@ -135,6 +135,12 @@ public class PlayerStats : CharacterStats
     {
         staminaCDTimeStamp = Time.time + staminaRegenCooldownTime;
         canRegen = false;
+    }
+
+    public void DrainStaminaWithCooldown(float staminaAmount)
+    {
+        PutStaminaRegenOnCooldown();
+        DrainStamina(staminaAmount);
     }
 
     #endregion

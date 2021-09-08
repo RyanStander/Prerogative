@@ -6,8 +6,12 @@ using UnityEngine.AI;
 public class PursueTargetState : State
 {
     public CombatStanceState combatStanceState;
+    public IdleState idleState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if (enemyManager.currentTarget == null)
+            return idleState;
+
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
         if (enemyManager.isPerformingAction)

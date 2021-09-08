@@ -163,11 +163,4 @@ public class WeaponSlotManager : MonoBehaviour
         //Drains stamina based on what attack type the player is using
         playerStats.DrainStamina(attackingWeapon.baseStaminaCost * attackingWeapon.heavyAttackMultiplier);
     }
-
-    public void DodgeStaminaDrain()
-    {
-        //temporary, fix asap
-        playerStats.PutStaminaRegenOnCooldown();
-        playerStats.DrainStamina(5);
-    }
 }
