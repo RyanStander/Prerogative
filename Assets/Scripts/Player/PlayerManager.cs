@@ -107,6 +107,8 @@ public class PlayerManager : CharacterManager
         }
     }
 
+    #region Player Interactions
+
     public void CheckForInteractableObject()
     {
         RaycastHit hit;
@@ -143,4 +145,6 @@ public class PlayerManager : CharacterManager
             }
         }
     }
+
+    #endregion
 }
