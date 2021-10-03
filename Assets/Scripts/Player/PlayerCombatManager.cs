@@ -14,7 +14,8 @@ public class PlayerCombatManager : MonoBehaviour
     private WeaponSlotManager weaponSlotManager;
     private PlayerStats playerStats;
 
-    private LayerMask backstabLayer = 1 << 13;
+    [SerializeField] private LayerMask backstabLayer = 1 << 13;
+    [SerializeField] private LayerMask riposteLayer = 1 << 14;
     private void Awake()
     {
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
@@ -177,7 +178,7 @@ public class PlayerCombatManager : MonoBehaviour
 
             HandleHeavyAttack(playerInventory.rightWeapon);
         }*/
-        AttemptBackStabOrParry();
+        AttemptBackStabOrRiposte();
     }
     
     #endregion
@@ -250,17 +251,17 @@ public class PlayerCombatManager : MonoBehaviour
         playerInventory.currentSpell.SuccessfullyCastSpell(playerAnimatorManager, playerStats);
     }
 
-    private void AttemptBackStabOrParry()
+    private void AttemptBackStabOrRiposte()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position, 
+        if (Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position,
             transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
         {
             CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
             DamageCollider rightWeaponDamageCollider = weaponSlotManager.rightHandDamageCollider;
 
-            if (enemyCharacterManager!=null)
+            if (enemyCharacterManager != null)
             {
                 //Check for team i.d (so cant back stab allies/self)
                 //pull us into a transform behind the enemy so the backstab looks clean
@@ -283,7 +284,35 @@ public class PlayerCombatManager : MonoBehaviour
                 //do damage
             }
         }
-    }
+        else if (Physics.Raycast(inputHandler.criticalAttackRayCastStartPoint.position,
+            transform.TransformDirection(Vector3.forward), out hit, 0.7f, riposteLayer))
+        {
+            CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+            DamageCollider rightWeaponDamageCollider = weaponSlotManager.rightHandDamageCollider;
 
+            if (enemyCharacterManager != null && enemyCharacterManager.canBeRiposted)
+            {
+                //Check for team i.d (so cant back stab allies/self)
+                //pull us into a transform in front of the enemy so the riposte looks clean
+                enemyCharacterManager.riposteCollider.LerpToPoint(playerManager.transform);
+                //rotate us towards that transform
+                Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                rotationDirection = hit.transform.position - playerManager.transform.position;
+                rotationDirection.y = 0;
+                rotationDirection.Normalize();
+                Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                playerManager.transform.rotation = targetRotation;
+
+                float criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeaponDamageCollider.currentWeaponDamage;
+                enemyCharacterManager.pendingCriticalDamage = criticalDamage;
+                //play animation
+                playerAnimatorManager.PlayTargetAnimation("Riposte", true);
+                //make enemy play animation
+                enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Riposted", true);
+                //do damage
+            }
+        }
+    }
     #endregion
 }

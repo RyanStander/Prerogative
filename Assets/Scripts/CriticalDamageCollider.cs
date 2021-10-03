@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class BackstabCollider : MonoBehaviour
+public class CriticalDamageCollider : MonoBehaviour
 {
-    public Transform backstabberStandPoint;
+    public Transform criticalDamageStandPosition;
 
     private float timeElapsed, lerpDuration = 0.5f;
     private bool currentlyMovingToPosition = false;
@@ -20,7 +18,7 @@ public class BackstabCollider : MonoBehaviour
         {
             if (timeElapsed < lerpDuration)
             {
-                transformToMove.position = Vector3.Lerp(startPoint, backstabberStandPoint.position, timeElapsed / lerpDuration);
+                transformToMove.position = Vector3.Lerp(startPoint, criticalDamageStandPosition.position, timeElapsed / lerpDuration);
 
                 timeElapsed += Time.deltaTime;
             }

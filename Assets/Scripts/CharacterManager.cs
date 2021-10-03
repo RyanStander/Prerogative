@@ -7,8 +7,11 @@ public class CharacterManager : MonoBehaviour
     public Transform lockOnTransform;
 
     [Header("Combat Colliders")]
-    public BoxCollider backstabBoxCollider;
-    public BackstabCollider backstabCollider;
+    public CriticalDamageCollider backstabCollider;
+    public CriticalDamageCollider riposteCollider;
+
+    [Header("Combat Flags")]
+    public bool canBeRiposted;
 
     //Damage will be inflicted during an animation event
     //Used in backstab or riposte animations
