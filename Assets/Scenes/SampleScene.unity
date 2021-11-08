@@ -2641,7 +2641,7 @@ MonoBehaviour:
   cameraPivotTransform: {fileID: 1066790415}
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   environmentLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -31007,7 +31007,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 946ffda936661974ba763dc061d93af7, type: 2}
     - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: weaponsInventory.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: weaponsInventory.Array.data[0]
@@ -31017,6 +31017,10 @@ PrefabInstance:
       propertyPath: weaponsInventory.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 71fcef38d2d8f66409d1270ac48fff8d, type: 2}
+    - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
+      propertyPath: weaponsInventory.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0efaffb33714af044931e57e327e722e, type: 2}
     - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.size
       value: 2
@@ -31028,7 +31032,7 @@ PrefabInstance:
     - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 0efaffb33714af044931e57e327e722e, type: 2}
     - target: {fileID: 4140189982712640118, guid: 76d36c85f8508384c8ba0aca17b00307, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[1]
       value: 

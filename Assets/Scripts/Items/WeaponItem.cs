@@ -17,11 +17,14 @@ public class WeaponItem : Item
     public string leftHandIdle;
     public string twoHandIdle;
 
-    [Header("One Handed Attack Animations")]
+    [Header("Attack Animations")]
     public List<string> OHLightAttacks;
     public List<string> THLightAttacks;
     public List<string> OHHeavyAttacks;
     public List<string> THHeavyAttacks;
+
+    [Header("Weapon Art")]
+    public string weaponArt;
 
     [Header("Stamina Costs")]
     public int baseStaminaCost;
@@ -36,6 +39,7 @@ public class WeaponItem : Item
         healingWeapon,
         casterWeapon2,
         casterWeapon3,
-        meleeWeapon
+        meleeWeapon,
+        shieldWeapon,
     }
 }

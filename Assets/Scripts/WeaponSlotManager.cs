@@ -112,6 +112,7 @@ public class WeaponSlotManager : MonoBehaviour
             return;
 
         leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        leftHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
         leftHandDamageCollider.currentWeaponDamage = playerInventory.leftWeapon.baseDamage;
     }
 
@@ -121,6 +122,7 @@ public class WeaponSlotManager : MonoBehaviour
             return;
 
         rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+        rightHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
         rightHandDamageCollider.currentWeaponDamage = playerInventory.rightWeapon.baseDamage;
     }
 

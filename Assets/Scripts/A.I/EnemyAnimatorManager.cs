@@ -30,4 +30,23 @@ public class EnemyAnimatorManager : AnimatorManager
         Vector3 velocity = deltaPosition / delta;
         enemyManager.enemyRigidBody.velocity = velocity;
     }
+
+    public void EnableIsParrying()
+    {
+        enemyManager.isParrying = true;
+    }
+    public void DisableIsParrying()
+    {
+        enemyManager.isParrying = false;
+    }
+
+    public void EnableCanBeRiposted()
+    {
+        enemyManager.canBeRiposted = true;
+    }
+
+    public void DisableCanBeRiposted()
+    {
+        enemyManager.canBeRiposted = false;
+    }
 }

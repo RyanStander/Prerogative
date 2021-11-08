@@ -20,7 +20,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    [HideInInspector] public bool rollInput,primaryAttackInput,primaryHoldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput;
+    [HideInInspector] public bool rollInput,primaryAttackInput,primaryHoldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput, parryInput;
     [HideInInspector] public float lockOnTargetInput;
 
     //Menu Inputs
@@ -115,6 +115,7 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.TwoHandSwap.performed += i => twoHandInput = true;
         inputActions.PlayerActions.Roll.performed += i => rollInput = true;
         inputActions.PlayerActions.Roll.canceled += i => rollInput = false;
+        inputActions.PlayerActions.Parry.performed += i => parryInput = true;
 
         //quickslot inputs
         inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
@@ -163,6 +164,22 @@ public class InputHandler : MonoBehaviour
         if (primaryHoldAttackInput)
         {
             playerCombatManager.HandlePrimaryHeldAttackAction();
+        }
+
+        if (parryInput)
+        {
+            //if two handing, handle wepaon art
+            if (twoHandFlag)
+            {
+
+            }
+            //else handle light attack if melee weapon
+            else
+            {
+                //handle weapon art if shield
+                playerCombatManager.HandleWeaponArtAction();
+            }
+
         }
     }
 

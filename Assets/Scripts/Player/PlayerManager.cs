@@ -77,6 +77,7 @@ public class PlayerManager : CharacterManager
         inputHandler.jumpInput = false;
         inputHandler.interactInput = false;
         inputHandler.lockOnTargetInput = 0;
+        inputHandler.parryInput = false;
 
         //Menu Inputs
         inputHandler.menuInput = false;

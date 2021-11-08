@@ -100,6 +100,61 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Left Stick"",
+                    ""id"": ""573da198-2b2f-4030-adb5-d63c5848a245"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c69f325a-c0e5-4627-880e-41c9496cb282"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1a7543a1-cefe-43e9-a70d-7943300cc0be"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e1c24699-d9a5-4a97-8ef6-056520658405"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""68c7892e-a685-48ac-8bbc-f6c7a7ec0a63"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""58a45138-f02d-4f9a-8415-7c588b2ef42c"",
                     ""path"": ""<Gamepad>/rightStick"",
@@ -201,6 +256,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""Two Hand Swap"",
                     ""type"": ""Button"",
                     ""id"": ""c2938e15-06ab-41a9-95e4-3a8184373090"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Parry"",
+                    ""type"": ""Button"",
+                    ""id"": ""e0edaced-9f1b-4313-821f-2e2c5ac835ad"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -336,6 +399,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""Two Hand Swap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2125458-9959-4505-9c06-20fd26cb31a0"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Parry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b2e0eaf-39d8-4699-9779-8713c149feb1"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Parry"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -590,6 +675,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
         m_PlayerActions_TwoHandSwap = m_PlayerActions.FindAction("Two Hand Swap", throwIfNotFound: true);
+        m_PlayerActions_Parry = m_PlayerActions.FindAction("Parry", throwIfNotFound: true);
         // Quick Slots
         m_QuickSlots = asset.FindActionMap("Quick Slots", throwIfNotFound: true);
         m_QuickSlots_DPadUp = m_QuickSlots.FindAction("D-Pad Up", throwIfNotFound: true);
@@ -706,6 +792,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Interact;
     private readonly InputAction m_PlayerActions_LockOn;
     private readonly InputAction m_PlayerActions_TwoHandSwap;
+    private readonly InputAction m_PlayerActions_Parry;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -717,6 +804,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
         public InputAction @TwoHandSwap => m_Wrapper.m_PlayerActions_TwoHandSwap;
+        public InputAction @Parry => m_Wrapper.m_PlayerActions_Parry;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -747,6 +835,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @TwoHandSwap.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
                 @TwoHandSwap.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
                 @TwoHandSwap.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTwoHandSwap;
+                @Parry.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
+                @Parry.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
+                @Parry.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -772,6 +863,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @TwoHandSwap.started += instance.OnTwoHandSwap;
                 @TwoHandSwap.performed += instance.OnTwoHandSwap;
                 @TwoHandSwap.canceled += instance.OnTwoHandSwap;
+                @Parry.started += instance.OnParry;
+                @Parry.performed += instance.OnParry;
+                @Parry.canceled += instance.OnParry;
             }
         }
     }
@@ -915,6 +1009,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnLockOn(InputAction.CallbackContext context);
         void OnTwoHandSwap(InputAction.CallbackContext context);
+        void OnParry(InputAction.CallbackContext context);
     }
     public interface IQuickSlotsActions
     {

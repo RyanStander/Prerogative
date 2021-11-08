@@ -87,6 +87,61 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Left Stick",
+                    "id": "573da198-2b2f-4030-adb5-d63c5848a245",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "c69f325a-c0e5-4627-880e-41c9496cb282",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1a7543a1-cefe-43e9-a70d-7943300cc0be",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e1c24699-d9a5-4a97-8ef6-056520658405",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "68c7892e-a685-48ac-8bbc-f6c7a7ec0a63",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "58a45138-f02d-4f9a-8415-7c588b2ef42c",
                     "path": "<Gamepad>/rightStick",
@@ -188,6 +243,14 @@
                     "name": "Two Hand Swap",
                     "type": "Button",
                     "id": "c2938e15-06ab-41a9-95e4-3a8184373090",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Parry",
+                    "type": "Button",
+                    "id": "e0edaced-9f1b-4313-821f-2e2c5ac835ad",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -323,6 +386,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Two Hand Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2125458-9959-4505-9c06-20fd26cb31a0",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b2e0eaf-39d8-4699-9779-8713c149feb1",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

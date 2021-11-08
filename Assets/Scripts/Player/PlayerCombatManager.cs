@@ -181,6 +181,20 @@ public class PlayerCombatManager : MonoBehaviour
         AttemptBackStabOrRiposte();
     }
     
+    public void HandleWeaponArtAction()
+    {
+        //if it is a shield
+        if (playerInventory.leftWeapon.weaponType==WeaponItem.WeaponType.shieldWeapon)
+        {
+            //perform shield weapon art
+            PerformWeaponArt(inputHandler.twoHandFlag);
+        }
+        else if(playerInventory.leftWeapon.weaponType==WeaponItem.WeaponType.meleeWeapon)
+        {
+            //do a light attack
+        }
+    }
+
     #endregion
 
     #region Combat Actions
@@ -243,6 +257,23 @@ public class PlayerCombatManager : MonoBehaviour
         else
         {
             playerAnimatorManager.PlayTargetAnimation("Shrug", true);
+        }
+    }
+
+    private void PerformWeaponArt(bool isTwoHanding)
+    {
+        if (playerManager.isInteracting)
+            return;
+
+        //If we are performing weapon art for left weapon
+        if (isTwoHanding)
+        {
+
+        }
+        //else two handing, perform weapon art for right weapon
+        else
+        {
+            playerAnimatorManager.PlayTargetAnimation(playerInventory.leftWeapon.weaponArt, true);
         }
     }
 
