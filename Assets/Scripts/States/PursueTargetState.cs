@@ -9,6 +9,9 @@ public class PursueTargetState : State
     public IdleState idleState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if (enemyManager.isInteracting)
+            return this;
+
         if (enemyManager.currentTarget == null)
             return idleState;
 
@@ -31,9 +34,6 @@ public class PursueTargetState : State
 
         HandleRotateTowardsTarget(enemyManager);
 
-        //Resets nav mesh agent
-        enemyManager.navmeshAgent.transform.localPosition = Vector3.zero;
-        enemyManager.navmeshAgent.transform.localRotation = Quaternion.identity;
         //Chase the target
         //If within attack range, return combat stance state
         //if target is out of range, return this state and continue to chase target

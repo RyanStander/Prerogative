@@ -18,6 +18,9 @@ public class EnemyManager : CharacterManager
     public float rotationSpeed = 15;
     public float maximumAttackRange = 1.5f;
 
+    [Header("Combat Flags")]
+    public bool canDoCombo;
+
     [Header("A.I Settings")]
     public float detectionRadius=20;
 
@@ -44,14 +47,19 @@ public class EnemyManager : CharacterManager
 
     private void Update()
     {
+        HandleStateMachine();
+
         HandleRecoveryTimer();
 
         isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
+        canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
     }
 
     private void FixedUpdate()
     {
-        HandleStateMachine();
+        //Resets nav mesh agent
+        navmeshAgent.transform.localPosition = Vector3.zero;
+        navmeshAgent.transform.localRotation = Quaternion.identity;
     }
 
     private void HandleStateMachine()

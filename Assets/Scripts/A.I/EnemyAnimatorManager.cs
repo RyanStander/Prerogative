@@ -49,4 +49,24 @@ public class EnemyAnimatorManager : AnimatorManager
     {
         enemyManager.canBeRiposted = false;
     }
+
+    public void EnableCombo()
+    {
+        anim.SetBool("canDoCombo", true);
+    }
+
+    public void DisableCombo()
+    {
+        anim.SetBool("canDoCombo", false);
+    }
+
+    public void EnableInvulnerability()
+    {
+        anim.SetBool("isInvulnerable", true);
+    }
+
+    public void DisableInvulnerability()
+    {
+        anim.SetBool("isInvulnerable", false);
+    }
 }
