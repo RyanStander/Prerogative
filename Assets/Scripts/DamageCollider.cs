@@ -32,6 +32,7 @@ public class DamageCollider : MonoBehaviour
             //hanlde enemy/damageable being attack
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
             CharacterManager targetCharacterManager = other.GetComponent<CharacterManager>();
+            BlockingCollider blockingCollider = other.transform.GetComponentInChildren<BlockingCollider>();
 
             if (targetCharacterManager!=null)
             {
@@ -44,6 +45,15 @@ public class DamageCollider : MonoBehaviour
                         Debug.LogWarning("characterManager for damage collider was not set, please do so");
                     return;
                 }
+                else if (blockingCollider != null && targetCharacterManager.isBlocking)
+                {
+                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * blockingCollider.blockingPhysicalDamageAbsorption) / 100;
+                    if (enemyStats != null)
+                    {
+                        enemyStats.TakeDamage(physicalDamageAfterBlock, true, "BlockGuard");
+                        return;
+                    }
+                }
             }
 
             if (enemyStats != null)
@@ -55,6 +65,7 @@ public class DamageCollider : MonoBehaviour
         {
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
             CharacterManager targetCharacterManager = other.GetComponent<CharacterManager>();
+            BlockingCollider blockingCollider = other.transform.GetComponentInChildren<BlockingCollider>();
 
             if (targetCharacterManager != null)
             {
@@ -66,6 +77,15 @@ public class DamageCollider : MonoBehaviour
                     else
                         Debug.LogWarning("characterManager for damage collider was not set, please do so");
                     return;
+                }
+                else if (blockingCollider!=null && targetCharacterManager.isBlocking)
+                {
+                    float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * blockingCollider.blockingPhysicalDamageAbsorption) / 100;
+                    if (playerStats!=null)
+                    {
+                        playerStats.TakeDamage(physicalDamageAfterBlock,true,"BlockGuard");
+                        return;
+                    }
                 }
             }
 

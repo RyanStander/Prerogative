@@ -16,6 +16,9 @@ MonoBehaviour:
   itemName: Magus Wand
   modelPrefab: {fileID: 5998665846097091022, guid: 931a109006d37f54db939995cbc4c26b, type: 3}
   isUnarmed: 0
+  baseDamage: 25
+  criticalDamageMultiplier: 4
+  physicalDamageAbsorption: 15
   rightHandIdle: Right_Idle_SwordShield_01
   leftHandIdle: Left_Idle_SwordShield_01
   twoHandIdle: Both_Idle_GreatSword_01
@@ -31,6 +34,7 @@ MonoBehaviour:
   - OH_Heavy_Attack
   THHeavyAttacks:
   - TH_Heavy_Attack
+  weaponArt: 
   baseStaminaCost: 20
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

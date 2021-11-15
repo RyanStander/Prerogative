@@ -14,8 +14,9 @@ public class CharacterManager : MonoBehaviour
     public bool canBeRiposted;
     public bool canBeParried;
     public bool isParrying;
+    public bool isBlocking;
 
-    //Damage will be inflicted during an animation event
-    //Used in backstab or riposte animations
-    [Tooltip("The damage dealt during backstabs/counters")]public float pendingCriticalDamage;
+   //Damage will be inflicted during an animation event
+   //Used in backstab or riposte animations
+   [Tooltip("The damage dealt during backstabs/counters")]public float pendingCriticalDamage;
 }

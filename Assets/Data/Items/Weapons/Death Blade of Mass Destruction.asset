@@ -16,6 +16,9 @@ MonoBehaviour:
   itemName: Death Blade of Deviness
   modelPrefab: {fileID: 5998665846097091022, guid: 22751196c426f8b479f06defa1662405, type: 3}
   isUnarmed: 0
+  baseDamage: 25
+  criticalDamageMultiplier: 4
+  physicalDamageAbsorption: 100
   rightHandIdle: Right_Idle_SwordShield_01
   leftHandIdle: Left_Idle_SwordShield_01
   twoHandIdle: Both_Idle_GreatSword_01
@@ -31,6 +34,7 @@ MonoBehaviour:
   - OH_Heavy_Attack
   THHeavyAttacks:
   - TH_Heavy_Attack
+  weaponArt: 
   baseStaminaCost: 0
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

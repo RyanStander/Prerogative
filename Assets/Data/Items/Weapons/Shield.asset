@@ -18,6 +18,7 @@ MonoBehaviour:
   isUnarmed: 0
   baseDamage: 5
   criticalDamageMultiplier: 5
+  physicalDamageAbsorption: 90
   rightHandIdle: Right_Idle_SwordShield_01
   leftHandIdle: Left_Idle_SwordShield_01
   twoHandIdle: Both_Idle_SwordShield_01

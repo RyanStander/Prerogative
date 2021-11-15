@@ -11,6 +11,7 @@ public class InputHandler : MonoBehaviour
     private PlayerCombatManager playerCombatManager;
     private PlayerInventory playerInventory;
     private PlayerManager playerManager;
+    private BlockingCollider blockingCollider;
     private WeaponSlotManager weaponSlotManager;
     private CameraHandler cameraHandler;
     private UIManager uiManager;
@@ -20,7 +21,7 @@ public class InputHandler : MonoBehaviour
     private Vector2 cameraInput;
 
     //Combat inputs
-    [HideInInspector] public bool rollInput,primaryAttackInput,primaryHoldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput, parryInput;
+    [HideInInspector] public bool rollInput,primaryAttackInput,primaryHoldAttackInput, jumpInput,interactInput,twoHandInput,lockOnInput, parryInput, blockInput;
     [HideInInspector] public float lockOnTargetInput;
 
     //Menu Inputs
@@ -51,6 +52,7 @@ public class InputHandler : MonoBehaviour
         weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
         playerCombatManager = GetComponentInChildren<PlayerCombatManager>();
         animatorManager = GetComponentInChildren<AnimatorManager>();
+        blockingCollider = GetComponentInChildren<BlockingCollider>();
 
         uiManager = FindObjectOfType<UIManager>();
         cameraHandler = FindObjectOfType<CameraHandler>();
@@ -84,7 +86,7 @@ public class InputHandler : MonoBehaviour
         //Combat inputs
         HandleMoveInput(delta);
         HandleRollInput(delta);
-        HandleAttackInput(delta); 
+        HandleCombatInput(delta); 
         HandleLockOnInput();
 
         //Menu inputs
@@ -116,6 +118,8 @@ public class InputHandler : MonoBehaviour
         inputActions.PlayerActions.Roll.performed += i => rollInput = true;
         inputActions.PlayerActions.Roll.canceled += i => rollInput = false;
         inputActions.PlayerActions.Parry.performed += i => parryInput = true;
+        inputActions.PlayerActions.Block.performed += i => blockInput = true;
+        inputActions.PlayerActions.Block.canceled += i => blockInput = false;
 
         //quickslot inputs
         inputActions.QuickSlots.DPadRight.performed += i => dPadRight = true;
@@ -154,7 +158,7 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    private void HandleAttackInput(float delta)
+    private void HandleCombatInput(float delta)
     {
         if (primaryAttackInput)
         {
@@ -164,6 +168,20 @@ public class InputHandler : MonoBehaviour
         if (primaryHoldAttackInput)
         {
             playerCombatManager.HandlePrimaryHeldAttackAction();
+        }
+
+        if (blockInput)
+        {
+            playerCombatManager.HandleBlockAction();
+        }
+        else
+        {
+            playerManager.isBlocking = false;
+
+            if (blockingCollider.blockingCollider.enabled)
+            {
+                blockingCollider.DisableBlockingCollider();
+            }
         }
 
         if (parryInput)

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCombatManager : MonoBehaviour
 {
     private PlayerAnimatorManager playerAnimatorManager;
+    private PlayerEquipmentManager playerEquipmentManager;
     private PlayerManager playerManager;
     private PlayerInventory playerInventory;
     private InputHandler inputHandler;
@@ -20,6 +21,7 @@ public class PlayerCombatManager : MonoBehaviour
     {
         playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
         weaponSlotManager = GetComponent<WeaponSlotManager>();
+        playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
 
         inputHandler = GetComponentInParent<InputHandler>();
         playerStats = GetComponentInParent<PlayerStats>();
@@ -180,6 +182,11 @@ public class PlayerCombatManager : MonoBehaviour
         }*/
         AttemptBackStabOrRiposte();
     }
+
+    public void HandleBlockAction()
+    {
+        PerformBlockingAction();
+    }
     
     public void HandleWeaponArtAction()
     {
@@ -258,6 +265,19 @@ public class PlayerCombatManager : MonoBehaviour
         {
             playerAnimatorManager.PlayTargetAnimation("Shrug", true);
         }
+    }
+
+    private void PerformBlockingAction()
+    {
+        if (playerManager.isInteracting)
+            return;
+
+        if (playerManager.isBlocking)
+            return;
+
+        playerAnimatorManager.PlayTargetAnimation("BlockStart",false,true);
+        playerEquipmentManager.OpenBlockingCollider();
+        playerManager.isBlocking = true;
     }
 
     private void PerformWeaponArt(bool isTwoHanding)

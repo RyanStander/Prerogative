@@ -267,6 +267,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""31f5a0d1-ee2d-4f5b-9a96-089c55220646"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -421,6 +429,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""Parry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1093642-feba-4851-b882-8f7abff8dea3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83b235dd-0e25-4e71-b701-99f754b26ad3"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -676,6 +706,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
         m_PlayerActions_TwoHandSwap = m_PlayerActions.FindAction("Two Hand Swap", throwIfNotFound: true);
         m_PlayerActions_Parry = m_PlayerActions.FindAction("Parry", throwIfNotFound: true);
+        m_PlayerActions_Block = m_PlayerActions.FindAction("Block", throwIfNotFound: true);
         // Quick Slots
         m_QuickSlots = asset.FindActionMap("Quick Slots", throwIfNotFound: true);
         m_QuickSlots_DPadUp = m_QuickSlots.FindAction("D-Pad Up", throwIfNotFound: true);
@@ -793,6 +824,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_LockOn;
     private readonly InputAction m_PlayerActions_TwoHandSwap;
     private readonly InputAction m_PlayerActions_Parry;
+    private readonly InputAction m_PlayerActions_Block;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -805,6 +837,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
         public InputAction @TwoHandSwap => m_Wrapper.m_PlayerActions_TwoHandSwap;
         public InputAction @Parry => m_Wrapper.m_PlayerActions_Parry;
+        public InputAction @Block => m_Wrapper.m_PlayerActions_Block;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -838,6 +871,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Parry.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
                 @Parry.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
                 @Parry.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnParry;
+                @Block.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnBlock;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -866,6 +902,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Parry.started += instance.OnParry;
                 @Parry.performed += instance.OnParry;
                 @Parry.canceled += instance.OnParry;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
             }
         }
     }
@@ -1010,6 +1049,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnLockOn(InputAction.CallbackContext context);
         void OnTwoHandSwap(InputAction.CallbackContext context);
         void OnParry(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
     public interface IQuickSlotsActions
     {
